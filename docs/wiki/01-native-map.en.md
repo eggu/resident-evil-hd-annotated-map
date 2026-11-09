@@ -30,7 +30,7 @@ The first run uses English, visited rooms and room names only. The legend shows 
 
 Reopening the map returns to 1x.
 
-While zoomed, rooms and door marks scale 2x and the player marker moves with the map at native size. The floor name moves above the legend, the native guide UI is hidden, and typewriters and item boxes appear as icons in the middle of their room.
+While zoomed, rooms and door marks scale 2x and the player marker moves with the map at native size. The floor name moves above the legend, the native guide UI is hidden, and every typewriter and item box is drawn as an icon at its spot in the room. Zoomed out, only those the native map does not already mark are drawn.
 
 ## Native data reference
 
