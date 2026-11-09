@@ -2,7 +2,7 @@
   "game_exe_sha256": "39b840663e4b1a6835c60cbd176e4ee6c21b9197fc2c2dd733f2a7c36a0b429a",
   "copied_files": {
     "src/re1_mapnames.c": {
-      "sha256": "0454858b8f1933019cb0039308367c76bfad71405a74de257bcc10a4a211b2c2"
+      "sha256": "d001cc9bcb2bf26c7168ba4c590dbaeccd77a2e02773fffdff82e63b374d4473"
     },
     "src/labels.h": {
       "sha256": "2333f5e02554ea6b79990033c321b5a022477a4101e0b1ec8d61fc06356cf933"
@@ -41,7 +41,7 @@
       "sha256": "be8be996f8dde4c68a2b7b98ddb47c7ca611e5887b9e4be6544dfefe0982c4b6"
     },
     "src/synth_marks.h": {
-      "sha256": "89992ce1a878564a4e9a1e2113288511c3eb1d8c16239c886ea9d82663414594"
+      "sha256": "6015949fc90067c8e23d2e1171b3b6d662bd96a6a9f1ce9ebe19e9adef07e06c"
     },
     "src/save_points.h": {
       "sha256": "9a8380a4f579cd64cb1eef2c847a115a22e4cae78f77f21e0cc7b8b2bb1e633f"

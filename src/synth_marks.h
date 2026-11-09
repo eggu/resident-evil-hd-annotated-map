@@ -57,7 +57,7 @@ static const Synth synth_marks[SYN_COUNT] = {
     {105, 2, 2, 1023, 97.02f, -116.88f, 14, 5, {0, 0, 0, 512}}, /* Residence Room 001 / 001호실: the Self Defense Gun row (flag 339) */
     {133, 4, 4, 0, -1277.0f, 578.0f, 255, 6, {0}, 1, 212}, /* Visual Data Room / 영상 자료실: Kenneth's Film viewing */
     {137, 4, 5, 0, 42.0f, -87.0f, 255, 6, {0}, 1, 272},    /* Pass Code Corridor / 암호 복도: after the rescue */
-    {34, 0, 2, 0, 305.5f, 232.4f, 255, 6, {0}, 1, 3},      /* Tea Room / 다실: first zombie over Kenneth (r103 aev event area mNo 1, behind the Dining Room); 0x4a2200 sets bank1 3 */
+    {4, 0, 2, 0, 305.5f, 199.1f, 255, 6, {8 | 16, 4}, 1, 3}, /* shown once any of sections 3/4/34 is visited;  Tea Room / 다실 corridor (section 4 = room 104, the strip behind the Dining Room; live 2026-11-09: player there, bank1 3 still clear): first zombie over Kenneth, r103 aev event area mNo 1; 0x4a2200 sets bank1 3 */
     EVENT_MARK_ROWS
 };
 static int syn_bit(const unsigned *bank, unsigned n, unsigned size) { return n < size && (bank[n >> 5] >> (n & 31)) & 1; }

@@ -775,8 +775,14 @@ static void build_save_icons(const U32 *b5, U32 area, U32 floor, float ox, float
         const int *r = (const int *)(exe + EXE_ROOMS + 96 * i);
         if ((U32)r[6] != area || (U32)r[7] != floor || !bit(b5, i)) continue;
         const int *extra = (const int *)(uintptr_t)r[0x44 / 4];
-        if (!extra || !readable(extra, 0x18)) continue;
-        int typewriter = extra[2] != -1, box = extra[4] != -1, n = typewriter + box, drawn = 0;
+        int ok = extra && readable(extra, 0x18);
+        float tx, tz;
+        /* the room's own aev machine counts too: the Dining Room typewriter (aev type 6) has no native callout entry */
+        int ntw = ok && extra[2] != -1, nbox = ok && extra[4] != -1; /* native callout exists (drawn natively when not zoomed) */
+        int typewriter = zoom_on ? ntw || save_point(i, 0, &tx, &tz) : !ntw && save_point(i, 0, &tx, &tz);
+        int box = zoom_on ? nbox || save_point(i, 1, &tx, &tz) : !nbox && save_point(i, 1, &tx, &tz);
+        int n = typewriter + box, drawn = 0;
+        if (!n) continue;
         for (int k = 0; k < 2; k++) {
             if (!(k ? box : typewriter)) continue;
             float wx, wz, px, py;
@@ -958,7 +964,7 @@ static void build(BYTE *mgr, U32 area, U32 floor, float ox, float oy, U32 W, U32
         build_enemies(b1, b2, (const U32 *)(mgr + 0x33c), b7, area, floor, ox, oy, sx, sy, tk, marks, nmarks, W, H);
         build_crimson(mgr, area, floor, ox, oy, sx, sy, tk, W, H);
     }
-    if (zoom_on && !all_off) build_save_icons(b5, area, floor, ox, oy, sx, sy, is, W, H);
+    if (!all_off) build_save_icons(b5, area, floor, ox, oy, sx, sy, is, W, H); /* zoomed: all; else only machines without a native callout */
     nocc = marks_layout(marks, nmarks, occ, nocc, MAXOCC, is, item_names, W, H);
     for (int pass = 0; pass < 2; pass++)
         for (U32 n = 0; n < nmarks; n++) {

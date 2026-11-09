@@ -85,7 +85,7 @@ Settings changed on the map screen are saved automatically in `scripts/RE1HD.Ann
 - Enemies appear only where they were recorded in rooms you entered. Rooms you never entered show none.
 - Even with all rooms shown, floors and areas follow the game's own conditions, so you cannot switch to a map you have not reached.
 - The layout was tuned at 1440p. Names can overlap at other resolutions.
-- While zoomed, the game's own guide UI is hidden and typewriters and item boxes appear as icons in the middle of their room.
+- While zoomed, the game's own guide UI is hidden and every typewriter and item box is drawn as an icon at its spot in the room. Zoomed out, only those the game's map does not already mark are drawn.
 - Puzzles are an orange `!` diamond, events a purple `?` diamond with no name (gone once the scene has played). Two-line names are aligned toward the icon.
 - Weapons are shown as key items ([3]). A locked door's key is shown on the door.
 - Common item and enemy icons on a key item or puzzle mark are hidden, and names go where they cover the least.

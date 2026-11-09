@@ -110,7 +110,7 @@ int main(void) {
     {   /* Tea Room first zombie (Kenneth): shown until bank1 3 */
         unsigned zero[32] = {0}, seen[16] = {0}; set(seen, 3);
         const Synth *r = &synth_marks[SYN_EV_KENNETH];
-        assert(r->room == 34 && syn_event_visible(r, zero, zero, zero, zero) && !syn_event_visible(r, zero, seen, zero, zero));
+        assert(r->room == 4 && r->kv[0] == (8 | 16) && r->kv[1] == 4 && syn_event_visible(r, zero, zero, zero, zero) && !syn_event_visible(r, zero, seen, zero, zero));
     }
     {   /* Kenneth's Film viewing: only with the film (bank3 483), gone once viewed (bank1 212) */
         const Synth *r = &synth_marks[SYN_EV_FILM];
@@ -147,7 +147,7 @@ for flag, room, x, z in ((124, 43, -26.96, 313.14), (339, 105, 97.02, -116.88)):
     row = re.search(r'^\{4,%d,%d,\d+,\d+,%d,0,1,[-\d.]+f,[-\d.]+f,(-?[\d.]+)f,(-?[\d.]+)f' % (room, room, flag), labels, re.M)
     assert row and abs(float(row[1]) - x) < .01 and abs(float(row[2]) - z) < .01, (flag, row and row.groups())
 shapes = rg.shapes()
-for room, point in ((108, (309.9, 289.8)), (108, (390.0, 351.0)), (108, (296.4, 536.4)), (113, (490.8, 450.9)), (114, (684.3, 502.2)), (34, (260.5, 429.3)), (43, (623.1, 378.9)), (105, (237.0, 374.4)), (136, (470.7, 366.9)), (139, (433.8, 317.6)), (145, (618.0, 574.4)), (133, (345.1, 417.0)), (148, (435.1, 454.6)), (140, (400.0, 238.0)), (137, (404.5, 323.2)), (34, (326.6, 492.2))):
+for room, point in ((108, (309.9, 289.8)), (108, (390.0, 351.0)), (108, (296.4, 536.4)), (113, (490.8, 450.9)), (114, (684.3, 502.2)), (34, (260.5, 429.3)), (43, (623.1, 378.9)), (105, (237.0, 374.4)), (136, (470.7, 366.9)), (139, (433.8, 317.6)), (145, (618.0, 574.4)), (133, (345.1, 417.0)), (148, (435.1, 454.6)), (140, (400.0, 238.0)), (137, (404.5, 323.2)), (4, (326.6, 492.2))):
     assert shapes[room].distance_outside(*point) <= 4, (room, point)
 print('PASS: 3 lamps (! badge, then the lamp\'s eye once lit) + passcode door (until the Medical Room is entered), no code anywhere, points in their rooms')
 
@@ -182,3 +182,10 @@ assert _spots == {k: (round(v[0], 1), round(v[1], 1)) for k, v in _es.spots().it
 for _room, (_x, _y) in _spots.items():
     assert shapes[_room].contains(_x, _y), _room
 print(f'PASS: {len(_spots)} room event spots inside their rooms, header current')
+
+# save icons: a machine known only from the room's aev (Dining Room typewriter, room 5) is drawn in both views
+_sp = (ROOT / 'src/save_points.h').read_text(encoding='utf-8')
+assert '{5,0,528.6f,335.2f}' in _sp
+assert 'zoom_on ? ntw || save_point(i, 0, &tx, &tz) : !ntw && save_point(i, 0, &tx, &tz)' in c
+assert 'if (!all_off) build_save_icons(' in c
+print('PASS: aev-only save machines (Dining Room typewriter) drawn zoomed and unzoomed')
