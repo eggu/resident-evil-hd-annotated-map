@@ -27,14 +27,14 @@ An ASI mod that shows room names, locked doors and keys, items, documents and ma
 
 ## Scope and defaults
 
-Requires the Steam version of Resident Evil / Biohazard HD REMASTER (`bhd.exe`, current build). On any other executable the mod does nothing.
+Requires the Steam or GOG version of Resident Evil / Biohazard HD REMASTER (`bhd.exe`, current build).
 
 The first run uses English, visited rooms and room names only. Turn on the rest with the number keys on the map screen. Events (spoilers) are hidden at first too.
 
 ## Installation
 
 1. Close the game. Download `RE1-HD-Annotated-Map-<version>.zip` from [Releases](https://github.com/eggu/resident-evil-hd-annotated-map/releases/latest) and extract it. `Source code` is not the installer.
-2. Copy the ZIP contents (`dinput8.dll`, `scripts/`) into the folder with `bhd.exe`, keeping the folder structure. In your Steam library, right-click the game and choose **Manage → Browse local files** to open that folder.
+2. Copy the ZIP contents (`dinput8.dll`, `scripts/`) into the folder with `bhd.exe`, keeping the folder structure. On Steam, right-click the game in your library and choose **Manage → Browse local files**; in GOG Galaxy, open the game, then **Settings (⚙) → Manage installation → Show folder**.
    - [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader) v9.7.4 (MIT) is included as `dinput8.dll`.
    - If you already have a `dinput8.dll`, for example from Fusion Fix, skip it and copy `scripts/` only.
 3. Launch the game and open the map.

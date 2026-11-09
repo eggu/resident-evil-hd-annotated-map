@@ -1,7 +1,7 @@
 RE1 HD Annotated Map - Survivor's Notes - Resident Evil HD REMASTER
 상세 지도: 생존자의 메모
 
-지원: Steam판 Resident Evil / Biohazard HD REMASTER(bhd.exe) + Ultimate ASI Loader(포함).
+지원: Steam·GOG판 Resident Evil / Biohazard HD REMASTER(bhd.exe) + Ultimate ASI Loader(포함).
 1996년 원작용이 아닙니다.
 게임 지도에 방 이름, 잠긴 문과 열쇠, 핵심 아이템, 문서·지도, 퍼즐·이벤트, 일반 아이템, 타자기·아이템 상자, 적을 표시합니다.
 
@@ -38,7 +38,7 @@ https://github.com/eggu/resident-evil-hd-annotated-map
 English
 ================================================================
 
-Supported: Resident Evil / Biohazard HD REMASTER on Steam (bhd.exe) + Ultimate ASI Loader (included).
+Supported: Resident Evil / Biohazard HD REMASTER on Steam or GOG (bhd.exe) + Ultimate ASI Loader (included).
 This is not for the 1996 original.
 Shows room names, locked doors and required keys, key items, files and maps, puzzles and events,
 common items, typewriters and item boxes, and enemies on the game's map.

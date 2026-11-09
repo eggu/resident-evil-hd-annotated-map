@@ -27,7 +27,6 @@ typedef struct { float x, y, z, rhw; U32 color; float u, v; } Vertex; /* FVF XYZ
 #include "crimson_data.h"
 #include "enemy_rec.h"
 #include "zoom.h"
-#include "exe_check.h"
 #include "hold_key.h"
 #include "marks.h"
 #include "legend_text.h"
@@ -1505,7 +1504,7 @@ BOOL WINAPI DllMain(HINSTANCE dll, DWORD reason, void *reserved) {
         load_colors();
         if (migrate) { save_settings(); log_line("settings: INI rewritten once with Version 4\r\n"); }
         exe = (BYTE *)GetModuleHandleA(0);
-        if (exe != (BYTE *)0x400000 || !exe_supported(exe)) {
+        if (exe != (BYTE *)0x400000) {
             log_line("RE1HD.AnnotatedMap 1.0.0: unsupported bhd.exe; no patch applied\r\n");
             return TRUE;
         }

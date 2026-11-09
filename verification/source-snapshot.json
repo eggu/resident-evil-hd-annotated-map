@@ -2,10 +2,10 @@
   "game_exe_sha256": "39b840663e4b1a6835c60cbd176e4ee6c21b9197fc2c2dd733f2a7c36a0b429a",
   "copied_files": {
     "src/re1_mapnames.c": {
-      "sha256": "d001cc9bcb2bf26c7168ba4c590dbaeccd77a2e02773fffdff82e63b374d4473"
+      "sha256": "3eb790e4b5f6f42c61b8743726718bda0b78914513972d9eea857e765e183c29"
     },
     "src/labels.h": {
-      "sha256": "2333f5e02554ea6b79990033c321b5a022477a4101e0b1ec8d61fc06356cf933"
+      "sha256": "6eb4b1071c37a7cfc30a0dddf62586a60209849b4b96e6668c597f7353f8b450"
     },
     "src/crimson_data.h": {
       "sha256": "ae1c6789395b8277982bc56ed59ab3ac0bf1086966c07ae31cbd772028021a97"
@@ -23,7 +23,7 @@
       "sha256": "4c1b0a8f34a418650f2b59bd3d794306bf20a2c944318eed5c66d93bc9bec75a"
     },
     "src/section_rules.h": {
-      "sha256": "71e42d9273983c85f8916102bff94cb9676308d76615822cae702c86ee384a23"
+      "sha256": "8da938d445ed6083f2d588060d4b3346395bbcf57cda9af80c12479318b3916c"
     },
     "src/enemy_rec.h": {
       "sha256": "5b6366010d0dc42cc9b691bf48cffbb877a06353391ec8d073717fb2b478a46f"
@@ -41,7 +41,7 @@
       "sha256": "be8be996f8dde4c68a2b7b98ddb47c7ca611e5887b9e4be6544dfefe0982c4b6"
     },
     "src/synth_marks.h": {
-      "sha256": "f6446ba1c411418e95530a1472c9a00eeb5025463c35f0f839e23ddedb338f22"
+      "sha256": "e6f1b574a802011719e9380a8af6bbb3d1e6d0756d393f293c1941f2ede22e3b"
     },
     "src/save_points.h": {
       "sha256": "9a8380a4f579cd64cb1eef2c847a115a22e4cae78f77f21e0cc7b8b2bb1e633f"

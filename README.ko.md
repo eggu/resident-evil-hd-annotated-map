@@ -6,7 +6,7 @@
 <p align="center"><img src="docs/logo.png" alt="RE1 HD Annotated Map - Survivor's Notes" width="320"></p>
 -->
 
-**상세 지도: 생존자의 메모** — Steam판 Resident Evil / Biohazard HD REMASTER의 지도에 방 이름, 잠긴 문과 열쇠, 아이템, 문서·지도, 퍼즐, 이벤트, 타자기·아이템 상자, 적을 표시하는 ASI 모드입니다. 한국어/영어를 지원합니다. 1996년 원작용이 아닙니다. 원작용은 [RE1 Annotated Map](https://github.com/eggu/resident-evil-annotated-map)을 쓰세요.
+**상세 지도: 생존자의 메모** — Steam·GOG판 Resident Evil / Biohazard HD REMASTER의 지도에 방 이름, 잠긴 문과 열쇠, 아이템, 문서·지도, 퍼즐, 이벤트, 타자기·아이템 상자, 적을 표시하는 ASI 모드입니다. 한국어/영어를 지원합니다. 1996년 원작용이 아닙니다. 원작용은 [RE1 Annotated Map](https://github.com/eggu/resident-evil-annotated-map)을 쓰세요.
 
 - 게임 자체의 지도 화면에 표시합니다. 주운 아이템, 완료한 퍼즐은 지도에서 사라집니다.
 - 방문한 방만 보거나, 지도로 공개된 방 또는 모든 방을 볼 수 있습니다.
@@ -27,14 +27,14 @@
 
 ## 표시 범위와 기본값
 
-Steam판 Resident Evil / Biohazard HD REMASTER(`bhd.exe`, 현재 빌드)가 필요합니다. 다른 실행 파일에서는 아무것도 하지 않습니다.
+Steam 또는 GOG판 Resident Evil / Biohazard HD REMASTER(`bhd.exe`, 현재 빌드)가 필요합니다.
 
 처음 실행하면 영어, 방문한 방, 방 이름만 표시합니다. 나머지는 지도 화면에서 숫자 키로 켭니다. 이벤트(스포일러)도 처음에는 숨겨져 있습니다.
 
 ## 설치
 
 1. 게임을 종료합니다. [Releases](https://github.com/eggu/resident-evil-hd-annotated-map/releases/latest)에서 `RE1-HD-Annotated-Map-<버전>.zip`을 받아 압축을 풉니다. `Source code`는 설치 파일이 아닙니다.
-2. ZIP의 내용(`dinput8.dll`, `scripts/`)을 `bhd.exe`가 있는 게임 폴더에 폴더 구조 그대로 복사합니다. Steam 라이브러리에서 게임을 오른쪽 클릭한 뒤 **관리 → 로컬 파일 보기**를 누르면 이 폴더가 열립니다.
+2. ZIP의 내용(`dinput8.dll`, `scripts/`)을 `bhd.exe`가 있는 게임 폴더에 폴더 구조 그대로 복사합니다. Steam은 라이브러리에서 게임을 오른쪽 클릭한 뒤 **관리 → 로컬 파일 보기**, GOG Galaxy는 게임 페이지에서 **설정(⚙) → 설치 관리 → 폴더 보기**를 누르면 이 폴더가 열립니다.
    - ASI 로더인 [Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader) v9.7.4(MIT)가 `dinput8.dll`로 포함되어 있습니다.
    - Fusion Fix 등으로 `dinput8.dll`이 이미 있으면 `dinput8.dll`은 건너뛰고 `scripts/`만 복사하세요.
 3. 게임을 실행하고 지도를 엽니다.

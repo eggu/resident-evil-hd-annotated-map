@@ -1,6 +1,6 @@
 # RE1 HD Annotated Map - Survivor's Notes 1.0.0
 
-First public release. An ASI mod for Resident Evil / Biohazard HD REMASTER (Steam) that adds annotations to the game's own map screen.
+First public release. An ASI mod for Resident Evil / Biohazard HD REMASTER (Steam or GOG) that adds annotations to the game's own map screen.
 
 ## English
 
@@ -19,7 +19,7 @@ Known limits: enemies appear only in rooms you have entered; the layout was tune
 
 ## 한국어
 
-첫 공개 버전입니다. Steam판 Resident Evil / Biohazard HD REMASTER의 지도 화면에 주석을 더하는 ASI 모드입니다.
+첫 공개 버전입니다. Steam·GOG판 Resident Evil / Biohazard HD REMASTER의 지도 화면에 주석을 더하는 ASI 모드입니다.
 
 - 방 이름, 잠긴 문과 열쇠, 핵심 아이템(무기 포함), 문서·지도, 퍼즐, 이벤트, 일반 아이템, 타자기·아이템 상자, 적을 표시합니다.
 - 진행에 따라 표시가 바뀝니다. 주운 아이템, 열린 문, 푼 퍼즐, 쓰러뜨린 적은 사라집니다. 크림슨 헤드는 부활 전까지 회색이며 남은 시간도 볼 수 있습니다.
