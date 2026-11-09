@@ -1,0 +1,3820 @@
+{
+ "note": "tools/build_events.py output (bhd.exe analysis image + nativePC/arc/event, 2026-11-08). bank 0-3 = flag bank; hide_bank in src/event_marks.h is 4 for bank 0.",
+ "events": [
+  {
+   "room": "100",
+   "section": 0,
+   "area": 0,
+   "floor": 2,
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "bank": 0,
+   "bit": 77,
+   "chr": "chris",
+   "scenes": [
+    5,
+    5,
+    5,
+    1
+   ],
+   "sites": [
+    "0x5f7162",
+    "0x5f71cf",
+    "0x5f738f",
+    "0x5f7862"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "00",
+    "03",
+    "07"
+   ],
+   "kb": 499,
+   "voice": true,
+   "canvas": [
+    191.4,
+    402.7
+   ],
+   "world": [
+    -57.8,
+    203.7
+   ],
+   "room_record": [
+    136,
+    353,
+    31,
+    -30,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 0
+  },
+  {
+   "room": "100",
+   "section": 0,
+   "area": 0,
+   "floor": 2,
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "bank": 0,
+   "bit": 69,
+   "chr": "chris",
+   "scenes": [
+    6
+   ],
+   "sites": [
+    "0x5f7423"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 122,
+   "voice": true,
+   "canvas": [
+    191.4,
+    358.7
+   ],
+   "world": [
+    -57.8,
+    -203.7
+   ],
+   "room_record": [
+    136,
+    353,
+    31,
+    -30,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 1
+  },
+  {
+   "room": "100",
+   "section": 0,
+   "area": 0,
+   "floor": 2,
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "bank": 0,
+   "bit": 64,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x5f771d"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03",
+    "07"
+   ],
+   "kb": 703,
+   "voice": true,
+   "canvas": [
+    207.4,
+    402.7
+   ],
+   "world": [
+    76.2,
+    203.7
+   ],
+   "room_record": [
+    136,
+    353,
+    31,
+    -30,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 2
+  },
+  {
+   "room": "100",
+   "section": 0,
+   "area": 0,
+   "floor": 2,
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "bank": 0,
+   "bit": 67,
+   "chr": "chris",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x5f78ef"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 74,
+   "voice": true,
+   "canvas": [
+    175.4,
+    402.7
+   ],
+   "world": [
+    -191.7,
+    203.7
+   ],
+   "room_record": [
+    136,
+    353,
+    31,
+    -30,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 3
+  },
+  {
+   "room": "100",
+   "section": 0,
+   "area": 0,
+   "floor": 2,
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "bank": 0,
+   "bit": 69,
+   "chr": "jill",
+   "scenes": [
+    10
+   ],
+   "sites": [
+    "0x5f7bfe"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01"
+   ],
+   "kb": 164,
+   "voice": true,
+   "canvas": [
+    207.4,
+    358.7
+   ],
+   "world": [
+    76.2,
+    -203.7
+   ],
+   "room_record": [
+    136,
+    353,
+    31,
+    -30,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 4
+  },
+  {
+   "room": "105",
+   "section": 5,
+   "area": 0,
+   "floor": 2,
+   "ko": "식당",
+   "en": "Dinning Room",
+   "bank": 0,
+   "bit": 65,
+   "chr": "jill",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x5fcdd0"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 2149,
+   "voice": true,
+   "canvas": [
+    323.2,
+    560.1
+   ],
+   "world": [
+    5.9,
+    127.8
+   ],
+   "room_record": [
+    178,
+    519,
+    127,
+    -48,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 5
+  },
+  {
+   "room": "105",
+   "section": 5,
+   "area": 0,
+   "floor": 2,
+   "ko": "식당",
+   "en": "Dinning Room",
+   "bank": 0,
+   "bit": 71,
+   "chr": "jill",
+   "scenes": [
+    1,
+    2
+   ],
+   "sites": [
+    "0x5fceff",
+    "0x5fd00a"
+   ],
+   "evidence": "set after the scene call, also tested there",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1362,
+   "voice": true,
+   "canvas": [
+    323.2,
+    528.1
+   ],
+   "world": [
+    5.9,
+    -168.5
+   ],
+   "room_record": [
+    178,
+    519,
+    127,
+    -48,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 6
+  },
+  {
+   "room": "105",
+   "section": 5,
+   "area": 0,
+   "floor": 2,
+   "ko": "식당",
+   "en": "Dinning Room",
+   "bank": 0,
+   "bit": 66,
+   "chr": "jill",
+   "scenes": [
+    3
+   ],
+   "sites": [
+    "0x5fd182"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1347,
+   "voice": true,
+   "canvas": [
+    339.2,
+    560.1
+   ],
+   "world": [
+    139.8,
+    127.8
+   ],
+   "room_record": [
+    178,
+    519,
+    127,
+    -48,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 7
+  },
+  {
+   "room": "105",
+   "section": 5,
+   "area": 0,
+   "floor": 2,
+   "ko": "식당",
+   "en": "Dinning Room",
+   "bank": 0,
+   "bit": 67,
+   "chr": "jill",
+   "scenes": [
+    4
+   ],
+   "sites": [
+    "0x5fd2dd"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 5810,
+   "voice": true,
+   "canvas": [
+    307.2,
+    560.1
+   ],
+   "world": [
+    -128.1,
+    127.8
+   ],
+   "room_record": [
+    178,
+    519,
+    127,
+    -48,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 8
+  },
+  {
+   "room": "105",
+   "section": 5,
+   "area": 0,
+   "floor": 2,
+   "ko": "식당",
+   "en": "Dinning Room",
+   "bank": 0,
+   "bit": 70,
+   "chr": "jill",
+   "scenes": [
+    5
+   ],
+   "sites": [
+    "0x5fd6ac"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1186,
+   "voice": true,
+   "canvas": [
+    339.2,
+    528.1
+   ],
+   "world": [
+    139.8,
+    -168.5
+   ],
+   "room_record": [
+    178,
+    519,
+    127,
+    -48,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 9
+  },
+  {
+   "room": "105",
+   "section": 5,
+   "area": 0,
+   "floor": 2,
+   "ko": "식당",
+   "en": "Dinning Room",
+   "bank": 0,
+   "bit": 68,
+   "chr": "jill",
+   "scenes": [
+    6,
+    7
+   ],
+   "sites": [
+    "0x5fd7ff",
+    "0x5fd96f"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 5825,
+   "voice": true,
+   "canvas": [
+    307.2,
+    528.1
+   ],
+   "world": [
+    -128.1,
+    -168.5
+   ],
+   "room_record": [
+    178,
+    519,
+    127,
+    -48,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 10
+  },
+  {
+   "room": "106",
+   "section": 6,
+   "area": 0,
+   "floor": 2,
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "bank": 0,
+   "bit": 1,
+   "chr": "chris",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x5ff954"
+   ],
+   "evidence": "set before the scene call; Chris-only native init 0x4a3f60 (Jill uses 0x4a43b0)",
+   "eps": [
+    "00",
+    "01",
+    "04"
+   ],
+   "kb": 1118,
+   "voice": true,
+   "canvas": [
+    512.9,
+    569.6
+   ],
+   "world": [
+    -3.3,
+    215.7
+   ],
+   "room_record": [
+    431,
+    474,
+    86,
+    -93,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 11
+  },
+  {
+   "room": "106",
+   "section": 6,
+   "area": 0,
+   "floor": 2,
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "bank": 0,
+   "bit": 4,
+   "chr": "chris",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x5ff9f1"
+   ],
+   "evidence": "set before the scene call; Chris-only native init 0x4a3f60 (Jill uses 0x4a43b0)",
+   "eps": [
+    "00",
+    "01",
+    "04"
+   ],
+   "kb": 827,
+   "voice": true,
+   "canvas": [
+    528.9,
+    569.6
+   ],
+   "world": [
+    130.6,
+    215.7
+   ],
+   "room_record": [
+    431,
+    474,
+    86,
+    -93,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 12
+  },
+  {
+   "room": "106",
+   "section": 6,
+   "area": 0,
+   "floor": 2,
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "bank": 0,
+   "bit": 3,
+   "chr": "chris",
+   "scenes": [
+    3
+   ],
+   "sites": [
+    "0x5ffade"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00"
+   ],
+   "kb": 663,
+   "voice": true,
+   "canvas": [
+    496.9,
+    569.6
+   ],
+   "world": [
+    -137.3,
+    215.7
+   ],
+   "room_record": [
+    431,
+    474,
+    86,
+    -93,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 13
+  },
+  {
+   "room": "106",
+   "section": 6,
+   "area": 0,
+   "floor": 2,
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "bank": 0,
+   "bit": 2,
+   "chr": "jill",
+   "scenes": [
+    5
+   ],
+   "sites": [
+    "0x5ffbdd"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02",
+    "04"
+   ],
+   "kb": 2938,
+   "voice": true,
+   "canvas": [
+    520.9,
+    555.6
+   ],
+   "world": [
+    63.6,
+    86.1
+   ],
+   "room_record": [
+    431,
+    474,
+    86,
+    -93,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 14
+  },
+  {
+   "room": "106",
+   "section": 6,
+   "area": 0,
+   "floor": 2,
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "bank": 0,
+   "bit": 3,
+   "chr": "jill",
+   "scenes": [
+    7
+   ],
+   "sites": [
+    "0x5ffd38"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1242,
+   "voice": true,
+   "canvas": [
+    504.9,
+    555.6
+   ],
+   "world": [
+    -70.3,
+    86.1
+   ],
+   "room_record": [
+    431,
+    474,
+    86,
+    -93,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 15
+  },
+  {
+   "room": "106",
+   "section": 6,
+   "area": 0,
+   "floor": 2,
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "bank": 0,
+   "bit": 5,
+   "chr": "jill",
+   "scenes": [
+    10,
+    11,
+    17
+   ],
+   "sites": [
+    "0x5fffab",
+    "0x60010b",
+    "0x60032b"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1082,
+   "voice": true,
+   "canvas": [
+    536.9,
+    555.6
+   ],
+   "world": [
+    197.5,
+    86.1
+   ],
+   "room_record": [
+    431,
+    474,
+    86,
+    -93,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 16
+  },
+  {
+   "room": "109",
+   "section": 9,
+   "area": 0,
+   "floor": 2,
+   "ko": "굽은 복도",
+   "en": "Winding Corridor",
+   "bank": 1,
+   "bit": 37,
+   "chr": "jill",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x601e73"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01"
+   ],
+   "kb": 5638,
+   "voice": true,
+   "canvas": [
+    771.6,
+    364.1
+   ],
+   "world": [
+    30.1,
+    13.0
+   ],
+   "room_record": [
+    714,
+    319,
+    86,
+    -44,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 17
+  },
+  {
+   "room": "109",
+   "section": 9,
+   "area": 0,
+   "floor": 2,
+   "ko": "굽은 복도",
+   "en": "Winding Corridor",
+   "bank": 2,
+   "bit": 132,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x601ed8"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "00"
+   ],
+   "kb": 5031,
+   "voice": true,
+   "canvas": [
+    775.6,
+    380.1
+   ],
+   "world": [
+    63.6,
+    161.1
+   ],
+   "room_record": [
+    714,
+    319,
+    86,
+    -44,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 18
+  },
+  {
+   "room": "109",
+   "section": 9,
+   "area": 0,
+   "floor": 2,
+   "ko": "굽은 복도",
+   "en": "Winding Corridor",
+   "bank": 0,
+   "bit": 32,
+   "chr": "jill",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x6026d8"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1631,
+   "voice": true,
+   "canvas": [
+    775.6,
+    396.1
+   ],
+   "world": [
+    63.6,
+    309.3
+   ],
+   "room_record": [
+    714,
+    319,
+    86,
+    -44,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 19
+  },
+  {
+   "room": "10f",
+   "section": 15,
+   "area": 0,
+   "floor": 2,
+   "ko": "바",
+   "en": "Bar",
+   "bank": 0,
+   "bit": 71,
+   "chr": "chris",
+   "scenes": [
+    5
+   ],
+   "sites": [
+    "0x60c2b6"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 604,
+   "voice": true,
+   "canvas": [
+    339.2,
+    433.4
+   ],
+   "world": [
+    -191.7,
+    -62.0
+   ],
+   "room_record": [
+    258,
+    416,
+    91,
+    -33,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 20
+  },
+  {
+   "room": "10f",
+   "section": 15,
+   "area": 0,
+   "floor": 2,
+   "ko": "바",
+   "en": "Bar",
+   "bank": 0,
+   "bit": 72,
+   "chr": "chris",
+   "scenes": [
+    7
+   ],
+   "sites": [
+    "0x60c465"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 73,
+   "voice": true,
+   "canvas": [
+    321.2,
+    447.4
+   ],
+   "world": [
+    -342.3,
+    67.6
+   ],
+   "room_record": [
+    258,
+    416,
+    91,
+    -33,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 21
+  },
+  {
+   "room": "115",
+   "section": 21,
+   "area": 0,
+   "floor": 2,
+   "ko": "대리석 방",
+   "en": "Marble Room",
+   "bank": 0,
+   "bit": 96,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x60dbb1"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "00"
+   ],
+   "kb": 430,
+   "voice": true,
+   "canvas": [
+    746.7,
+    384.4
+   ],
+   "world": [
+    -222.2,
+    184.3
+   ],
+   "room_record": [
+    753,
+    366,
+    50,
+    1,
+    8.0,
+    8.0
+   ],
+   "id": 22
+  },
+  {
+   "room": "115",
+   "section": 21,
+   "area": 0,
+   "floor": 2,
+   "ko": "대리석 방",
+   "en": "Marble Room",
+   "bank": 0,
+   "bit": 97,
+   "chr": "jill",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x60e183"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "01"
+   ],
+   "kb": 440,
+   "voice": true,
+   "canvas": [
+    734.7,
+    396.4
+   ],
+   "world": [
+    -333.3,
+    295.4
+   ],
+   "room_record": [
+    753,
+    366,
+    50,
+    1,
+    8.0,
+    8.0
+   ],
+   "id": 23
+  },
+  {
+   "room": "115",
+   "section": 21,
+   "area": 0,
+   "floor": 2,
+   "ko": "대리석 방",
+   "en": "Marble Room",
+   "bank": 1,
+   "bit": 246,
+   "chr": "jill",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x60e41a"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 2914,
+   "voice": true,
+   "canvas": [
+    758.7,
+    396.4
+   ],
+   "world": [
+    -111.1,
+    295.4
+   ],
+   "room_record": [
+    753,
+    366,
+    50,
+    1,
+    8.0,
+    8.0
+   ],
+   "id": 24
+  },
+  {
+   "room": "119",
+   "section": 25,
+   "area": 0,
+   "floor": 2,
+   "ko": "정원 서재",
+   "en": "Courtyard Study",
+   "bank": 0,
+   "bit": 76,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x610f99"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00"
+   ],
+   "kb": 97,
+   "voice": true,
+   "canvas": [
+    626.6,
+    351.2
+   ],
+   "world": [
+    -83.7,
+    -23.1
+   ],
+   "room_record": [
+    624,
+    318,
+    30,
+    -35,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 25
+  },
+  {
+   "room": "11a",
+   "section": 26,
+   "area": 0,
+   "floor": 2,
+   "ko": "지붕 통로",
+   "en": "Roofed Passage",
+   "bank": 3,
+   "bit": 335,
+   "chr": "jill",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x611762"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "01"
+   ],
+   "kb": 550,
+   "voice": true,
+   "canvas": [
+    574.5,
+    275.7
+   ],
+   "world": [
+    0.0,
+    77.8
+   ],
+   "room_record": [
+    555,
+    163,
+    30,
+    -94,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 26
+  },
+  {
+   "room": "206",
+   "section": 43,
+   "area": 0,
+   "floor": 1,
+   "ko": "작은 서재",
+   "en": "Small Library",
+   "bank": 0,
+   "bit": 41,
+   "chr": "chris",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x619423"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 77,
+   "voice": true,
+   "canvas": [
+    617.4,
+    368.2
+   ],
+   "world": [
+    -70.3,
+    209.3
+   ],
+   "room_record": [
+    596,
+    308,
+    46,
+    -36,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 27
+  },
+  {
+   "room": "206",
+   "section": 43,
+   "area": 0,
+   "floor": 1,
+   "ko": "작은 서재",
+   "en": "Small Library",
+   "bank": 0,
+   "bit": 34,
+   "chr": "chris",
+   "scenes": [
+    3
+   ],
+   "sites": [
+    "0x6194a8"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 1896,
+   "voice": true,
+   "canvas": [
+    617.4,
+    336.2
+   ],
+   "world": [
+    -70.3,
+    -87.0
+   ],
+   "room_record": [
+    596,
+    308,
+    46,
+    -36,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 28
+  },
+  {
+   "room": "206",
+   "section": 43,
+   "area": 0,
+   "floor": 1,
+   "ko": "작은 서재",
+   "en": "Small Library",
+   "bank": 0,
+   "bit": 38,
+   "chr": "chris",
+   "scenes": [
+    4,
+    5
+   ],
+   "sites": [
+    "0x619708",
+    "0x619848"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 153,
+   "voice": true,
+   "canvas": [
+    633.4,
+    368.2
+   ],
+   "world": [
+    63.6,
+    209.3
+   ],
+   "room_record": [
+    596,
+    308,
+    46,
+    -36,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 29
+  },
+  {
+   "room": "20a",
+   "section": 47,
+   "area": 0,
+   "floor": 1,
+   "ko": "어항실",
+   "en": "Fish Tank Room",
+   "bank": 0,
+   "bit": 64,
+   "chr": "jill",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x61b844"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1304,
+   "voice": true,
+   "canvas": [
+    808.5,
+    355.6
+   ],
+   "world": [
+    188.3,
+    -207.4
+   ],
+   "room_record": [
+    815,
+    334,
+    5,
+    -46,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 30
+  },
+  {
+   "room": "20a",
+   "section": 47,
+   "area": 0,
+   "floor": 1,
+   "ko": "어항실",
+   "en": "Fish Tank Room",
+   "bank": 1,
+   "bit": 79,
+   "chr": "jill",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x61b8a5"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1368,
+   "voice": true,
+   "canvas": [
+    792.5,
+    355.6
+   ],
+   "world": [
+    54.4,
+    -207.4
+   ],
+   "room_record": [
+    815,
+    334,
+    5,
+    -46,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 31
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 1,
+   "bit": 116,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x61f792"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03",
+    "07"
+   ],
+   "kb": 1360,
+   "voice": true,
+   "canvas": [
+    681.0,
+    563.4
+   ],
+   "world": [
+    -35.2,
+    -141.7
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 32
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 0,
+   "bit": 100,
+   "chr": "chris",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x61f865"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03",
+    "07"
+   ],
+   "kb": 542,
+   "voice": true,
+   "canvas": [
+    667.0,
+    555.4
+   ],
+   "world": [
+    -152.3,
+    -215.7
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 33
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 0,
+   "bit": 98,
+   "chr": "chris",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x61f9a0"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03",
+    "07"
+   ],
+   "kb": 1349,
+   "voice": true,
+   "canvas": [
+    675.0,
+    541.4
+   ],
+   "world": [
+    -85.4,
+    -345.4
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 34
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 0,
+   "bit": 99,
+   "chr": "chris",
+   "scenes": [
+    3
+   ],
+   "sites": [
+    "0x61fb1a"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "07"
+   ],
+   "kb": 504,
+   "voice": true,
+   "canvas": [
+    727.0,
+    585.4
+   ],
+   "world": [
+    349.9,
+    62.0
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 35
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 1,
+   "bit": 116,
+   "chr": "jill",
+   "scenes": [
+    4
+   ],
+   "sites": [
+    "0x61fd02"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "07"
+   ],
+   "kb": 875,
+   "voice": true,
+   "canvas": [
+    675.0,
+    525.4
+   ],
+   "world": [
+    -85.4,
+    -493.5
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 36
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 0,
+   "bit": 101,
+   "chr": "jill",
+   "scenes": [
+    5
+   ],
+   "sites": [
+    "0x61fdd5"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "07"
+   ],
+   "kb": 524,
+   "voice": true,
+   "canvas": [
+    681.0,
+    563.4
+   ],
+   "world": [
+    -35.2,
+    -141.7
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 37
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 0,
+   "bit": 99,
+   "chr": "jill",
+   "scenes": [
+    6
+   ],
+   "sites": [
+    "0x61ff61"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "07"
+   ],
+   "kb": 1140,
+   "voice": true,
+   "canvas": [
+    681.0,
+    563.4
+   ],
+   "world": [
+    -35.2,
+    -141.7
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 38
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 0,
+   "bit": 100,
+   "chr": "jill",
+   "scenes": [
+    7
+   ],
+   "sites": [
+    "0x6200da"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "07"
+   ],
+   "kb": 475,
+   "voice": true,
+   "canvas": [
+    681.0,
+    563.4
+   ],
+   "world": [
+    -35.2,
+    -141.7
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 39
+  },
+  {
+   "room": "20d",
+   "section": 50,
+   "area": 0,
+   "floor": 1,
+   "ko": "기둥 방",
+   "en": "Pillar Room",
+   "bank": 0,
+   "bit": 102,
+   "chr": "jill",
+   "scenes": [
+    8
+   ],
+   "sites": [
+    "0x6201a7"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "07"
+   ],
+   "kb": 544,
+   "voice": true,
+   "canvas": [
+    681.0,
+    563.4
+   ],
+   "world": [
+    -35.2,
+    -141.7
+   ],
+   "room_record": [
+    680,
+    536,
+    28,
+    -67,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 40
+  },
+  {
+   "room": "20e",
+   "section": 51,
+   "area": 0,
+   "floor": 1,
+   "ko": "다락 입구",
+   "en": "Attic Entry",
+   "bank": 1,
+   "bit": 41,
+   "chr": "chris",
+   "scenes": [
+    0,
+    1
+   ],
+   "sites": [
+    "0x6203e7",
+    "0x6205d4"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00"
+   ],
+   "kb": 163,
+   "voice": true,
+   "canvas": [
+    768.0,
+    561.0
+   ],
+   "world": [
+    -97.9,
+    -55.6
+   ],
+   "room_record": [
+    770,
+    520,
+    43,
+    -70,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 41
+  },
+  {
+   "room": "20e",
+   "section": 51,
+   "area": 0,
+   "floor": 1,
+   "ko": "다락 입구",
+   "en": "Attic Entry",
+   "bank": 0,
+   "bit": 42,
+   "chr": "chris",
+   "scenes": [
+    3
+   ],
+   "sites": [
+    "0x6207e3"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 90,
+   "voice": true,
+   "canvas": [
+    768.0,
+    545.0
+   ],
+   "world": [
+    -97.9,
+    -203.7
+   ],
+   "room_record": [
+    770,
+    520,
+    43,
+    -70,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 42
+  },
+  {
+   "room": "20e",
+   "section": 51,
+   "area": 0,
+   "floor": 1,
+   "ko": "다락 입구",
+   "en": "Attic Entry",
+   "bank": 1,
+   "bit": 41,
+   "chr": "jill",
+   "scenes": [
+    5
+   ],
+   "sites": [
+    "0x620b04"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01"
+   ],
+   "kb": 158,
+   "voice": true,
+   "canvas": [
+    768.0,
+    529.0
+   ],
+   "world": [
+    -97.9,
+    -351.9
+   ],
+   "room_record": [
+    770,
+    520,
+    43,
+    -70,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 43
+  },
+  {
+   "room": "20e",
+   "section": 51,
+   "area": 0,
+   "floor": 1,
+   "ko": "다락 입구",
+   "en": "Attic Entry",
+   "bank": 0,
+   "bit": 34,
+   "chr": "jill",
+   "scenes": [
+    6
+   ],
+   "sites": [
+    "0x620c13"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1520,
+   "voice": true,
+   "canvas": [
+    768.0,
+    513.0
+   ],
+   "world": [
+    -97.9,
+    -500.0
+   ],
+   "room_record": [
+    770,
+    520,
+    43,
+    -70,
+    8.850000381469727,
+    8.0
+   ],
+   "id": 44
+  },
+  {
+   "room": "212",
+   "section": 55,
+   "area": 0,
+   "floor": 1,
+   "ko": "야외 테라스",
+   "en": "Outside Patio",
+   "bank": 0,
+   "bit": 128,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x622dec"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00"
+   ],
+   "kb": 2075,
+   "voice": true,
+   "canvas": [
+    721.4,
+    607.8
+   ],
+   "world": [
+    -225.7,
+    286.1
+   ],
+   "room_record": [
+    596,
+    512,
+    181,
+    -89,
+    8.5,
+    8.0
+   ],
+   "id": 45
+  },
+  {
+   "room": "212",
+   "section": 55,
+   "area": 0,
+   "floor": 1,
+   "ko": "야외 테라스",
+   "en": "Outside Patio",
+   "bank": 1,
+   "bit": 162,
+   "chr": "jill",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x622ea1"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 3531,
+   "voice": true,
+   "canvas": [
+    739.4,
+    607.8
+   ],
+   "world": [
+    -68.8,
+    286.1
+   ],
+   "room_record": [
+    596,
+    512,
+    181,
+    -89,
+    8.5,
+    8.0
+   ],
+   "id": 46
+  },
+  {
+   "room": "212",
+   "section": 55,
+   "area": 0,
+   "floor": 1,
+   "ko": "야외 테라스",
+   "en": "Outside Patio",
+   "bank": 0,
+   "bit": 128,
+   "chr": "jill",
+   "scenes": [
+    3
+   ],
+   "sites": [
+    "0x62314b"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01"
+   ],
+   "kb": 2062,
+   "voice": true,
+   "canvas": [
+    755.4,
+    607.8
+   ],
+   "world": [
+    70.6,
+    286.1
+   ],
+   "room_record": [
+    596,
+    512,
+    181,
+    -89,
+    8.5,
+    8.0
+   ],
+   "id": 47
+  },
+  {
+   "room": "212",
+   "section": 55,
+   "area": 0,
+   "floor": 1,
+   "ko": "야외 테라스",
+   "en": "Outside Patio",
+   "bank": 0,
+   "bit": 140,
+   "chr": "jill",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x62320a"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 2253,
+   "voice": true,
+   "canvas": [
+    755.4,
+    625.8
+   ],
+   "world": [
+    70.6,
+    452.8
+   ],
+   "room_record": [
+    596,
+    512,
+    181,
+    -89,
+    8.5,
+    8.0
+   ],
+   "id": 48
+  },
+  {
+   "room": "300",
+   "section": 72,
+   "area": 1,
+   "floor": 2,
+   "ko": "중앙 정원",
+   "en": "Main Garden",
+   "bank": 1,
+   "bit": 165,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x62ad40"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00"
+   ],
+   "kb": 574,
+   "voice": true,
+   "canvas": [
+    461.5,
+    539.1
+   ],
+   "world": [
+    -43.8,
+    -268.5
+   ],
+   "room_record": [
+    345,
+    509,
+    118,
+    -73,
+    5.409999847412109,
+    5.710000038146973
+   ],
+   "id": 49
+  },
+  {
+   "room": "300",
+   "section": 72,
+   "area": 1,
+   "floor": 2,
+   "ko": "중앙 정원",
+   "en": "Main Garden",
+   "bank": 1,
+   "bit": 165,
+   "chr": "jill",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x62b551"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "01"
+   ],
+   "kb": 535,
+   "voice": true,
+   "canvas": [
+    477.5,
+    539.1
+   ],
+   "world": [
+    175.3,
+    -268.5
+   ],
+   "room_record": [
+    345,
+    509,
+    118,
+    -73,
+    5.409999847412109,
+    5.710000038146973
+   ],
+   "id": 50
+  },
+  {
+   "room": "309",
+   "section": 81,
+   "area": 1,
+   "floor": 3,
+   "ko": "발전기실",
+   "en": "Generator Room",
+   "bank": 0,
+   "bit": 131,
+   "chr": "jill",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x6334a8"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 813,
+   "voice": true,
+   "canvas": [
+    678.8,
+    350.7
+   ],
+   "world": [
+    60.5,
+    122.2
+   ],
+   "room_record": [
+    622,
+    273,
+    71,
+    -62,
+    8.699999809265137,
+    8.0
+   ],
+   "id": 51
+  },
+  {
+   "room": "30a",
+   "section": 82,
+   "area": 1,
+   "floor": 3,
+   "ko": "엔리코의 방",
+   "en": "Enrico Room",
+   "bank": 0,
+   "bit": 101,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x636215"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "04",
+    "06"
+   ],
+   "kb": 1666,
+   "voice": true,
+   "canvas": [
+    743.8,
+    538.9
+   ],
+   "world": [
+    430.0,
+    525.4
+   ],
+   "room_record": [
+    712,
+    491,
+    5,
+    0,
+    8.699999809265137,
+    8.600000381469727
+   ],
+   "id": 52
+  },
+  {
+   "room": "30a",
+   "section": 82,
+   "area": 1,
+   "floor": 3,
+   "ko": "엔리코의 방",
+   "en": "Enrico Room",
+   "bank": 0,
+   "bit": 102,
+   "chr": "chris",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x636280"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "06"
+   ],
+   "kb": 785,
+   "voice": true,
+   "canvas": [
+    743.8,
+    522.9
+   ],
+   "world": [
+    430.0,
+    387.6
+   ],
+   "room_record": [
+    712,
+    491,
+    5,
+    0,
+    8.699999809265137,
+    8.600000381469727
+   ],
+   "id": 53
+  },
+  {
+   "room": "30a",
+   "section": 82,
+   "area": 1,
+   "floor": 3,
+   "ko": "엔리코의 방",
+   "en": "Enrico Room",
+   "bank": 0,
+   "bit": 103,
+   "chr": "jill",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x63670a"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "04",
+    "06"
+   ],
+   "kb": 997,
+   "voice": true,
+   "canvas": [
+    709.8,
+    538.9
+   ],
+   "world": [
+    140.5,
+    525.4
+   ],
+   "room_record": [
+    712,
+    491,
+    5,
+    0,
+    8.699999809265137,
+    8.600000381469727
+   ],
+   "id": 54
+  },
+  {
+   "room": "30a",
+   "section": 82,
+   "area": 1,
+   "floor": 3,
+   "ko": "엔리코의 방",
+   "en": "Enrico Room",
+   "bank": 0,
+   "bit": 104,
+   "chr": "jill",
+   "scenes": [
+    3
+   ],
+   "sites": [
+    "0x636770"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "06"
+   ],
+   "kb": 772,
+   "voice": true,
+   "canvas": [
+    757.8,
+    530.9
+   ],
+   "world": [
+    549.2,
+    456.5
+   ],
+   "room_record": [
+    712,
+    491,
+    5,
+    0,
+    8.699999809265137,
+    8.600000381469727
+   ],
+   "id": 55
+  },
+  {
+   "room": "315",
+   "section": 93,
+   "area": 3,
+   "floor": 4,
+   "ko": "제시카의 무덤",
+   "en": "Jessica's Tomb",
+   "bank": 1,
+   "bit": 264,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x640b9d"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "04"
+   ],
+   "kb": 856,
+   "voice": true,
+   "canvas": [
+    373.2,
+    375.3
+   ],
+   "world": [
+    -1597.8,
+    -1656.7
+   ],
+   "room_record": [
+    298,
+    207,
+    303,
+    -377,
+    10.0,
+    8.329999923706055
+   ],
+   "id": 56
+  },
+  {
+   "room": "315",
+   "section": 93,
+   "area": 3,
+   "floor": 4,
+   "ko": "제시카의 무덤",
+   "en": "Jessica's Tomb",
+   "bank": 0,
+   "bit": 43,
+   "chr": "chris",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x640ed4"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "04"
+   ],
+   "kb": 853,
+   "voice": true,
+   "canvas": [
+    389.2,
+    407.3
+   ],
+   "world": [
+    -1479.3,
+    -1372.1
+   ],
+   "room_record": [
+    298,
+    207,
+    303,
+    -377,
+    10.0,
+    8.329999923706055
+   ],
+   "id": 57
+  },
+  {
+   "room": "315",
+   "section": 93,
+   "area": 3,
+   "floor": 4,
+   "ko": "제시카의 무덤",
+   "en": "Jessica's Tomb",
+   "bank": 1,
+   "bit": 264,
+   "chr": "jill",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x641d31"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 5741,
+   "voice": true,
+   "canvas": [
+    365.2,
+    361.3
+   ],
+   "world": [
+    -1657.0,
+    -1781.2
+   ],
+   "room_record": [
+    298,
+    207,
+    303,
+    -377,
+    10.0,
+    8.329999923706055
+   ],
+   "id": 58
+  },
+  {
+   "room": "315",
+   "section": 93,
+   "area": 3,
+   "floor": 4,
+   "ko": "제시카의 무덤",
+   "en": "Jessica's Tomb",
+   "bank": 0,
+   "bit": 38,
+   "chr": "jill",
+   "scenes": [
+    5
+   ],
+   "sites": [
+    "0x64263f"
+   ],
+   "evidence": "set before the scene call, also tested there",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1222,
+   "voice": true,
+   "canvas": [
+    389.2,
+    423.3
+   ],
+   "world": [
+    -1479.3,
+    -1229.8
+   ],
+   "room_record": [
+    298,
+    207,
+    303,
+    -377,
+    10.0,
+    8.329999923706055
+   ],
+   "id": 59
+  },
+  {
+   "room": "316",
+   "section": 94,
+   "area": 1,
+   "floor": 4,
+   "ko": "쓰레기 압축실",
+   "en": "Garbage Compactor Room",
+   "bank": 0,
+   "bit": 141,
+   "chr": "jill",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x64366d"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1748,
+   "voice": true,
+   "canvas": [
+    281.5,
+    596.5
+   ],
+   "world": [
+    -116.1,
+    616.2
+   ],
+   "room_record": [
+    225,
+    515,
+    45,
+    -44,
+    6.059999942779541,
+    6.900000095367432
+   ],
+   "id": 60
+  },
+  {
+   "room": "316",
+   "section": 94,
+   "area": 1,
+   "floor": 4,
+   "ko": "쓰레기 압축실",
+   "en": "Garbage Compactor Room",
+   "bank": 0,
+   "bit": 138,
+   "chr": "jill",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x6436ff"
+   ],
+   "evidence": "set after the scene call, also tested there",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1153,
+   "voice": true,
+   "canvas": [
+    265.5,
+    596.5
+   ],
+   "world": [
+    -311.7,
+    616.2
+   ],
+   "room_record": [
+    225,
+    515,
+    45,
+    -44,
+    6.059999942779541,
+    6.900000095367432
+   ],
+   "id": 61
+  },
+  {
+   "room": "316",
+   "section": 94,
+   "area": 1,
+   "floor": 4,
+   "ko": "쓰레기 압축실",
+   "en": "Garbage Compactor Room",
+   "bank": 0,
+   "bit": 137,
+   "chr": "jill",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x643be3"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1315,
+   "voice": true,
+   "canvas": [
+    313.5,
+    596.5
+   ],
+   "world": [
+    275.0,
+    616.2
+   ],
+   "room_record": [
+    225,
+    515,
+    45,
+    -44,
+    6.059999942779541,
+    6.900000095367432
+   ],
+   "id": 62
+  },
+  {
+   "room": "405",
+   "section": 109,
+   "area": 2,
+   "floor": 2,
+   "ko": "중앙 복도",
+   "en": "Central Corridor",
+   "bank": 0,
+   "bit": 133,
+   "chr": "jill",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x649fa4"
+   ],
+   "evidence": "set after the scene at 0x64a000; trigger tests bank0[133] at 0x4c0ced (bank1[188] belongs to the preceding insecticide function)",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 804,
+   "voice": true,
+   "canvas": [
+    400.1,
+    506.1
+   ],
+   "world": [
+    1093.5,
+    -237.8
+   ],
+   "room_record": [
+    219,
+    359,
+    0,
+    -199,
+    10.5,
+    10.0
+   ],
+   "id": 63
+  },
+  {
+   "room": "405",
+   "section": 109,
+   "area": 2,
+   "floor": 2,
+   "ko": "중앙 복도",
+   "en": "Central Corridor",
+   "bank": 0,
+   "bit": 131,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x64a184"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "04"
+   ],
+   "kb": 1429,
+   "voice": true,
+   "canvas": [
+    400.1,
+    522.1
+   ],
+   "world": [
+    1093.5,
+    -119.3
+   ],
+   "room_record": [
+    219,
+    359,
+    0,
+    -199,
+    10.5,
+    10.0
+   ],
+   "id": 64
+  },
+  {
+   "room": "405",
+   "section": 109,
+   "area": 2,
+   "floor": 2,
+   "ko": "중앙 복도",
+   "en": "Central Corridor",
+   "bank": 0,
+   "bit": 132,
+   "chr": "jill",
+   "scenes": [
+    2
+   ],
+   "sites": [
+    "0x64a704"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "04"
+   ],
+   "kb": 1527,
+   "voice": true,
+   "canvas": [
+    400.1,
+    490.1
+   ],
+   "world": [
+    1093.5,
+    -356.3
+   ],
+   "room_record": [
+    219,
+    359,
+    0,
+    -199,
+    10.5,
+    10.0
+   ],
+   "id": 65
+  },
+  {
+   "room": "406",
+   "section": 110,
+   "area": 2,
+   "floor": 2,
+   "ko": "002호실",
+   "en": "Room 002",
+   "bank": 0,
+   "bit": 135,
+   "chr": "jill",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x64b00c"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 2688,
+   "voice": true,
+   "canvas": [
+    507.1,
+    386.1
+   ],
+   "world": [
+    115.0,
+    -140.0
+   ],
+   "room_record": [
+    429,
+    359,
+    63,
+    -51,
+    10.5,
+    10.0
+   ],
+   "id": 66
+  },
+  {
+   "room": "408",
+   "section": 112,
+   "area": 2,
+   "floor": 2,
+   "ko": "미술관",
+   "en": "Gallery",
+   "bank": 0,
+   "bit": 130,
+   "chr": "chris",
+   "scenes": [
+    0,
+    1
+   ],
+   "sites": [
+    "0x64be36",
+    "0x64bf98"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 877,
+   "voice": true,
+   "canvas": [
+    531.9,
+    474.4
+   ],
+   "world": [
+    4.0,
+    87.9
+   ],
+   "room_record": [
+    401,
+    326,
+    136,
+    -147,
+    11.0,
+    10.699999809265137
+   ],
+   "id": 67
+  },
+  {
+   "room": "409",
+   "section": 113,
+   "area": 2,
+   "floor": 2,
+   "ko": "의무실",
+   "en": "Medical Room",
+   "bank": 0,
+   "bit": 37,
+   "chr": "chris",
+   "scenes": [
+    9,
+    0
+   ],
+   "sites": [
+    "0x64d26f",
+    "0x64d54f"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 98,
+   "voice": true,
+   "canvas": [
+    431.4,
+    443.7
+   ],
+   "world": [
+    -196.8,
+    -119.0
+   ],
+   "room_record": [
+    416,
+    443,
+    41,
+    -27,
+    10.5,
+    9.520000457763672
+   ],
+   "id": 68
+  },
+  {
+   "room": "40f",
+   "section": 119,
+   "area": 2,
+   "floor": 3,
+   "ko": "경비실",
+   "en": "Guard Room",
+   "bank": 0,
+   "bit": 103,
+   "chr": "chris",
+   "scenes": [
+    0,
+    1
+   ],
+   "sites": [
+    "0x653281",
+    "0x653318"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "03"
+   ],
+   "kb": 47,
+   "voice": true,
+   "canvas": [
+    427.2,
+    449.4
+   ],
+   "world": [
+    -32.7,
+    -112.4
+   ],
+   "room_record": [
+    378,
+    396,
+    48,
+    -78,
+    9.5,
+    8.699999809265137
+   ],
+   "id": 69
+  },
+  {
+   "room": "501",
+   "section": 130,
+   "area": 4,
+   "floor": 3,
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "bank": 1,
+   "bit": 325,
+   "chr": "chris",
+   "scenes": [
+    0
+   ],
+   "sites": [
+    "0x659d07"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00"
+   ],
+   "kb": 483,
+   "voice": true,
+   "canvas": [
+    440.8,
+    408.8
+   ],
+   "world": [
+    259.8,
+    232.5
+   ],
+   "room_record": [
+    262,
+    302,
+    146,
+    -89,
+    7.300000190734863,
+    6.659999847412109
+   ],
+   "id": 70
+  },
+  {
+   "room": "501",
+   "section": 130,
+   "area": 4,
+   "floor": 3,
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "bank": 1,
+   "bit": 325,
+   "chr": "jill",
+   "scenes": [
+    5
+   ],
+   "sites": [
+    "0x65a54a"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "01"
+   ],
+   "kb": 496,
+   "voice": true,
+   "canvas": [
+    414.8,
+    380.8
+   ],
+   "world": [
+    -4.1,
+    -79.0
+   ],
+   "room_record": [
+    262,
+    302,
+    146,
+    -89,
+    7.300000190734863,
+    6.659999847412109
+   ],
+   "id": 71
+  },
+  {
+   "room": "50b",
+   "section": 140,
+   "area": 4,
+   "floor": 5,
+   "ko": "감방 입구",
+   "en": "Cell Entrance",
+   "bank": 1,
+   "bit": 224,
+   "chr": "both",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x662a60"
+   ],
+   "evidence": "set after the scene call, also tested there",
+   "eps": [
+    "00",
+    "01"
+   ],
+   "kb": 289,
+   "voice": true,
+   "canvas": [
+    354.4,
+    280.2
+   ],
+   "world": [
+    -297.6,
+    219.7
+   ],
+   "room_record": [
+    326,
+    208,
+    39,
+    -46,
+    5.5,
+    5.260000228881836
+   ],
+   "id": 72
+  },
+  {
+   "room": "50c",
+   "section": 141,
+   "area": 4,
+   "floor": 5,
+   "ko": "승강기 입구",
+   "en": "Elevator Entry",
+   "bank": 1,
+   "bit": 334,
+   "chr": "chris",
+   "scenes": [
+    1
+   ],
+   "sites": [
+    "0x663020"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "03"
+   ],
+   "kb": 293,
+   "voice": true,
+   "canvas": [
+    589.9,
+    394.3
+   ],
+   "world": [
+    1.3,
+    1.4
+   ],
+   "room_record": [
+    541,
+    337,
+    61,
+    -61,
+    5.5,
+    5.260000228881836
+   ],
+   "id": 73
+  },
+  {
+   "room": "50c",
+   "section": 141,
+   "area": 4,
+   "floor": 5,
+   "ko": "승강기 입구",
+   "en": "Elevator Entry",
+   "bank": 1,
+   "bit": 334,
+   "chr": "jill",
+   "scenes": [
+    2,
+    3
+   ],
+   "sites": [
+    "0x663098",
+    "0x663105"
+   ],
+   "evidence": "set after the scene call",
+   "eps": [
+    "01",
+    "02"
+   ],
+   "kb": 1196,
+   "voice": true,
+   "canvas": [
+    589.9,
+    378.3
+   ],
+   "world": [
+    1.3,
+    -223.9
+   ],
+   "room_record": [
+    541,
+    337,
+    61,
+    -61,
+    5.5,
+    5.260000228881836
+   ],
+   "id": 74
+  },
+  {
+   "room": "512",
+   "section": 147,
+   "area": 4,
+   "floor": 5,
+   "ko": "감방",
+   "en": "Cell",
+   "bank": 1,
+   "bit": 332,
+   "chr": "both",
+   "scenes": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "sites": [
+    "0x665252",
+    "0x6652d3",
+    "0x665413",
+    "0x665493"
+   ],
+   "evidence": "set before the scene call",
+   "eps": [
+    "00",
+    "01"
+   ],
+   "kb": 122,
+   "voice": true,
+   "canvas": [
+    407.2,
+    263.1
+   ],
+   "world": [
+    -11.9,
+    80.3
+   ],
+   "room_record": [
+    378,
+    229,
+    22,
+    -17,
+    5.0,
+    5.260000228881836
+   ],
+   "id": 75
+  }
+ ],
+ "skipped": [
+  {
+   "room": "100",
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "site": "0x5f7638",
+   "scene": 3,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "100",
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "site": "0x5f792a",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "100",
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "site": "0x5f79c5",
+   "scene": 11,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "100",
+   "ko": "의약품 창고",
+   "en": "Medical Storage Room",
+   "site": "0x5f80af",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x5ff86c",
+   "scene": 0,
+   "reason": "no characters in the scene (camera/object only)"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x5ffb5b",
+   "scene": 4,
+   "reason": "no characters in the scene (camera/object only)"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x5ffd8f",
+   "scene": 8,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x5ffdff",
+   "scene": 9,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x60015c",
+   "scene": 13,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x6001fd",
+   "scene": 12,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x60037c",
+   "scene": 19,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "106",
+   "ko": "중앙 홀",
+   "en": "Main Hall",
+   "site": "0x60041d",
+   "scene": 18,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "10f",
+   "ko": "바",
+   "en": "Bar",
+   "site": "0x60be5e",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "10f",
+   "ko": "바",
+   "en": "Bar",
+   "site": "0x60bfec",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "10f",
+   "ko": "바",
+   "en": "Bar",
+   "site": "0x60c145",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "10f",
+   "ko": "바",
+   "en": "Bar",
+   "site": "0x60c38c",
+   "scene": 6,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "10f",
+   "ko": "바",
+   "en": "Bar",
+   "site": "0x60c537",
+   "scene": 8,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "206",
+   "ko": "작은 서재",
+   "en": "Small Library",
+   "site": "0x61909f",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "206",
+   "ko": "작은 서재",
+   "en": "Small Library",
+   "site": "0x6191d4",
+   "scene": 1,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "20e",
+   "ko": "다락 입구",
+   "en": "Attic Entry",
+   "site": "0x620758",
+   "scene": 2,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "20e",
+   "ko": "다락 입구",
+   "en": "Attic Entry",
+   "site": "0x62093e",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "210",
+   "ko": "다락",
+   "en": "Attic",
+   "site": "0x6219e2",
+   "scene": 0,
+   "reason": "entering the Attic starts the Yawn fight (boss room rule)"
+  },
+  {
+   "room": "210",
+   "ko": "다락",
+   "en": "Attic",
+   "site": "0x622068",
+   "scene": 1,
+   "reason": "entering the Attic starts the Yawn fight (boss room rule)"
+  },
+  {
+   "room": "212",
+   "ko": "야외 테라스",
+   "en": "Outside Patio",
+   "site": "0x6235de",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62d65d",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62d82f",
+   "scene": 2,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62d981",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62da31",
+   "scene": 10,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62da92",
+   "scene": 12,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62dca9",
+   "scene": 12,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62eb7e",
+   "scene": 5,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62ece8",
+   "scene": 7,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62ee31",
+   "scene": 9,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62eede",
+   "scene": 11,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "303",
+   "ko": "헬기장",
+   "en": "Heliport",
+   "site": "0x62ef42",
+   "scene": 13,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "304",
+   "ko": "지그재그 길",
+   "en": "Zigzag Path",
+   "site": "0x62fcbf",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "30b",
+   "ko": "바위 통로 1",
+   "en": "Boulder Passage 1",
+   "site": "0x6371dd",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "311",
+   "ko": "진흙길",
+   "en": "Muddy Path",
+   "site": "0x63a341",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "315",
+   "ko": "제시카의 무덤",
+   "en": "Jessica's Tomb",
+   "site": "0x641fe8",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d302",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d32b",
+   "scene": 5,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d3f5",
+   "scene": 11,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d5e2",
+   "scene": 1,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d60b",
+   "scene": 2,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d6d5",
+   "scene": 10,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d84a",
+   "scene": 3,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d8e3",
+   "scene": 6,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "409",
+   "ko": "의무실",
+   "en": "Medical Room",
+   "site": "0x64d986",
+   "scene": null,
+   "reason": "scene number computed at run time"
+  },
+  {
+   "room": "40c",
+   "ko": "식물 42 방",
+   "en": "Plant 42 Room",
+   "site": "0x650ab0",
+   "scene": 0,
+   "reason": "entering starts the Plant 42 fight (boss room rule)"
+  },
+  {
+   "room": "40c",
+   "ko": "식물 42 방",
+   "en": "Plant 42 Room",
+   "site": "0x650b8c",
+   "scene": 1,
+   "reason": "entering starts the Plant 42 fight (boss room rule)"
+  },
+  {
+   "room": "40c",
+   "ko": "식물 42 방",
+   "en": "Plant 42 Room",
+   "site": "0x650c41",
+   "scene": 2,
+   "reason": "entering starts the Plant 42 fight (boss room rule)"
+  },
+  {
+   "room": "40c",
+   "ko": "식물 42 방",
+   "en": "Plant 42 Room",
+   "site": "0x650e45",
+   "scene": 3,
+   "reason": "entering starts the Plant 42 fight (boss room rule)"
+  },
+  {
+   "room": "40c",
+   "ko": "식물 42 방",
+   "en": "Plant 42 Room",
+   "site": "0x650f11",
+   "scene": 4,
+   "reason": "entering starts the Plant 42 fight (boss room rule)"
+  },
+  {
+   "room": "40c",
+   "ko": "식물 42 방",
+   "en": "Plant 42 Room",
+   "site": "0x651001",
+   "scene": 5,
+   "reason": "entering starts the Plant 42 fight (boss room rule)"
+  },
+  {
+   "room": "40e",
+   "ko": "대형 수조 통로",
+   "en": "Aqua Ring Walkway",
+   "site": "0x652e9f",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "500",
+   "ko": "입구",
+   "en": "Entrance",
+   "site": "0x6599ab",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "500",
+   "ko": "입구",
+   "en": "Entrance",
+   "site": "0x6599fc",
+   "scene": 1,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x659e44",
+   "scene": 1,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x65a051",
+   "scene": 2,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x65a171",
+   "scene": 3,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x65a238",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x65a69d",
+   "scene": 6,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x65a8ac",
+   "scene": 7,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x65aabc",
+   "scene": 8,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "501",
+   "ko": "헬기장 통로",
+   "en": "Passage to Heliport",
+   "site": "0x65ac78",
+   "scene": 9,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "505",
+   "ko": "O자 통로",
+   "en": "'O' Room",
+   "site": "0x65cd8a",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "508",
+   "ko": "암호 복도",
+   "en": "Pass Code Corridor",
+   "site": "0x65ef6b",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "508",
+   "ko": "암호 복도",
+   "en": "Pass Code Corridor",
+   "site": "0x65efbc",
+   "scene": 2,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "508",
+   "ko": "암호 복도",
+   "en": "Pass Code Corridor",
+   "site": "0x65f00c",
+   "scene": 1,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "508",
+   "ko": "암호 복도",
+   "en": "Pass Code Corridor",
+   "site": "0x65f05c",
+   "scene": 3,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "50b",
+   "ko": "감방 입구",
+   "en": "Cell Entrance",
+   "site": "0x6629b0",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "50c",
+   "ko": "승강기 입구",
+   "en": "Elevator Entry",
+   "site": "0x662f88",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x66567a",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x6656fb",
+   "scene": 1,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x6657b0",
+   "scene": 2,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x665821",
+   "scene": 3,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x665889",
+   "scene": 4,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x66590b",
+   "scene": 5,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x66598b",
+   "scene": 6,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x665a71",
+   "scene": 7,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x665af1",
+   "scene": 8,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x665bb0",
+   "scene": 9,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "513",
+   "ko": "중앙 연구실",
+   "en": "Main Laboratory",
+   "site": "0x665c2a",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  },
+  {
+   "room": "514",
+   "ko": "중앙 연구실 입구",
+   "en": "Main Laboratory Entrance",
+   "site": "0x6674bb",
+   "scene": 0,
+   "reason": "the scene sets no flag, so it cannot be hidden once played"
+  }
+ ]
+}

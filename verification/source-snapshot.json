@@ -1,0 +1,233 @@
+{
+  "game_exe_sha256": "39b840663e4b1a6835c60cbd176e4ee6c21b9197fc2c2dd733f2a7c36a0b429a",
+  "copied_files": {
+    "src/re1_mapnames.c": {
+      "sha256": "0454858b8f1933019cb0039308367c76bfad71405a74de257bcc10a4a211b2c2"
+    },
+    "src/labels.h": {
+      "sha256": "2333f5e02554ea6b79990033c321b5a022477a4101e0b1ec8d61fc06356cf933"
+    },
+    "src/crimson_data.h": {
+      "sha256": "ae1c6789395b8277982bc56ed59ab3ac0bf1086966c07ae31cbd772028021a97"
+    },
+    "src/rescue_state.h": {
+      "sha256": "a256e2f5a080887a85ef108665c0b362f3094c74c2426cc966ec6726b60f6fde"
+    },
+    "src/item_state.h": {
+      "sha256": "f32445419b60ed5d4a1c3ca0f050aa5c8955aca386d0120bd0560589e9a7f10b"
+    },
+    "src/reward_state.h": {
+      "sha256": "0c1c805a0e1b853339233f31ee5e095c26441b79adbc89ddfe132d3f6f265894"
+    },
+    "src/reward_rules.h": {
+      "sha256": "4c1b0a8f34a418650f2b59bd3d794306bf20a2c944318eed5c66d93bc9bec75a"
+    },
+    "src/section_rules.h": {
+      "sha256": "71e42d9273983c85f8916102bff94cb9676308d76615822cae702c86ee384a23"
+    },
+    "src/enemy_rec.h": {
+      "sha256": "5b6366010d0dc42cc9b691bf48cffbb877a06353391ec8d073717fb2b478a46f"
+    },
+    "src/marks.h": {
+      "sha256": "be5d1df7a0fc8831623903414ab3302a650a4b757ff1410cd145e9f2e62caad9"
+    },
+    "src/legend_text.h": {
+      "sha256": "b8f08926ac9ba895bb322b931f81ce0d80462d780dd717fcb599b5f333514ecd"
+    },
+    "src/hold_key.h": {
+      "sha256": "ee00370ea00fdea1d9202d2e48da889308a4763e900a03acb63a1fa0318622aa"
+    },
+    "src/item_name_text.h": {
+      "sha256": "be8be996f8dde4c68a2b7b98ddb47c7ca611e5887b9e4be6544dfefe0982c4b6"
+    },
+    "src/synth_marks.h": {
+      "sha256": "89992ce1a878564a4e9a1e2113288511c3eb1d8c16239c886ea9d82663414594"
+    },
+    "src/save_points.h": {
+      "sha256": "9a8380a4f579cd64cb1eef2c847a115a22e4cae78f77f21e0cc7b8b2bb1e633f"
+    },
+    "src/colors.h": {
+      "sha256": "a8fdae17a034703d352cc185807932729c2667c4a065c821d9975ab7347ba6d8"
+    },
+    "src/name_lines.h": {
+      "sha256": "eaeadd997eb63e5feaa7daac203b63f1eb68f5e26cce0907a22161357cc6a279"
+    },
+    "src/event_marks.h": {
+      "sha256": "15593323421434f0244ef2a24b06a0e1fe3a56c570aa465f9a236335399efb7e"
+    }
+  },
+  "ordinary_ids": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    25,
+    33,
+    34,
+    35,
+    36,
+    66,
+    68,
+    101,
+    104,
+    112,
+    113,
+    121
+  ],
+  "ordinary_placements": 216,
+  "kerosene_rooms": [
+    "102",
+    "114",
+    "118",
+    "403",
+    "503"
+  ],
+  "icon_provenance": {
+    "style": "A, approved 2026-10-18",
+    "atlas": "diagnostics/mapoverlay-icon-proposals-20261018/restyle-A-transparent.png",
+    "atlas_sha256": "08b419926271764ff33416690f2c6fd5b111b5b73f44c45c392e4b8c6ab74b3f",
+    "ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132
+    ],
+    "aliases": {
+      "8": 7,
+      "9": 7,
+      "66": 1,
+      "131": 104,
+      "132": 104
+    }
+  },
+  "label_count": 948,
+  "icon_count": 83
+}

@@ -1,0 +1,62 @@
+[
+ {
+  "room": 0,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 5,
+  "typewriter": true,
+  "item_box": false
+ },
+ {
+  "room": 24,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 79,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 92,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 94,
+  "typewriter": false,
+  "item_box": true
+ },
+ {
+  "room": 98,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 103,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 107,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 114,
+  "typewriter": true,
+  "item_box": false
+ },
+ {
+  "room": 131,
+  "typewriter": true,
+  "item_box": true
+ },
+ {
+  "room": 143,
+  "typewriter": true,
+  "item_box": true
+ }
+]

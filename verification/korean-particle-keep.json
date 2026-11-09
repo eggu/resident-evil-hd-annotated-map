@@ -1,0 +1,4 @@
+{
+  "_note": "Words whose '의' stays when tools/apply_name_rules.py drops the Korean particle (RE0 HD wiki 02 name rules). '주의' is one word, not a particle; '최후의' and '저주의' are fixed phrases that read wrong without it.",
+  "keep": ["주의", "최후의", "저주의"]
+}

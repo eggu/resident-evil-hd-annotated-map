@@ -1,0 +1,3520 @@
+[
+  {
+    "room_id": "100",
+    "name_ko": "의약품 창고",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Medical Storage Room",
+    "native_index": 0,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      136,
+      353
+    ],
+    "door_markers": [
+      0
+    ],
+    "atlas_rect": [
+      584,
+      120,
+      54,
+      78
+    ]
+  },
+  {
+    "room_id": "101",
+    "name_ko": "서쪽 안계단",
+    "name_status": "translated_external",
+    "external_name": "Mansion - West Wing Inner Stairway",
+    "native_index": 1,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      99,
+      319
+    ],
+    "door_markers": [
+      0,
+      1,
+      2
+    ],
+    "atlas_rect": [
+      188,
+      246,
+      142,
+      180
+    ]
+  },
+  {
+    "room_id": "102",
+    "name_ko": "작은 창고",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Small Storeroom",
+    "native_index": 2,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      185,
+      351
+    ],
+    "door_markers": [
+      1
+    ],
+    "atlas_rect": [
+      584,
+      198,
+      52,
+      76
+    ]
+  },
+  {
+    "room_id": "103",
+    "name_ko": "북쪽 복도·다실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Northern Corridor & Tea Room",
+    "native_index": 3,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      234,
+      319
+    ],
+    "door_markers": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "atlas_rect": [
+      370,
+      120,
+      214,
+      222
+    ]
+  },
+  {
+    "room_id": "104",
+    "name_ko": "북쪽 복도·다실",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Northern Corridor & Tea Room",
+    "native_index": 4,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      95,
+      445
+    ],
+    "door_markers": [
+      3,
+      7,
+      8,
+      9
+    ],
+    "atlas_rect": [
+      650,
+      0,
+      364,
+      98
+    ]
+  },
+  {
+    "room_id": "105",
+    "name_ko": "식당",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Dinning Room",
+    "native_index": 5,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      178,
+      519
+    ],
+    "door_markers": [
+      7,
+      10
+    ],
+    "atlas_rect": [
+      370,
+      0,
+      274,
+      120
+    ]
+  },
+  {
+    "room_id": "106",
+    "name_ko": "중앙 홀",
+    "name_status": "translated_external",
+    "external_name": "Mansion - Main Hall",
+    "native_index": 6,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      431,
+      474
+    ],
+    "door_markers": [
+      11,
+      10,
+      12,
+      13,
+      14
+    ],
+    "atlas_rect": [
+      0,
+      0,
+      184,
+      256
+    ]
+  },
+  {
+    "room_id": "107",
+    "name_ko": "미술실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Art Room",
+    "native_index": 7,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      601,
+      523
+    ],
+    "door_markers": [
+      12,
+      15,
+      16
+    ],
+    "atlas_rect": [
+      836,
+      294,
+      182,
+      124
+    ]
+  },
+  {
+    "room_id": "108",
+    "name_ko": "L자 복도",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - 'L' Corridor",
+    "native_index": 8,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      712,
+      433
+    ],
+    "door_markers": [
+      15,
+      17
+    ],
+    "atlas_rect": [
+      0,
+      256,
+      188,
+      236
+    ]
+  },
+  {
+    "room_id": "109",
+    "name_ko": "굽은 복도",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Winding Corridor",
+    "native_index": 9,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      714,
+      319
+    ],
+    "door_markers": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "atlas_rect": [
+      650,
+      294,
+      186,
+      144
+    ]
+  },
+  {
+    "room_id": "10a",
+    "name_ko": "어두운 복도",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Dark Corridor",
+    "native_index": 10,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      600,
+      324
+    ],
+    "door_markers": [
+      18,
+      22,
+      23,
+      24,
+      25
+    ],
+    "atlas_rect": [
+      116,
+      626,
+      122,
+      106
+    ]
+  },
+  {
+    "room_id": "10b",
+    "name_ko": "묘지",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Graveyard",
+    "native_index": 11,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      455,
+      178
+    ],
+    "door_markers": [
+      26
+    ],
+    "atlas_rect": [
+      506,
+      602,
+      154,
+      380
+    ]
+  },
+  {
+    "room_id": "10c",
+    "name_ko": "온실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Greenhouse",
+    "native_index": 12,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      328,
+      363
+    ],
+    "door_markers": [
+      4
+    ],
+    "atlas_rect": [
+      120,
+      870,
+      114,
+      74
+    ]
+  },
+  {
+    "room_id": "10d",
+    "name_ko": "호랑이 석상실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Tiger Statue Room",
+    "native_index": 13,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      258,
+      363
+    ],
+    "door_markers": [
+      5
+    ],
+    "atlas_rect": [
+      330,
+      246,
+      40,
+      48
+    ]
+  },
+  {
+    "room_id": "10e",
+    "name_ko": "연구원 침실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Researcher's Bedroom",
+    "native_index": 14,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      166,
+      412
+    ],
+    "door_markers": [
+      6
+    ],
+    "atlas_rect": [
+      262,
+      820,
+      72,
+      104
+    ]
+  },
+  {
+    "room_id": "10f",
+    "name_ko": "바",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Bar",
+    "native_index": 15,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      258,
+      416
+    ],
+    "door_markers": [
+      8
+    ],
+    "atlas_rect": [
+      0,
+      742,
+      256,
+      128
+    ]
+  },
+  {
+    "room_id": "110",
+    "name_ko": "비밀 통로",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Secret Passage",
+    "native_index": 16,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      671,
+      502
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      188,
+      426,
+      106,
+      26
+    ]
+  },
+  {
+    "room_id": "111",
+    "name_ko": "대미술실·거울방",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Large Art & Mirror Rooms",
+    "native_index": 17,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      600,
+      478
+    ],
+    "door_markers": [
+      13,
+      27
+    ],
+    "atlas_rect": [
+      836,
+      418,
+      184,
+      88
+    ]
+  },
+  {
+    "room_id": "112",
+    "name_ko": "서쪽 바깥계단",
+    "name_status": "translated_external",
+    "external_name": "Mansion - West Wing Outer Stairway",
+    "native_index": 18,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      37,
+      282
+    ],
+    "door_markers": [
+      9
+    ],
+    "atlas_rect": [
+      0,
+      492,
+      116,
+      250
+    ]
+  },
+  {
+    "room_id": "113",
+    "name_ko": "욕실",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Bathroom",
+    "native_index": 19,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      821,
+      323
+    ],
+    "door_markers": [
+      19
+    ],
+    "atlas_rect": [
+      382,
+      516,
+      72,
+      82
+    ]
+  },
+  {
+    "room_id": "114",
+    "name_ko": "실외 보일러",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Outside Boiler",
+    "native_index": 20,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      808,
+      290
+    ],
+    "door_markers": [
+      20
+    ],
+    "atlas_rect": [
+      0,
+      870,
+      120,
+      150
+    ]
+  },
+  {
+    "room_id": "115",
+    "name_ko": "대리석 방",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Marble Room",
+    "native_index": 21,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      753,
+      366
+    ],
+    "door_markers": [
+      21,
+      28
+    ],
+    "atlas_rect": [
+      584,
+      274,
+      50,
+      54
+    ]
+  },
+  {
+    "room_id": "116",
+    "name_ko": "거실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Living Room",
+    "native_index": 22,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      770,
+      409
+    ],
+    "door_markers": [
+      28
+    ],
+    "atlas_rect": [
+      300,
+      516,
+      82,
+      86
+    ]
+  },
+  {
+    "room_id": "117",
+    "name_ko": "대미술관",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Large Gallery",
+    "native_index": 23,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      600,
+      409
+    ],
+    "door_markers": [
+      22
+    ],
+    "atlas_rect": [
+      836,
+      506,
+      182,
+      86
+    ]
+  },
+  {
+    "room_id": "118",
+    "name_ko": "동쪽 창고",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - East Wing Storeroom",
+    "native_index": 24,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      686,
+      318
+    ],
+    "door_markers": [
+      29
+    ],
+    "atlas_rect": [
+      454,
+      516,
+      52,
+      72
+    ]
+  },
+  {
+    "room_id": "119",
+    "name_ko": "정원 서재",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Courtyard Study",
+    "native_index": 25,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      624,
+      318
+    ],
+    "door_markers": [
+      23
+    ],
+    "atlas_rect": [
+      506,
+      516,
+      44,
+      70
+    ]
+  },
+  {
+    "room_id": "11a",
+    "name_ko": "지붕 통로",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Roofed Passage",
+    "native_index": 26,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      555,
+      163
+    ],
+    "door_markers": [
+      24,
+      30
+    ],
+    "atlas_rect": [
+      564,
+      342,
+      76,
+      246
+    ]
+  },
+  {
+    "room_id": "11b",
+    "name_ko": "정원 헛간",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Garden Shed",
+    "native_index": 27,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      586,
+      93
+    ],
+    "door_markers": [
+      30,
+      30,
+      31,
+      32
+    ],
+    "atlas_rect": [
+      284,
+      602,
+      222,
+      206
+    ]
+  },
+  {
+    "room_id": "11c",
+    "name_ko": "숨겨진 옷장",
+    "name_status": "translated_external",
+    "external_name": "Mansion 1F - Hidden Wardrobe",
+    "native_index": 28,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      772,
+      546
+    ],
+    "door_markers": [
+      16
+    ],
+    "atlas_rect": [
+      196,
+      452,
+      80,
+      44
+    ]
+  },
+  {
+    "room_id": "11d",
+    "name_ko": "거울방",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Mirror Room",
+    "native_index": 29,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      770,
+      478
+    ],
+    "door_markers": [
+      27
+    ],
+    "atlas_rect": [
+      252,
+      924,
+      82,
+      84
+    ]
+  },
+  {
+    "room_id": "11e",
+    "name_ko": "바",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Bar",
+    "native_index": 30,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      258,
+      363
+    ],
+    "door_markers": [
+      8
+    ],
+    "atlas_rect": [
+      334,
+      820,
+      172,
+      166
+    ]
+  },
+  {
+    "room_id": "11f",
+    "name_ko": null,
+    "name_status": "unknown",
+    "external_name": null,
+    "native_index": 31,
+    "map_area": 5,
+    "map_floor": 2,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "room_id": "120",
+    "name_ko": "동쪽 계단",
+    "name_status": "unknown",
+    "external_name": "Mansion - East Wing Stairway",
+    "native_index": 32,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      663,
+      266
+    ],
+    "door_markers": [
+      25,
+      29
+    ],
+    "atlas_rect": [
+      116,
+      492,
+      80,
+      134
+    ]
+  },
+  {
+    "room_id": "121",
+    "name_ko": "대미술관",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Large Gallery",
+    "native_index": 33,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      551,
+      408
+    ],
+    "door_markers": [
+      26,
+      22
+    ],
+    "atlas_rect": [
+      330,
+      342,
+      234,
+      86
+    ]
+  },
+  {
+    "room_id": "122",
+    "name_ko": "북쪽 복도·다실",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Northern Corridor & Tea Room",
+    "native_index": 34,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      95,
+      319
+    ],
+    "door_markers": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "atlas_rect": [
+      660,
+      592,
+      364,
+      254
+    ]
+  },
+  {
+    "room_id": "123",
+    "name_ko": "굽은 복도·욕실",
+    "name_status": "unknown",
+    "external_name": "Winding Corridor & Bathroom",
+    "native_index": 35,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      714,
+      318
+    ],
+    "door_markers": [
+      17,
+      18,
+      20,
+      21
+    ],
+    "atlas_rect": [
+      650,
+      438,
+      186,
+      144
+    ]
+  },
+  {
+    "room_id": "124",
+    "name_ko": "대미술실·거울방",
+    "name_status": "unknown",
+    "external_name": "Large Art & Mirror Rooms",
+    "native_index": 36,
+    "map_area": 0,
+    "map_floor": 2,
+    "anchor_candidate": [
+      600,
+      478
+    ],
+    "door_markers": [
+      13
+    ],
+    "atlas_rect": [
+      300,
+      428,
+      264,
+      88
+    ]
+  },
+  {
+    "room_id": "200",
+    "name_ko": "주방 승강기",
+    "name_status": "translated_external",
+    "external_name": "Mansion - Kitchen Elevator",
+    "native_index": 37,
+    "map_area": 5,
+    "map_floor": 6,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "room_id": "201",
+    "name_ko": "묘지",
+    "name_status": "unknown",
+    "external_name": "Mansion 1F - Graveyard",
+    "native_index": 38,
+    "map_area": 0,
+    "map_floor": 3,
+    "anchor_candidate": [
+      478,
+      220
+    ],
+    "door_markers": [
+      132
+    ],
+    "atlas_rect": [
+      0,
+      0,
+      190,
+      316
+    ]
+  },
+  {
+    "room_id": "202",
+    "name_ko": "식당 위층",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Dinning Room",
+    "native_index": 39,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      178,
+      519
+    ],
+    "door_markers": [
+      36,
+      35,
+      37
+    ],
+    "atlas_rect": [
+      526,
+      598,
+      274,
+      122
+    ]
+  },
+  {
+    "room_id": "203",
+    "name_ko": "발코니",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Outside Balcony",
+    "native_index": 40,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      97,
+      486
+    ],
+    "door_markers": [
+      38,
+      39
+    ],
+    "atlas_rect": [
+      190,
+      0,
+      360,
+      266
+    ]
+  },
+  {
+    "room_id": "204",
+    "name_ko": "C자 복도",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - 'C' Corridor",
+    "native_index": 41,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      596,
+      395
+    ],
+    "door_markers": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "atlas_rect": [
+      726,
+      0,
+      166,
+      182
+    ]
+  },
+  {
+    "room_id": "205",
+    "name_ko": "갑옷실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Armor Room",
+    "native_index": 42,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      596,
+      424
+    ],
+    "door_markers": [
+      40
+    ],
+    "atlas_rect": [
+      868,
+      186,
+      136,
+      100
+    ]
+  },
+  {
+    "room_id": "206",
+    "name_ko": "작은 서재",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Small Library",
+    "native_index": 43,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      596,
+      308
+    ],
+    "door_markers": [
+      41,
+      45
+    ],
+    "atlas_rect": [
+      706,
+      720,
+      76,
+      108
+    ]
+  },
+  {
+    "room_id": "207",
+    "name_ko": "동쪽 계단",
+    "name_status": "translated_external",
+    "external_name": "Mansion - East Wing Stairway",
+    "native_index": 44,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      663,
+      266
+    ],
+    "door_markers": [
+      42,
+      45,
+      46,
+      47
+    ],
+    "atlas_rect": [
+      190,
+      458,
+      250,
+      162
+    ]
+  },
+  {
+    "room_id": "208",
+    "name_ko": "사슴 방",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Deer Room",
+    "native_index": 45,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      750,
+      332
+    ],
+    "door_markers": [
+      46,
+      48,
+      49
+    ],
+    "atlas_rect": [
+      706,
+      828,
+      72,
+      60
+    ]
+  },
+  {
+    "room_id": "209",
+    "name_ko": "침실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Bedroom",
+    "native_index": 46,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      688,
+      332
+    ],
+    "door_markers": [
+      48
+    ],
+    "atlas_rect": [
+      706,
+      888,
+      66,
+      80
+    ]
+  },
+  {
+    "room_id": "20a",
+    "name_ko": "어항실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Fish Tank Room",
+    "native_index": 47,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      815,
+      334
+    ],
+    "door_markers": [
+      49
+    ],
+    "atlas_rect": [
+      960,
+      0,
+      62,
+      58
+    ]
+  },
+  {
+    "room_id": "20b",
+    "name_ko": "휴게실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Resting Room",
+    "native_index": 48,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      819,
+      380
+    ],
+    "door_markers": [
+      47,
+      50
+    ],
+    "atlas_rect": [
+      892,
+      104,
+      88,
+      70
+    ]
+  },
+  {
+    "room_id": "20c",
+    "name_ko": "압사 함정실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Sliding Trap Room",
+    "native_index": 49,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      751,
+      380
+    ],
+    "door_markers": [
+      50
+    ],
+    "atlas_rect": [
+      432,
+      850,
+      74,
+      174
+    ]
+  },
+  {
+    "room_id": "20d",
+    "name_ko": "기둥 방",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Pillar Room",
+    "native_index": 50,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      680,
+      536
+    ],
+    "door_markers": [
+      43,
+      51
+    ],
+    "atlas_rect": [
+      440,
+      458,
+      96,
+      116
+    ]
+  },
+  {
+    "room_id": "20e",
+    "name_ko": "다락 입구",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Attic Entry",
+    "native_index": 51,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      770,
+      520
+    ],
+    "door_markers": [
+      51,
+      52,
+      53
+    ],
+    "atlas_rect": [
+      358,
+      850,
+      74,
+      136
+    ]
+  },
+  {
+    "room_id": "20f",
+    "name_ko": "작은 식당",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Small Dinning Room",
+    "native_index": 52,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      727,
+      520
+    ],
+    "door_markers": [
+      52
+    ],
+    "atlas_rect": [
+      956,
+      286,
+      66,
+      102
+    ]
+  },
+  {
+    "room_id": "210",
+    "name_ko": "다락",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Attic",
+    "native_index": 53,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      815,
+      437
+    ],
+    "door_markers": [
+      53
+    ],
+    "atlas_rect": [
+      916,
+      542,
+      92,
+      240
+    ]
+  },
+  {
+    "room_id": "211",
+    "name_ko": "작은 식당",
+    "name_status": "unknown",
+    "external_name": "Mansion 2F - Small Dinning Room",
+    "native_index": 54,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      706,
+      520
+    ],
+    "door_markers": [
+      52
+    ],
+    "atlas_rect": [
+      868,
+      286,
+      88,
+      102
+    ]
+  },
+  {
+    "room_id": "212",
+    "name_ko": "야외 테라스",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Outside Patio",
+    "native_index": 55,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      596,
+      512
+    ],
+    "door_markers": [
+      54
+    ],
+    "atlas_rect": [
+      190,
+      266,
+      350,
+      192
+    ]
+  },
+  {
+    "room_id": "213",
+    "name_ko": "승강기 복도",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Elevator Corridor",
+    "native_index": 56,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      290,
+      359
+    ],
+    "door_markers": [
+      135,
+      55,
+      56,
+      57,
+      33
+    ],
+    "atlas_rect": [
+      710,
+      186,
+      158,
+      198
+    ]
+  },
+  {
+    "room_id": "214",
+    "name_ko": "거울 복도",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Mirror Corridor",
+    "native_index": 57,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      114,
+      282
+    ],
+    "door_markers": [
+      59,
+      60,
+      58,
+      55,
+      35
+    ],
+    "atlas_rect": [
+      0,
+      316,
+      190,
+      294
+    ]
+  },
+  {
+    "room_id": "215",
+    "name_ko": "박제실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Trophy Room",
+    "native_index": 58,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      114,
+      339
+    ],
+    "door_markers": [
+      61
+    ],
+    "atlas_rect": [
+      892,
+      0,
+      68,
+      104
+    ]
+  },
+  {
+    "room_id": "216",
+    "name_ko": "서재",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Library",
+    "native_index": 59,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      241,
+      319
+    ],
+    "door_markers": [
+      56
+    ],
+    "atlas_rect": [
+      550,
+      0,
+      176,
+      186
+    ]
+  },
+  {
+    "room_id": "217",
+    "name_ko": "죽음의 통로",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - 'Death' Passage",
+    "native_index": 60,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      236,
+      282
+    ],
+    "door_markers": [
+      58
+    ],
+    "atlas_rect": [
+      526,
+      944,
+      166,
+      54
+    ]
+  },
+  {
+    "room_id": "218",
+    "name_ko": "서재",
+    "name_status": "unknown",
+    "external_name": "Mansion 2F - Library",
+    "native_index": 61,
+    "map_area": 0,
+    "map_floor": 0,
+    "anchor_candidate": [
+      240,
+      321
+    ],
+    "door_markers": [
+      62
+    ],
+    "atlas_rect": [
+      550,
+      186,
+      160,
+      198
+    ]
+  },
+  {
+    "room_id": "219",
+    "name_ko": "자재실",
+    "name_status": "translated_external",
+    "external_name": "Mansion 2F - Materials Room",
+    "native_index": 62,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      292,
+      491
+    ],
+    "door_markers": [
+      57
+    ],
+    "atlas_rect": [
+      960,
+      58,
+      58,
+      34
+    ]
+  },
+  {
+    "room_id": "21a",
+    "name_ko": "콘크리트 통로 1",
+    "name_status": "translated_external",
+    "external_name": "Mansion B1 - Concrete Passage 1",
+    "native_index": 63,
+    "map_area": 0,
+    "map_floor": 3,
+    "anchor_candidate": [
+      510,
+      496
+    ],
+    "door_markers": [
+      63
+    ],
+    "atlas_rect": [
+      800,
+      388,
+      224,
+      154
+    ]
+  },
+  {
+    "room_id": "21b",
+    "name_ko": "콘크리트 통로 2",
+    "name_status": "translated_external",
+    "external_name": "Mansion B1 - Concrete Passage 2",
+    "native_index": 64,
+    "map_area": 0,
+    "map_floor": 3,
+    "anchor_candidate": [
+      266,
+      448
+    ],
+    "door_markers": [
+      63,
+      64
+    ],
+    "atlas_rect": [
+      540,
+      384,
+      260,
+      214
+    ]
+  },
+  {
+    "room_id": "21c",
+    "name_ko": "주방",
+    "name_status": "translated_external",
+    "external_name": "Mansion B1 - Kitchen",
+    "native_index": 65,
+    "map_area": 0,
+    "map_floor": 3,
+    "anchor_candidate": [
+      266,
+      448
+    ],
+    "door_markers": [
+      136,
+      64,
+      65,
+      34
+    ],
+    "atlas_rect": [
+      154,
+      870,
+      174,
+      116
+    ]
+  },
+  {
+    "room_id": "21d",
+    "name_ko": "서쪽 안계단",
+    "name_status": "unknown",
+    "external_name": "Mansion - West Wing Inner Stairway",
+    "native_index": 66,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      97,
+      337
+    ],
+    "door_markers": [
+      36,
+      38,
+      59,
+      61
+    ],
+    "atlas_rect": [
+      358,
+      622,
+      160,
+      228
+    ]
+  },
+  {
+    "room_id": "21e",
+    "name_ko": "서쪽 바깥계단",
+    "name_status": "unknown",
+    "external_name": "Mansion - West Wing Outer Stairway",
+    "native_index": 67,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      37,
+      282
+    ],
+    "door_markers": [
+      60
+    ],
+    "atlas_rect": [
+      800,
+      542,
+      116,
+      250
+    ]
+  },
+  {
+    "room_id": "21f",
+    "name_ko": null,
+    "name_status": "unknown",
+    "external_name": null,
+    "native_index": 68,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      455,
+      178
+    ],
+    "door_markers": [
+      66
+    ],
+    "atlas_rect": [
+      0,
+      610,
+      154,
+      380
+    ]
+  },
+  {
+    "room_id": "220",
+    "name_ko": "죽음의 통로",
+    "name_status": "unknown",
+    "external_name": "Mansion 3F - 'Death' Passage",
+    "native_index": 69,
+    "map_area": 0,
+    "map_floor": 0,
+    "anchor_candidate": [
+      240,
+      282
+    ],
+    "door_markers": [
+      62
+    ],
+    "atlas_rect": [
+      154,
+      620,
+      204,
+      250
+    ]
+  },
+  {
+    "room_id": "221",
+    "name_ko": "계단 통로",
+    "name_status": "unknown",
+    "external_name": "Stairway Passage",
+    "native_index": 70,
+    "map_area": 0,
+    "map_floor": 3,
+    "anchor_candidate": [
+      298,
+      433
+    ],
+    "door_markers": [
+      65
+    ],
+    "atlas_rect": [
+      440,
+      574,
+      86,
+      48
+    ]
+  },
+  {
+    "room_id": "222",
+    "name_ko": "중앙 홀",
+    "name_status": "unknown",
+    "external_name": "Mansion - Main Hall",
+    "native_index": 71,
+    "map_area": 0,
+    "map_floor": 1,
+    "anchor_candidate": [
+      433,
+      478
+    ],
+    "door_markers": [
+      37,
+      39,
+      44,
+      54,
+      66
+    ],
+    "atlas_rect": [
+      526,
+      720,
+      180,
+      224
+    ]
+  },
+  {
+    "room_id": "300",
+    "name_ko": "중앙 정원",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Main Garden",
+    "native_index": 72,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      345,
+      509
+    ],
+    "door_markers": [
+      137,
+      68,
+      67
+    ],
+    "atlas_rect": [
+      530,
+      674,
+      166,
+      194
+    ]
+  },
+  {
+    "room_id": "301",
+    "name_ko": "연못",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Water Pool",
+    "native_index": 73,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      354,
+      356
+    ],
+    "door_markers": [
+      138,
+      67
+    ],
+    "atlas_rect": [
+      530,
+      480,
+      192,
+      194
+    ]
+  },
+  {
+    "room_id": "302",
+    "name_ko": "폭포",
+    "name_status": "translated_external",
+    "external_name": "Courtyard - Falls Area",
+    "native_index": 74,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      238,
+      496
+    ],
+    "door_markers": [
+      137,
+      138,
+      69
+    ],
+    "atlas_rect": [
+      442,
+      300,
+      156,
+      168
+    ]
+  },
+  {
+    "room_id": "303",
+    "name_ko": "헬기장",
+    "name_status": "translated_external",
+    "external_name": "Heliport",
+    "native_index": 75,
+    "map_area": 4,
+    "map_floor": 2,
+    "anchor_candidate": [
+      324,
+      297
+    ],
+    "door_markers": [
+      139,
+      70
+    ],
+    "atlas_rect": [
+      0,
+      496,
+      372,
+      416
+    ]
+  },
+  {
+    "room_id": "304",
+    "name_ko": "지그재그 길",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Zigzag Path",
+    "native_index": 76,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      90,
+      231
+    ],
+    "door_markers": [
+      69,
+      71
+    ],
+    "atlas_rect": [
+      372,
+      496,
+      158,
+      394
+    ]
+  },
+  {
+    "room_id": "305",
+    "name_ko": "분수",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Fountain",
+    "native_index": 77,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      76,
+      546
+    ],
+    "door_markers": [
+      133,
+      140
+    ],
+    "atlas_rect": [
+      854,
+      182,
+      170,
+      182
+    ]
+  },
+  {
+    "room_id": "306",
+    "name_ko": "지하 석상실",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Underground Statue Room",
+    "native_index": 78,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      165,
+      588
+    ],
+    "door_markers": [
+      72
+    ],
+    "atlas_rect": [
+      678,
+      868,
+      80,
+      120
+    ]
+  },
+  {
+    "room_id": "307",
+    "name_ko": "지하 입구 통로",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Entrance Passage",
+    "native_index": 79,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      395,
+      229
+    ],
+    "door_markers": [
+      73,
+      74
+    ],
+    "atlas_rect": [
+      598,
+      244,
+      122,
+      236
+    ]
+  },
+  {
+    "room_id": "308",
+    "name_ko": "갈림길",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Forked Passage",
+    "native_index": 80,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      510,
+      273
+    ],
+    "door_markers": [
+      73,
+      75
+    ],
+    "atlas_rect": [
+      728,
+      244,
+      126,
+      248
+    ]
+  },
+  {
+    "room_id": "309",
+    "name_ko": "발전기실",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Generator Room",
+    "native_index": 81,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      622,
+      273
+    ],
+    "door_markers": [
+      147,
+      75,
+      76
+    ],
+    "atlas_rect": [
+      134,
+      420,
+      208,
+      272
+    ]
+  },
+  {
+    "room_id": "30a",
+    "name_ko": "엔리코의 방",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Enrico Room",
+    "native_index": 82,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      712,
+      491
+    ],
+    "door_markers": [
+      76
+    ],
+    "atlas_rect": [
+      572,
+      868,
+      106,
+      152
+    ]
+  },
+  {
+    "room_id": "30b",
+    "name_ko": "바위 통로 1",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Boulder Passage 1",
+    "native_index": 83,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      243,
+      400
+    ],
+    "door_markers": [
+      74
+    ],
+    "atlas_rect": [
+      0,
+      912,
+      204,
+      112
+    ]
+  },
+  {
+    "room_id": "30c",
+    "name_ko": "거미 방",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Spider Room",
+    "native_index": 84,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      376,
+      504
+    ],
+    "door_markers": [
+      78,
+      77
+    ],
+    "atlas_rect": [
+      854,
+      364,
+      168,
+      128
+    ]
+  },
+  {
+    "room_id": "30d",
+    "name_ko": "직선 통로",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Straight Passage",
+    "native_index": 85,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      356,
+      602
+    ],
+    "door_markers": [
+      78,
+      79
+    ],
+    "atlas_rect": [
+      134,
+      930,
+      178,
+      38
+    ]
+  },
+  {
+    "room_id": "30e",
+    "name_ko": "폭포",
+    "name_status": "unknown",
+    "external_name": "Courtyard - Falls Area",
+    "native_index": 86,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      238,
+      390
+    ],
+    "door_markers": [
+      69
+    ],
+    "atlas_rect": [
+      442,
+      0,
+      156,
+      300
+    ]
+  },
+  {
+    "room_id": "30f",
+    "name_ko": "바위 통로 2",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B1 - Boulder Passage 2",
+    "native_index": 87,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      106,
+      528
+    ],
+    "door_markers": [
+      72,
+      79
+    ],
+    "atlas_rect": [
+      728,
+      492,
+      288,
+      146
+    ]
+  },
+  {
+    "room_id": "310",
+    "name_ko": "바위 통로 1",
+    "name_status": "unknown",
+    "external_name": "Courtyard B1 - Boulder Passage 1",
+    "native_index": 88,
+    "map_area": 1,
+    "map_floor": 3,
+    "anchor_candidate": [
+      243,
+      400
+    ],
+    "door_markers": [
+      74,
+      77
+    ],
+    "atlas_rect": [
+      760,
+      818,
+      250,
+      134
+    ]
+  },
+  {
+    "room_id": "311",
+    "name_ko": "진흙길",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Muddy Path",
+    "native_index": 89,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      455,
+      506
+    ],
+    "door_markers": [
+      80,
+      81
+    ],
+    "atlas_rect": [
+      134,
+      692,
+      178,
+      238
+    ]
+  },
+  {
+    "room_id": "312",
+    "name_ko": "작은 묘비",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Small Headstone Area",
+    "native_index": 90,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      622,
+      504
+    ],
+    "door_markers": [
+      81,
+      82
+    ],
+    "atlas_rect": [
+      336,
+      0,
+      150,
+      148
+    ]
+  },
+  {
+    "room_id": "313",
+    "name_ko": "숲길",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Forest Pathway",
+    "native_index": 91,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      575,
+      197
+    ],
+    "door_markers": [
+      82,
+      83
+    ],
+    "atlas_rect": [
+      0,
+      0,
+      336,
+      420
+    ]
+  },
+  {
+    "room_id": "314",
+    "name_ko": "산장",
+    "name_status": "translated_external",
+    "external_name": "Courtyard 1F - Cabin",
+    "native_index": 92,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      583,
+      215
+    ],
+    "door_markers": [
+      83
+    ],
+    "atlas_rect": [
+      472,
+      890,
+      100,
+      120
+    ]
+  },
+  {
+    "room_id": "315",
+    "name_ko": "제시카의 무덤",
+    "name_status": "translated_external",
+    "external_name": "Altar - Jessica's Tomb",
+    "native_index": 93,
+    "map_area": 3,
+    "map_floor": 4,
+    "anchor_candidate": [
+      298,
+      207
+    ],
+    "door_markers": [
+      134,
+      141
+    ],
+    "atlas_rect": [
+      0,
+      420,
+      134,
+      542
+    ]
+  },
+  {
+    "room_id": "316",
+    "name_ko": "쓰레기 압축실",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B2 - Garbage Compactor Room",
+    "native_index": 94,
+    "map_area": 1,
+    "map_floor": 4,
+    "anchor_candidate": [
+      225,
+      515
+    ],
+    "door_markers": [
+      148,
+      84
+    ],
+    "atlas_rect": [
+      342,
+      462,
+      104,
+      212
+    ]
+  },
+  {
+    "room_id": "317",
+    "name_ko": "굽은 지하 통로",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B2 - Winding Underground",
+    "native_index": 95,
+    "map_area": 1,
+    "map_floor": 4,
+    "anchor_candidate": [
+      322,
+      412
+    ],
+    "door_markers": [
+      84,
+      85,
+      86
+    ],
+    "atlas_rect": [
+      728,
+      638,
+      282,
+      180
+    ]
+  },
+  {
+    "room_id": "318",
+    "name_ko": "지하 창고",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B2 - Underground Storage Room",
+    "native_index": 96,
+    "map_area": 1,
+    "map_floor": 4,
+    "anchor_candidate": [
+      586,
+      441
+    ],
+    "door_markers": [
+      85
+    ],
+    "atlas_rect": [
+      336,
+      148,
+      128,
+      166
+    ]
+  },
+  {
+    "room_id": "319",
+    "name_ko": "리사의 방",
+    "name_status": "translated_external",
+    "external_name": "Courtyard B2 - Lisa's Room",
+    "native_index": 97,
+    "map_area": 1,
+    "map_floor": 4,
+    "anchor_candidate": [
+      403,
+      295
+    ],
+    "door_markers": [
+      86
+    ],
+    "atlas_rect": [
+      342,
+      314,
+      102,
+      148
+    ]
+  },
+  {
+    "room_id": "31a",
+    "name_ko": "제단 계단 통로",
+    "name_status": "translated_external",
+    "external_name": "Altar - Stairway Passage",
+    "native_index": 98,
+    "map_area": 3,
+    "map_floor": 3,
+    "anchor_candidate": [
+      382,
+      501
+    ],
+    "door_markers": [
+      87,
+      88
+    ],
+    "atlas_rect": [
+      136,
+      0,
+      306,
+      248
+    ]
+  },
+  {
+    "room_id": "31b",
+    "name_ko": null,
+    "name_status": "unknown",
+    "external_name": null,
+    "native_index": 99,
+    "map_area": 5,
+    "map_floor": 4,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [
+      88
+    ],
+    "atlas_rect": [
+      136,
+      248,
+      306,
+      248
+    ]
+  },
+  {
+    "room_id": "31c",
+    "name_ko": "제시카의 무덤",
+    "name_status": "unknown",
+    "external_name": "Altar - Jessica's Tomb",
+    "native_index": 100,
+    "map_area": 3,
+    "map_floor": 3,
+    "anchor_candidate": [
+      296,
+      249
+    ],
+    "door_markers": [
+      88
+    ],
+    "atlas_rect": [
+      0,
+      0,
+      136,
+      490
+    ]
+  },
+  {
+    "room_id": "31d",
+    "name_ko": "리사의 방",
+    "name_status": "unknown",
+    "external_name": "Courtyard B2 - Lisa's Room",
+    "native_index": 101,
+    "map_area": 1,
+    "map_floor": 4,
+    "anchor_candidate": [
+      403,
+      223
+    ],
+    "door_markers": [
+      86
+    ],
+    "atlas_rect": [
+      598,
+      0,
+      256,
+      244
+    ]
+  },
+  {
+    "room_id": "31e",
+    "name_ko": "분수",
+    "name_status": "unknown",
+    "external_name": "Courtyard 1F - Fountain",
+    "native_index": 102,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      76,
+      546
+    ],
+    "door_markers": [
+      133,
+      140,
+      142
+    ],
+    "atlas_rect": [
+      854,
+      0,
+      170,
+      182
+    ]
+  },
+  {
+    "room_id": "31f",
+    "name_ko": "산장",
+    "name_status": "unknown",
+    "external_name": "Courtyard 1F - Cabin",
+    "native_index": 103,
+    "map_area": 1,
+    "map_floor": 2,
+    "anchor_candidate": [
+      583,
+      215
+    ],
+    "door_markers": [
+      83
+    ],
+    "atlas_rect": [
+      372,
+      890,
+      100,
+      120
+    ]
+  },
+  {
+    "room_id": "400",
+    "name_ko": "입구 복도",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Entry Corridor",
+    "native_index": 104,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      95,
+      414
+    ],
+    "door_markers": [
+      89,
+      90,
+      92,
+      93,
+      94
+    ],
+    "atlas_rect": [
+      402,
+      0,
+      226,
+      348
+    ]
+  },
+  {
+    "room_id": "401",
+    "name_ko": "001호실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Room 001",
+    "native_index": 105,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      135,
+      327
+    ],
+    "door_markers": [
+      90,
+      91
+    ],
+    "atlas_rect": [
+      684,
+      346,
+      94,
+      156
+    ]
+  },
+  {
+    "room_id": "402",
+    "name_ko": "001호 욕실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Room 001 Bathroom",
+    "native_index": 106,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      135,
+      392
+    ],
+    "door_markers": [
+      91
+    ],
+    "atlas_rect": [
+      314,
+      510,
+      62,
+      76
+    ]
+  },
+  {
+    "room_id": "403",
+    "name_ko": "창고",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Storeroom",
+    "native_index": 107,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      138,
+      483
+    ],
+    "door_markers": [
+      92
+    ],
+    "atlas_rect": [
+      224,
+      510,
+      90,
+      112
+    ]
+  },
+  {
+    "room_id": "404",
+    "name_ko": "오락실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Rec Room",
+    "native_index": 108,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      223,
+      281
+    ],
+    "door_markers": [
+      93
+    ],
+    "atlas_rect": [
+      628,
+      0,
+      190,
+      346
+    ]
+  },
+  {
+    "room_id": "405",
+    "name_ko": "중앙 복도",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Central Corridor",
+    "native_index": 109,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      219,
+      359
+    ],
+    "door_markers": [
+      94,
+      95,
+      96
+    ],
+    "atlas_rect": [
+      0,
+      322,
+      224,
+      294
+    ]
+  },
+  {
+    "room_id": "406",
+    "name_ko": "002호실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Room 002",
+    "native_index": 110,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      429,
+      359
+    ],
+    "door_markers": [
+      95,
+      97
+    ],
+    "atlas_rect": [
+      684,
+      502,
+      136,
+      104
+    ]
+  },
+  {
+    "room_id": "407",
+    "name_ko": "002호 욕실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Room 002 Bathroom",
+    "native_index": 111,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      427,
+      359
+    ],
+    "door_markers": [
+      97
+    ],
+    "atlas_rect": [
+      274,
+      626,
+      68,
+      64
+    ]
+  },
+  {
+    "room_id": "408",
+    "name_ko": "미술관",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Gallery",
+    "native_index": 112,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      401,
+      326
+    ],
+    "door_markers": [
+      96,
+      98,
+      99,
+      100
+    ],
+    "atlas_rect": [
+      0,
+      730,
+      336,
+      294
+    ]
+  },
+  {
+    "room_id": "409",
+    "name_ko": "의무실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Medical Room",
+    "native_index": 113,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      416,
+      443
+    ],
+    "door_markers": [
+      98
+    ],
+    "atlas_rect": [
+      886,
+      532,
+      84,
+      64
+    ]
+  },
+  {
+    "room_id": "40a",
+    "name_ko": "003호실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Room 003",
+    "native_index": 114,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      588,
+      438
+    ],
+    "door_markers": [
+      99,
+      101,
+      102
+    ],
+    "atlas_rect": [
+      136,
+      626,
+      138,
+      104
+    ]
+  },
+  {
+    "room_id": "40b",
+    "name_ko": "003호 욕실",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Room 003 Bathroom",
+    "native_index": 115,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      590,
+      438
+    ],
+    "door_markers": [
+      101
+    ],
+    "atlas_rect": [
+      820,
+      532,
+      66,
+      66
+    ]
+  },
+  {
+    "room_id": "40c",
+    "name_ko": "식물 42 방",
+    "name_status": "translated_external",
+    "external_name": "Residence 1F - Plant 42 Room",
+    "native_index": 116,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      710,
+      448
+    ],
+    "door_markers": [
+      100,
+      102
+    ],
+    "atlas_rect": [
+      818,
+      0,
+      182,
+      250
+    ]
+  },
+  {
+    "room_id": "40d",
+    "name_ko": "대형 수조 입구",
+    "name_status": "translated_external",
+    "external_name": "Residence B1 - Aqua Ring Entry",
+    "native_index": 117,
+    "map_area": 2,
+    "map_floor": 3,
+    "anchor_candidate": [
+      196,
+      226
+    ],
+    "door_markers": [
+      103,
+      104
+    ],
+    "atlas_rect": [
+      0,
+      0,
+      402,
+      322
+    ]
+  },
+  {
+    "room_id": "40e",
+    "name_ko": "대형 수조 통로",
+    "name_status": "translated_external",
+    "external_name": "Residence B1 - Aqua Ring Walkway",
+    "native_index": 118,
+    "map_area": 2,
+    "map_floor": 3,
+    "anchor_candidate": [
+      416,
+      343
+    ],
+    "door_markers": [
+      103,
+      105,
+      106
+    ],
+    "atlas_rect": [
+      672,
+      606,
+      334,
+      418
+    ]
+  },
+  {
+    "room_id": "40f",
+    "name_ko": "경비실",
+    "name_status": "translated_external",
+    "external_name": "Residence B1 - Guard Room",
+    "native_index": 119,
+    "map_area": 2,
+    "map_floor": 3,
+    "anchor_candidate": [
+      378,
+      396
+    ],
+    "door_markers": [
+      105
+    ],
+    "atlas_rect": [
+      224,
+      322,
+      108,
+      188
+    ]
+  },
+  {
+    "room_id": "410",
+    "name_ko": "대형 수조 창고",
+    "name_status": "translated_external",
+    "external_name": "Residence B2 - Aqua Ring Storage",
+    "native_index": 120,
+    "map_area": 2,
+    "map_floor": 4,
+    "anchor_candidate": [
+      393,
+      345
+    ],
+    "door_markers": [
+      109,
+      108,
+      107
+    ],
+    "atlas_rect": [
+      534,
+      348,
+      150,
+      198
+    ]
+  },
+  {
+    "room_id": "411",
+    "name_ko": "제어실",
+    "name_status": "translated_external",
+    "external_name": "Residence B2 - Control Room",
+    "native_index": 121,
+    "map_area": 2,
+    "map_floor": 4,
+    "anchor_candidate": [
+      386,
+      403
+    ],
+    "door_markers": [
+      109
+    ],
+    "atlas_rect": [
+      820,
+      250,
+      144,
+      282
+    ]
+  },
+  {
+    "room_id": "412",
+    "name_ko": "대형 수조",
+    "name_status": "translated_external",
+    "external_name": "Residence B2 - Aqua Ring Water Tank",
+    "native_index": 122,
+    "map_area": 2,
+    "map_floor": 4,
+    "anchor_candidate": [
+      427,
+      343
+    ],
+    "door_markers": [
+      108
+    ],
+    "atlas_rect": [
+      342,
+      606,
+      330,
+      418
+    ]
+  },
+  {
+    "room_id": "413",
+    "name_ko": null,
+    "name_status": "unknown",
+    "external_name": null,
+    "native_index": 123,
+    "map_area": 5,
+    "map_floor": 0,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "room_id": "414",
+    "name_ko": null,
+    "name_status": "unknown",
+    "external_name": null,
+    "native_index": 124,
+    "map_area": 5,
+    "map_floor": 0,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "room_id": "415",
+    "name_ko": "대형 수조 입구",
+    "name_status": "unknown",
+    "external_name": "Residence B1 - Aqua Ring Entry",
+    "native_index": 125,
+    "map_area": 2,
+    "map_floor": 4,
+    "anchor_candidate": [
+      292,
+      258
+    ],
+    "door_markers": [
+      107
+    ],
+    "atlas_rect": [
+      332,
+      348,
+      202,
+      144
+    ]
+  },
+  {
+    "room_id": "416",
+    "name_ko": "제어실",
+    "name_status": "unknown",
+    "external_name": "Residence B2 - Control Room",
+    "native_index": 126,
+    "map_area": 2,
+    "map_floor": 3,
+    "anchor_candidate": [
+      382,
+      530
+    ],
+    "door_markers": [
+      106
+    ],
+    "atlas_rect": [
+      426,
+      492,
+      108,
+      108
+    ]
+  },
+  {
+    "room_id": "417",
+    "name_ko": "대형 수조 입구",
+    "name_status": "unknown",
+    "external_name": "Residence B1 - Aqua Ring Entry",
+    "native_index": 127,
+    "map_area": 2,
+    "map_floor": 3,
+    "anchor_candidate": [
+      393,
+      274
+    ],
+    "door_markers": [
+      104
+    ],
+    "atlas_rect": [
+      534,
+      546,
+      108,
+      28
+    ]
+  },
+  {
+    "room_id": "418",
+    "name_ko": "002호실",
+    "name_status": "unknown",
+    "external_name": "Residence 1F - Room 002",
+    "native_index": 128,
+    "map_area": 2,
+    "map_floor": 2,
+    "anchor_candidate": [
+      429,
+      359
+    ],
+    "door_markers": [
+      95,
+      97
+    ],
+    "atlas_rect": [
+      0,
+      626,
+      136,
+      104
+    ]
+  },
+  {
+    "room_id": "500",
+    "name_ko": "입구",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B1 - Entrance",
+    "native_index": 129,
+    "map_area": 4,
+    "map_floor": 3,
+    "anchor_candidate": [
+      540,
+      433
+    ],
+    "door_markers": [
+      143,
+      110,
+      111
+    ],
+    "atlas_rect": [
+      955,
+      210,
+      68,
+      104
+    ]
+  },
+  {
+    "room_id": "501",
+    "name_ko": "헬기장 통로",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B1 - Passage to Heliport",
+    "native_index": 130,
+    "map_area": 4,
+    "map_floor": 3,
+    "anchor_candidate": [
+      262,
+      302
+    ],
+    "door_markers": [
+      144,
+      111,
+      112
+    ],
+    "atlas_rect": [
+      0,
+      260,
+      298,
+      222
+    ]
+  },
+  {
+    "room_id": "502",
+    "name_ko": "아이템 상자실",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B2 - Item Box Room",
+    "native_index": 131,
+    "map_area": 4,
+    "map_floor": 4,
+    "anchor_candidate": [
+      607,
+      342
+    ],
+    "door_markers": [
+      113
+    ],
+    "atlas_rect": [
+      879,
+      210,
+      76,
+      152
+    ]
+  },
+  {
+    "room_id": "503",
+    "name_ko": "계단",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B2 - Stairway",
+    "native_index": 132,
+    "map_area": 4,
+    "map_floor": 4,
+    "anchor_candidate": [
+      281,
+      303
+    ],
+    "door_markers": [
+      113,
+      114
+    ],
+    "atlas_rect": [
+      0,
+      0,
+      424,
+      260
+    ]
+  },
+  {
+    "room_id": "504",
+    "name_ko": "영상 자료실",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B2 - Visual Data Room",
+    "native_index": 133,
+    "map_area": 4,
+    "map_floor": 4,
+    "anchor_candidate": [
+      223,
+      335
+    ],
+    "door_markers": [
+      114
+    ],
+    "atlas_rect": [
+      602,
+      0,
+      174,
+      174
+    ]
+  },
+  {
+    "room_id": "505",
+    "name_ko": "O자 통로",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - 'O' Room",
+    "native_index": 134,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      435,
+      310
+    ],
+    "door_markers": [
+      115,
+      116,
+      117,
+      118,
+      119
+    ],
+    "atlas_rect": [
+      878,
+      0,
+      118,
+      122
+    ]
+  },
+  {
+    "room_id": "506",
+    "name_ko": "수술실",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Operating Room",
+    "native_index": 135,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      459,
+      257
+    ],
+    "door_markers": [
+      115
+    ],
+    "atlas_rect": [
+      626,
+      284,
+      92,
+      80
+    ]
+  },
+  {
+    "room_id": "507",
+    "name_ko": "시체 안치실",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Morgue",
+    "native_index": 136,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      459,
+      335
+    ],
+    "door_markers": [
+      116
+    ],
+    "atlas_rect": [
+      955,
+      314,
+      66,
+      66
+    ]
+  },
+  {
+    "room_id": "508",
+    "name_ko": "암호 복도",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Pass Code Corridor",
+    "native_index": 137,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      348,
+      314
+    ],
+    "door_markers": [
+      117,
+      120,
+      121,
+      122
+    ],
+    "atlas_rect": [
+      410,
+      416,
+      96,
+      34
+    ]
+  },
+  {
+    "room_id": "509",
+    "name_ko": "X선실 A",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - X-Ray Room A",
+    "native_index": 138,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      384,
+      339
+    ],
+    "door_markers": [
+      120
+    ],
+    "atlas_rect": [
+      774,
+      298,
+      58,
+      56
+    ]
+  },
+  {
+    "room_id": "50a",
+    "name_ko": "X선실 B",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - X-Ray Room B",
+    "native_index": 139,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      378,
+      274
+    ],
+    "door_markers": [
+      121
+    ],
+    "atlas_rect": [
+      344,
+      420,
+      64,
+      56
+    ]
+  },
+  {
+    "room_id": "50b",
+    "name_ko": "감방 입구",
+    "name_status": "translated_external",
+    "external_name": "Laborartory B3 - Cell Entrance",
+    "native_index": 140,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      326,
+      208
+    ],
+    "door_markers": [
+      123,
+      122
+    ],
+    "atlas_rect": [
+      776,
+      0,
+      102,
+      166
+    ]
+  },
+  {
+    "room_id": "50c",
+    "name_ko": "승강기 입구",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Elevator Entry",
+    "native_index": 141,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      541,
+      337
+    ],
+    "door_markers": [
+      145,
+      118,
+      127,
+      124,
+      125,
+      126
+    ],
+    "atlas_rect": [
+      298,
+      260,
+      112,
+      160
+    ]
+  },
+  {
+    "room_id": "50d",
+    "name_ko": "헬기장 승강기",
+    "name_status": "translated_external",
+    "external_name": "Heliport Elevator",
+    "native_index": 142,
+    "map_area": 5,
+    "map_floor": 0,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "room_id": "50e",
+    "name_ko": "휴게실",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Lounge Room",
+    "native_index": 143,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      618,
+      363
+    ],
+    "door_markers": [
+      124
+    ],
+    "atlas_rect": [
+      832,
+      298,
+      44,
+      74
+    ]
+  },
+  {
+    "room_id": "50f",
+    "name_ko": "동력 미로 A",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Power Maze A",
+    "native_index": 144,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      549,
+      462
+    ],
+    "door_markers": [
+      125,
+      128
+    ],
+    "atlas_rect": [
+      750,
+      174,
+      116,
+      124
+    ]
+  },
+  {
+    "room_id": "510",
+    "name_ko": "동력 미로 B",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Power Maze B",
+    "native_index": 145,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      549,
+      536
+    ],
+    "door_markers": [
+      128,
+      129
+    ],
+    "atlas_rect": [
+      879,
+      122,
+      116,
+      88
+    ]
+  },
+  {
+    "room_id": "511",
+    "name_ko": "동력 제어실",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Power Control Room",
+    "native_index": 146,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      549,
+      607
+    ],
+    "door_markers": [
+      129
+    ],
+    "atlas_rect": [
+      510,
+      284,
+      116,
+      108
+    ]
+  },
+  {
+    "room_id": "512",
+    "name_ko": "감방",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B3 - Cell",
+    "native_index": 147,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      378,
+      229
+    ],
+    "door_markers": [
+      123
+    ],
+    "atlas_rect": [
+      298,
+      420,
+      46,
+      56
+    ]
+  },
+  {
+    "room_id": "513",
+    "name_ko": "중앙 연구실",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B4 - Main Laboratory",
+    "native_index": 148,
+    "map_area": 4,
+    "map_floor": 6,
+    "anchor_candidate": [
+      399,
+      284
+    ],
+    "door_markers": [
+      130
+    ],
+    "atlas_rect": [
+      424,
+      0,
+      178,
+      282
+    ]
+  },
+  {
+    "room_id": "514",
+    "name_ko": "중앙 연구실 입구",
+    "name_status": "translated_external",
+    "external_name": "Laboratory B4 - Main Laboratory Entrance",
+    "native_index": 149,
+    "map_area": 4,
+    "map_floor": 6,
+    "anchor_candidate": [
+      399,
+      237
+    ],
+    "door_markers": [
+      146,
+      130,
+      131
+    ],
+    "atlas_rect": [
+      602,
+      174,
+      148,
+      110
+    ]
+  },
+  {
+    "room_id": "515",
+    "name_ko": "연구실 승강기",
+    "name_status": "translated_external",
+    "external_name": "Laboratory - Elevator to Main Laboratory",
+    "native_index": 150,
+    "map_area": 5,
+    "map_floor": 0,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "room_id": "516",
+    "name_ko": null,
+    "name_status": "unknown",
+    "external_name": null,
+    "native_index": 151,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      541,
+      337
+    ],
+    "door_markers": [
+      127
+    ],
+    "atlas_rect": [
+      718,
+      298,
+      56,
+      68
+    ]
+  },
+  {
+    "room_id": "517",
+    "name_ko": null,
+    "name_status": "unknown",
+    "external_name": null,
+    "native_index": 152,
+    "map_area": 4,
+    "map_floor": 0,
+    "anchor_candidate": [
+      0,
+      0
+    ],
+    "door_markers": [],
+    "atlas_rect": [
+      996,
+      0,
+      28,
+      130
+    ]
+  },
+  {
+    "room_id": "518",
+    "name_ko": "계단",
+    "name_status": "unknown",
+    "external_name": "Laboratory B2 - Stairway",
+    "native_index": 153,
+    "map_area": 4,
+    "map_floor": 5,
+    "anchor_candidate": [
+      367,
+      213
+    ],
+    "door_markers": [
+      119
+    ],
+    "atlas_rect": [
+      410,
+      282,
+      100,
+      134
+    ]
+  }
+]
