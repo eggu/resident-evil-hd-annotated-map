@@ -13,7 +13,7 @@ First public release. An ASI mod for Resident Evil / Biohazard HD REMASTER (Stea
 - Zoom the map 2x with the Attack button and move it with the direction input.
 - Room names are placed on each room's real shape, and names stay clear of markers where possible.
 - Installation: copy `dinput8.dll` ([Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader), included) and `scripts/` into the folder with `bhd.exe`. If you already have a `dinput8.dll`, copy `scripts/` only. Close the game first.
-- The executable and saves are not modified. On an unsupported executable nothing is patched.
+- The executable and saves are not modified.
 
 Known limits: enemies appear only in rooms you have entered; the layout was tuned at 1440p, so names can overlap at other resolutions.
 
@@ -30,6 +30,6 @@ Known limits: enemies appear only in rooms you have entered; the layout was tune
 - 공격 버튼으로 지도를 2배 확대하고 방향 입력으로 움직입니다.
 - 방 이름을 각 방의 실제 모양 위에 배치하고, 이름이 표시와 겹치지 않도록 자리를 고릅니다.
 - 설치: 게임을 종료한 뒤 `dinput8.dll`([Ultimate ASI Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader), 포함)과 `scripts/`를 `bhd.exe`가 있는 폴더에 복사합니다. 이미 `dinput8.dll`이 있으면 `scripts/`만 복사하세요.
-- EXE와 세이브는 수정하지 않습니다. 지원 대상이 아닌 실행 파일에서는 아무것도 패치하지 않습니다.
+- EXE와 세이브는 수정하지 않습니다.
 
 알려진 한계: 적은 들어가 본 방에서만 표시됩니다. 화면 배치는 1440p 기준이라 해상도에 따라 이름이 겹칠 수 있습니다.

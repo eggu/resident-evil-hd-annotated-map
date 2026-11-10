@@ -6,7 +6,7 @@ English | [한국어](README.ko.md)
 <p align="center"><img src="docs/logo.png" alt="RE1 HD Annotated Map - Survivor's Notes" width="320"></p>
 -->
 
-An ASI mod that shows room names, locked doors and keys, items, documents and maps, puzzles, events, typewriters and item boxes, and enemies on the map of Resident Evil / Biohazard HD REMASTER on Steam. English and Korean are supported. It is not for the 1996 original; use [RE1 Annotated Map](https://github.com/eggu/resident-evil-annotated-map) for that.
+An ASI mod that shows room names, locked doors and keys, items, documents and maps, puzzles, events, typewriters and item boxes, and enemies on the map of Resident Evil / Biohazard HD REMASTER on Steam or GOG. English and Korean are supported. It is not for the 1996 original; use [RE1 Annotated Map](https://github.com/eggu/resident-evil-annotated-map) for that.
 
 - It draws on the game's own map screen. Items you picked up and puzzles you finished disappear from the map.
 - Show visited rooms only, rooms revealed by a map, or all rooms.
