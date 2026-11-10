@@ -2,9 +2,7 @@
 
 [English](README.md) | 한국어
 
-<!-- TODO: add docs/logo.png (320 px wide), then uncomment:
 <p align="center"><img src="docs/logo.png" alt="RE1 HD Annotated Map - Survivor's Notes" width="320"></p>
--->
 
 **상세 지도: 생존자의 메모** — Steam·GOG판 Resident Evil / Biohazard HD REMASTER의 지도에 방 이름, 잠긴 문과 열쇠, 아이템, 문서·지도, 퍼즐, 이벤트, 타자기·아이템 상자, 적을 표시하는 ASI 모드입니다. 한국어/영어를 지원합니다. 1996년 원작용이 아닙니다. 원작용은 [RE1 Annotated Map](https://github.com/eggu/resident-evil-annotated-map)을 쓰세요.
 
@@ -15,7 +13,6 @@
 
 ## 스크린샷
 
-<!-- TODO: 작성자가 준비한 파일을 docs/screenshots/에 추가 -->
 ![방 이름과 표시가 있는 지도](docs/screenshots/01-map-overview.png)
 
 | | 방문한 방 | 모든 방 |
