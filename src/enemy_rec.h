@@ -1,6 +1,6 @@
 /* Recorded enemy spawns: pure data + predicates (no Windows/game access), shared by re1_mapnames.c and
  * test_enemy_rec.c. A record = one enemy the game actually spawned (hook on 0x47f500, mode 0) in a room.
- * Per-save rule (coordinator decision A, nothing is written into game memory or saves):
+ * Per-save rule (nothing is written into game memory or saves):
  *   shown  <=>  room visited (bank5) in the loaded state  &&  killed flag bank2[gid] clear
  *               &&  same character + difficulty class  &&  stamp <= current game clock (wasps: bank1 188 only).
  * plus: a clock regression (older save loaded) purges records stamped after the new clock; a room load replaces
