@@ -1,8 +1,7 @@
 /* Native same-floor expanded/combined map sections. */
 static const unsigned section_replacements[][2] = {
-    {3,4},
-    {3,34},
-    {4,34},
+    {34,3}, /* section 34 = undrawn combined texture of 3 (Northern Corridor) and 4 (Tea Room): never named over them */
+    {34,4},
     {9,19},
     {9,35},
     {15,30},

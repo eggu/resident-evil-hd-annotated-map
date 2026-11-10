@@ -122,77 +122,77 @@
    "room": 3,
    "lang": "ko",
    "lines": [
-    "북쪽 복도·다실"
+    "북쪽 복도"
    ],
    "anchor": [
-    291.5,
-    346.5
+    319.5,
+    354.5
    ],
    "box": [
-    257,
-    340,
-    326,
-    354
+    296,
+    348,
+    342,
+    361
    ],
    "leader": null,
-   "coverage": 0.957
+   "coverage": 1.0
   },
   {
    "room": 3,
    "lang": "en",
    "lines": [
-    "Northern Corridor & Tea Room"
+    "Northern Corridor"
    ],
    "anchor": [
-    327.5,
-    345.5
+    319.5,
+    354.5
    ],
    "box": [
-    253,
-    340,
-    402,
-    352
+    275,
+    348,
+    364,
+    360
    ],
    "leader": null,
-   "coverage": 0.953
+   "coverage": 1.0
   },
   {
    "room": 4,
    "lang": "ko",
    "lines": [
-    "북쪽 복도·다실"
+    "다실"
    ],
    "anchor": [
-    183.5,
+    287.5,
     494.5
    ],
    "box": [
-    149,
+    276,
     488,
-    218,
+    299,
     502
    ],
    "leader": null,
-   "coverage": 0.957
+   "coverage": 1.0
   },
   {
    "room": 4,
    "lang": "en",
    "lines": [
-    "Northern Corridor & Tea Room"
+    "Tea Room"
    ],
    "anchor": [
-    219.5,
-    493.5
+    287.5,
+    492.5
    ],
    "box": [
-    145,
-    488,
-    294,
-    500
+    262,
+    487,
+    313,
+    498
    ],
    "leader": null,
-   "coverage": 0.953
+   "coverage": 1.0
   },
   {
    "room": 5,

@@ -11,9 +11,9 @@ Item names follow Evil Resource. One location can have several rows with differe
 | 0:2 | 102 | Small Storeroom | — | Flash Grenade | ![113](../../assets/icons/113.png) | 245.1,360.9 | Chris | — | — | 76 |
 | 0:2 | 102 | Small Storeroom | — | Ink Ribbon | ![68](../../assets/icons/68.png) | 217.74,405.54 | — | — | — | 67 |
 | 0:2 | 102 | Small Storeroom | — | Battery Pack | ![121](../../assets/icons/121.png) | 245.1,360.9 | Jill | — | — | 66 |
-| 0:2 | 103 | Northern Corridor & Tea Room | — | Battery Pack | ![121](../../assets/icons/121.png) | 286.5,338.4 | Jill | Very Easy/Easy, Normal | conditional | 32 |
-| 0:2 | 103 | Northern Corridor & Tea Room | — | Flash Grenade | ![113](../../assets/icons/113.png) | 286.5,338.4 | Chris | Very Easy/Easy, Normal | conditional | 31 |
-| 0:2 | 122 | Northern Corridor & Tea Room | 103 Northern Corridor & Tea Room | Dagger | ![112](../../assets/icons/112.png) | 311.7,411.3 | — | Very Easy/Easy | conditional | 16 |
+| 0:2 | 103 | Northern Corridor | — | Battery Pack | ![121](../../assets/icons/121.png) | 286.5,338.4 | Jill | Very Easy/Easy, Normal | conditional | 32 |
+| 0:2 | 103 | Northern Corridor | — | Flash Grenade | ![113](../../assets/icons/113.png) | 286.5,338.4 | Chris | Very Easy/Easy, Normal | conditional | 31 |
+| 0:2 | 103 | Northern Corridor | — | Dagger | ![112](../../assets/icons/112.png) | 311.7,411.3 | — | Very Easy/Easy | conditional | 16 |
 | 0:2 | 105 | Dining Room | — | Ink Ribbon | ![68](../../assets/icons/68.png) | 384.6,553.5 | — | — | — | 177 |
 | 0:2 | 107 | Art Room | — | Dagger | ![112](../../assets/icons/112.png) | 672.6,513.9 | — | — | — | 82 |
 | 0:2 | 108 | 'L' Corridor | — | Handgun Magazine | ![17](../../assets/icons/17.png) | 818.4,486.9 | — | Very Easy/Easy, Normal | — | 192 |

@@ -10,8 +10,8 @@ The name is the key that opens the door. The marker sits on the side not yet ent
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0:2 | 101 | West Wing Inner Stairway | 102 Small Storeroom | Lock Pick | 226.65,342.7 | 226.65,364.7 | Jill | — | — | 4 |
 | 0:2 | 101 | West Wing Inner Stairway | 102 Small Storeroom | Old Key | 226.65,342.7 | 226.65,364.7 | Chris | — | — | 4 |
-| 0:2 | 101 | West Wing Inner Stairway | 103 Northern Corridor & Tea Room | Armor Key | 247.6,339.3 | 269.6,339.3 | — | — | — | 34 |
-| 0:2 | 103 | Northern Corridor & Tea Room | 10f Bar | Armor Key | 369.75,495.2 | 369.75,473.2 | — | — | — | 6 |
+| 0:2 | 101 | West Wing Inner Stairway | 103 Northern Corridor | Armor Key | 247.6,339.3 | 269.6,339.3 | — | — | — | 34 |
+| 0:2 | 104 | Tea Room | 10f Bar | Armor Key | 369.75,495.2 | 369.75,473.2 | — | — | — | 6 |
 | 0:2 | 106 | Main Hall | 111 Large Art & Mirror Rooms | Helmet Key | 579.7,513.45 | 601.7,513.45 | — | — | — | 19 |
 | 0:2 | 107 | Art Room | 108 'L' Corridor | Sword Key | 677.8,576.9 | 699.8,576.9 | — | — | — | 2 |
 | 0:2 | 107 | Art Room | 11c Hidden Wardrobe | Closet Key | 733.6,549 | 755.6,549 | — | — | — | 46 |
@@ -35,7 +35,7 @@ The name is the key that opens the door. The marker sits on the side not yet ent
 | 0:1 | 106 | Main Hall | 212 Outside Patio | Armor Key | 577.9,595.8 | 599.9,595.8 | — | — | — | 31 |
 | 0:1 | 101 | West Wing Inner Stairway | 215 Trophy Room | Helmet Key | 221,396.45 | 199,396.45 | — | — | — | 21 |
 | 0:0 | 216 | Library | 217 'Death' Passage | Helmet Key | 410.9,454.95 | 388.9,454.95 | — | — | — | 38 |
-| 0:3 | 103 | Northern Corridor & Tea Room | 21c Kitchen | Sword Key | 329,450 | 307,450 | — | — | — | 15 |
+| 0:3 | 104 | Tea Room | 21c Kitchen | Sword Key | 329,450 | 307,450 | — | — | — | 15 |
 | 2:2 | 400 | Entry Corridor | 401 Room 001 | Key for Room 001 | 231.15,455.6 | 231.15,433.6 | — | — | — | 27 |
 | 2:2 | 405 | Central Corridor | 408 Gallery | Gallery Key | 409.6,509.85 | 431.6,509.85 | — | — | — | 25 |
 | 2:2 | 408 | Gallery | 40a Room 003 | Key for Room 003 | 568,491.4 | 590,491.4 | — | — | — | 40 |

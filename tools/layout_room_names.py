@@ -103,6 +103,7 @@ class Mask:
             cy = sum(y for _, y in self.cells) / len(self.cells)
             best = max(self.dist.values())
             self.pole = min((c for c, v in self.dist.items() if v == best), key=lambda c: ((c[0] + .5 - cx) ** 2 + (c[1] + .5 - cy) ** 2, c))
+            self.centroid = min(self.cells, key=lambda c: ((c[0] + .5 - cx) ** 2 + (c[1] + .5 - cy) ** 2, c))
             self.depth = best
 
     def edges(self):
@@ -136,6 +137,9 @@ def hit(a, b):
     return a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]
 
 
+CENTRE_ROOMS = {3, 4}  # sections 3 (Northern Corridor) and 4 (Tea Room)
+
+
 def exclusive_pairs(data):
     pairs = {(int(a), int(b)) for a, b in re.findall(r'\{(\d+),(\d+)\}', (ROOT / 'src/section_rules.h').read_text())}
     pairs |= {(b, a) for a, b in pairs}
@@ -156,7 +160,9 @@ def place_floor(names, masks, union, exclusive):
 
     for n in sorted(names, key=lambda n: (len(masks[n['room']].cells), n['room'])):
         m, (bw, bh) = masks[n['room']], n['size']
-        px, py = m.pole
+        # the two halves of the split Northern Corridor / Tea Room (user rule 2026-11-10): the name at the room's centre,
+        # the room cell nearest its centroid, not the widest blob at one end of the corridor
+        px, py = m.centroid if n['room'] in CENTRE_ROOMS else m.pole
 
         def box_at(cx, cy):
             l, t = int(round(cx - bw / 2)), int(round(cy - bh / 2))

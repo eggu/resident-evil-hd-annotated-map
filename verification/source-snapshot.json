@@ -5,7 +5,7 @@
       "sha256": "3eb790e4b5f6f42c61b8743726718bda0b78914513972d9eea857e765e183c29"
     },
     "src/labels.h": {
-      "sha256": "6eb4b1071c37a7cfc30a0dddf62586a60209849b4b96e6668c597f7353f8b450"
+      "sha256": "736053ee8c5e69940b5791473d14072cfc70cb12bf24510e2974fb7bae222df6"
     },
     "src/crimson_data.h": {
       "sha256": "ae1c6789395b8277982bc56ed59ab3ac0bf1086966c07ae31cbd772028021a97"
@@ -41,7 +41,7 @@
       "sha256": "be8be996f8dde4c68a2b7b98ddb47c7ca611e5887b9e4be6544dfefe0982c4b6"
     },
     "src/synth_marks.h": {
-      "sha256": "e6f1b574a802011719e9380a8af6bbb3d1e6d0756d393f293c1941f2ede22e3b"
+      "sha256": "f6446ba1c411418e95530a1472c9a00eeb5025463c35f0f839e23ddedb338f22"
     },
     "src/save_points.h": {
       "sha256": "9a8380a4f579cd64cb1eef2c847a115a22e4cae78f77f21e0cc7b8b2bb1e633f"

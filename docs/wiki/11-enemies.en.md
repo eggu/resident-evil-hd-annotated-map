@@ -42,7 +42,7 @@ For an enemy defeated before recording began, this table decides the room. It ma
 | --- | --- | --- | --- | --- |
 | 0:2 | 101 West Wing Inner Stairway | — | 5 | 385–389 |
 | 0:2 | 101 West Wing Inner Stairway | 203 Outside Balcony | 1 | 384 |
-| 0:2 | 103 Northern Corridor & Tea Room | — | 5 | 16–19, 32 |
+| 0:2 | 103 Northern Corridor | — | 5 | 16–19, 32 |
 | 0:2 | 106 Main Hall | — | 1 | 29 |
 | 0:2 | 107 Art Room | — | 1 | 140 |
 | 0:2 | 108 'L' Corridor | — | 2 | 390–391 |

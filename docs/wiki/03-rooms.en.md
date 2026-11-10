@@ -11,8 +11,8 @@ Spoilers. Rows are conditional variants from current src/labels.h, not unique it
 | 0:2 | 0 | 100 | 의약품 창고 | Medical Storage Room | 174.5,381.5 | — |
 | 0:2 | 1 | 101 | 서쪽 안계단 | West Wing Inner Stairway | 188.5,341.5 | — |
 | 0:2 | 2 | 102 | 작은 창고 | Small Storeroom | 237.5,378.5 | — |
-| 0:2 | 3 | 103 | 북쪽 복도·다실 | Northern Corridor & Tea Room | 327.5,345.5 | 4, 34 |
-| 0:2 | 4 | 104 | 북쪽 복도·다실 | Northern Corridor & Tea Room | 219.5,493.5 | 34 |
+| 0:2 | 3 | 103 | 북쪽 복도 | Northern Corridor | 319.5,354.5 | — |
+| 0:2 | 4 | 104 | 다실 | Tea Room | 287.5,492.5 | — |
 | 0:2 | 5 | 105 | 식당 | Dining Room | 322.5,545.5 | — |
 | 0:2 | 6 | 106 | 중앙 홀 | Main Hall | 513.5,586.5 | — |
 | 0:2 | 7 | 107 | 미술실 | Art Room | 658.5,562.5 | — |
@@ -42,7 +42,7 @@ Spoilers. Rows are conditional variants from current src/labels.h, not unique it
 | 5:2 | 31 | 11f | — | — | — | — |
 | 0:2 | 32 | 120 | 동쪽 계단 | East Wing Stairway | 672.5,310.5 | — |
 | 0:2 | 33 | 121 | 대미술관 | Large Gallery | 576.5,444.5 | — |
-| 0:2 | 34 | 122 | 북쪽 복도·다실 | Northern Corridor & Tea Room | 327.5,345.5 | — |
+| 0:2 | 34 | 122 | 북쪽 복도·다실 | Northern Corridor & Tea Room | 327.5,345.5 | 3, 4 |
 | 0:2 | 35 | 123 | 굽은 복도·욕실 | Winding Corridor & Bathroom | 794.5,357.5 | — |
 | 0:2 | 36 | 124 | 대미술실 ·거울방 | Large Art & Mirror Rooms | 752.5,479.5 | — |
 | 5:6 | 37 | 200 | 주방 승강기 | Kitchen Elevator | 48,36 | — |
