@@ -110,7 +110,7 @@ int main(void) {
     {   /* Tea Room first zombie (Kenneth): shown until bank1 3 */
         unsigned zero[32] = {0}, seen[16] = {0}; set(seen, 3);
         const Synth *r = &synth_marks[SYN_EV_KENNETH];
-        assert(r->room == 34 && r->wx == -150.0f && r->wz == -350.0f && r->kv[0] == (8 | 16) && r->kv[1] == 4 && syn_event_visible(r, zero, zero, zero, zero) && !syn_event_visible(r, zero, seen, zero, zero));
+        assert(r->room == 4 && r->wx == -955.0f && r->wz == -43.5f && r->kv[0] == (8 | 16) && r->kv[1] == 4 && syn_event_visible(r, zero, zero, zero, zero) && !syn_event_visible(r, zero, seen, zero, zero));
     }
     {   /* Kenneth's Film viewing: only with the film (bank3 483), gone once viewed (bank1 212) */
         const Synth *r = &synth_marks[SYN_EV_FILM];
@@ -147,7 +147,7 @@ for flag, room, x, z in ((124, 43, -26.96, 313.14), (339, 105, 97.02, -116.88)):
     row = re.search(r'^\{4,%d,%d,\d+,\d+,%d,0,1,[-\d.]+f,[-\d.]+f,(-?[\d.]+)f,(-?[\d.]+)f' % (room, room, flag), labels, re.M)
     assert row and abs(float(row[1]) - x) < .01 and abs(float(row[2]) - z) < .01, (flag, row and row.groups())
 shapes = rg.shapes()
-for room, point in ((108, (309.9, 289.8)), (108, (390.0, 351.0)), (108, (296.4, 536.4)), (113, (490.8, 450.9)), (114, (684.3, 502.2)), (34, (260.5, 429.3)), (43, (623.1, 378.9)), (105, (237.0, 374.4)), (136, (470.7, 366.9)), (139, (433.8, 317.6)), (145, (618.0, 574.4)), (133, (345.1, 417.0)), (148, (435.1, 454.6)), (140, (400.0, 238.0)), (137, (404.5, 323.2)), (34, (272.2, 429.3))):
+for room, point in ((108, (309.9, 289.8)), (108, (390.0, 351.0)), (108, (296.4, 536.4)), (113, (490.8, 450.9)), (114, (684.3, 502.2)), (43, (623.1, 378.9)), (105, (237.0, 374.4)), (136, (470.7, 366.9)), (139, (433.8, 317.6)), (145, (618.0, 574.4)), (133, (345.1, 417.0)), (148, (435.1, 454.6)), (140, (400.0, 238.0)), (137, (404.5, 323.2)), (4, (176.0, 466.0)), (4, (163.0, 466.0))):
     assert shapes[room].distance_outside(*point) <= 4, (room, point)
 print('PASS: 3 lamps (! badge, then the lamp\'s eye once lit) + passcode door (until the Medical Room is entered), no code anywhere, points in their rooms')
 
@@ -191,7 +191,7 @@ assert 'if (!all_off) build_save_icons(' in c
 print('PASS: aev-only save machines (Dining Room typewriter) drawn zoomed and unzoomed')
 
 # Kenneth event sits next to Kenneth's Film (same section, 11.7 canvas units = about one icon apart)
-_k = re.search(r'\{34, 0, 2, 0, (-?[\d.]+)f, (-?[\d.]+)f, 255, 6,', (ROOT / 'src/synth_marks.h').read_text(encoding='utf-8'))
-_f = re.search(r'\{34, 0, 2, 483, (-?[\d.]+)f, (-?[\d.]+)f,', (ROOT / 'src/synth_marks.h').read_text(encoding='utf-8'))
+_k = re.search(r'\{4, 0, 2, 0, (-?[\d.]+)f, (-?[\d.]+)f, 255, 6,', (ROOT / 'src/synth_marks.h').read_text(encoding='utf-8'))
+_f = re.search(r'\{4, 0, 2, 483, (-?[\d.]+)f, (-?[\d.]+)f,', (ROOT / 'src/synth_marks.h').read_text(encoding='utf-8'))
 assert _k and _f and abs(float(_k[2]) - float(_f[2])) < 1 and 0 < float(_k[1]) - float(_f[1]) <= 120
 print('PASS: Kenneth event beside Kenneth\'s Film')

@@ -52,12 +52,12 @@ static const Synth synth_marks[SYN_COUNT] = {
     {148, 4, 6, 0, -399.0f, 474.0f, 255, 2, {0}, 1, 22, 0x20}, /* Main Laboratory / 중앙 연구실: wake Barry (Jill), at his actor (em 45 spawn) */
     {140, 4, 5, 0, 316.5f, -374.6f, 255, 2, {0}},           /* Cell Entrance / 감방 입구: Cell passcode door */
     {114, 2, 2, 485, 349.0f, 190.0f, 16, 5, {0}},         /* Room 003 / 003호실 bookcase: gone once its bank3 flag 485 (the room code stops drawing the shelf book and its all-taken test reads it) or file bit 16 is set */
-    {34, 0, 2, 483, -247.8f, -350.0f, 255, 5, {0, 4}},    /* Tea Room / 다실 (section 34): the only unmarked aev pickup area (-600, -354) is 41 px outside the room shape, moved to the nearest inside point (RE0 out-of-room rule) */
+    {4, 0, 2, 483, -1063.8f, -43.5f, 255, 5, {8 | 16, 4}},/* Tea Room / 다실 (section 4): Kenneth's Film on Kenneth's body in the west sitting area (Evil Resource); bank3 483 */
     {43, 0, 1, 1023, -26.96f, 313.14f, 8, 5, {0, 2048}},  /* Small Library 2F: the Dog Whistle row (flag 124) */
     {105, 2, 2, 1023, 97.02f, -116.88f, 14, 5, {0, 0, 0, 512}}, /* Residence Room 001 / 001호실: the Self Defense Gun row (flag 339) */
     {133, 4, 4, 0, -1277.0f, 578.0f, 255, 6, {0}, 1, 212}, /* Visual Data Room / 영상 자료실: Kenneth's Film viewing */
     {137, 4, 5, 0, 42.0f, -87.0f, 255, 6, {0}, 1, 272},    /* Pass Code Corridor / 암호 복도: after the rescue */
-    {34, 0, 2, 0, -150.0f, -350.0f, 255, 6, {8 | 16, 4}, 1, 3}, /* Tea Room / 다실: first zombie over Kenneth, at his body beside the Kenneth's Film mark (-247.8,-350, bank3 483; user 2026-11-09); shown once any of sections 3/4/34 is visited, hidden on bank1 3 (0x4a2200) */
+    {4, 0, 2, 0, -955.0f, -43.5f, 255, 6, {8 | 16, 4}, 1, 3}, /* Tea Room / 다실: first zombie over Kenneth, beside his film (one icon east); shown once 3/4/34 is visited, hidden on bank1 3 (0x4a2200) */
     EVENT_MARK_ROWS
 };
 static int syn_bit(const unsigned *bank, unsigned n, unsigned size) { return n < size && (bank[n >> 5] >> (n & 31)) & 1; }
