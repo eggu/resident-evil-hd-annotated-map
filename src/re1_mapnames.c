@@ -1387,19 +1387,41 @@ static int in_image(const void *p, void **base) {
     MEMORY_BASIC_INFORMATION m;
     return VirtualQuery(p, &m, sizeof m) && m.Type == MEM_IMAGE && (*base = m.AllocationBase) != 0;
 }
-/* A COM object whose 119-entry vtable lives in one non-game image: IDirect3DDevice9 layout. */
+/* A COM object whose 119-entry vtable lives in one non-game image: IDirect3DDevice9 layout. Overlays and hook libraries may
+ * redirect a few slots (Present, Reset, EndScene) into their own image, so only the first three COM slots and most of the
+ * table must stay in the vtable's image; every slot must still point into loaded code. The object may also point at a copy
+ * of the whole table in heap memory (seen with the Steam and NVIDIA overlays injected; the copier was not identified): then the module of slot 0 (QueryInterface) stands in for the vtable's image.
+ * Returns the number of redirected slots + 1, or 0 when p is not a device. */
+#define DEVICE_FOREIGN_MAX 16
 static int is_device(void *p) {
     void **vt, *base, *b2;
-    if (!readable(p, 4) || !readable(vt = *(void ***)p, 119 * 4) || !in_image(vt, &base) || base == exe) return 0;
-    for (int i = 0; i < 119; i++)
-        if (!in_image(vt[i], &b2) || b2 != base) return 0;
-    return 1;
+    int foreign = 0;
+    if (!readable(p, 4) || !readable(vt = *(void ***)p, 119 * 4)) return 0;
+    if (!in_image(vt, &base) && !in_image(vt[0], &base)) return 0; /* heap copy of the table: slot 0's module */
+    if (base == exe) return 0;
+    for (int i = 0; i < 119; i++) {
+        if (!in_image(vt[i], &b2)) return 0;
+        if (b2 != base && (i < 3 || ++foreign > DEVICE_FOREIGN_MAX)) return 0;
+    }
+    return foreign + 1;
 }
 /* the device the game itself presents with: [[0xd5a048]+0x98] (0x7c1816, 0x9de294, 0xa702d8) */
 static void *find_device(void) {
     BYTE *ren = *(BYTE **)(exe + EXE_RENDERER);
     if (!readable(ren, 0x9c)) return 0;
-    return is_device(*(void **)(ren + 0x98)) ? *(void **)(ren + 0x98) : 0;
+    void *dev = *(void **)(ren + 0x98);
+    int found = is_device(dev);
+    static void *logged;
+    if (found && logged != dev) { /* once per device: where its table lives and how many slots other hooks own */
+        char line[400], mod[MAX_PATH] = "?";
+        void **vt = *(void ***)dev, *base = 0, *vbase = 0;
+        if (in_image(vt[0], &base)) GetModuleFileNameA((HMODULE)base, mod, sizeof mod);
+        logged = dev;
+        wsprintfA(line, "device found: vtable %s, %d slots hooked by others, slot 0 in %s\r\n",
+                  in_image(vt, &vbase) ? "in a module" : "copied to the heap", found - 1, mod);
+        log_line(line);
+    }
+    return found ? dev : 0;
 }
 
 /* Scope 3 (All rooms): native map renderers skip a room failing both bank5 (visited) and bank7 (revealed by a map
@@ -1474,6 +1496,22 @@ static DWORD WINAPI install(void *unused) {
         }
         void *dev = find_device();
         void **v = dev ? *(void ***)dev : 0;
+        static int no_device_logged;
+        if (!dev && tick > 600 && !no_device_logged++) { /* 30 s without a device: say what [[renderer]+0x98] holds */
+            BYTE *ren = *(BYTE **)(exe + EXE_RENDERER);
+            void *cand = readable(ren, 0x9c) ? *(void **)(ren + 0x98) : 0, *base = 0;
+            void **cvt = readable(cand, 4) ? *(void ***)cand : 0;
+            int foreign = 0, outside = 0, heap = 0;
+            char mod[MAX_PATH] = "?";
+            if (cvt && readable(cvt, 119 * 4) && ((heap = !in_image(cvt, &base)) == 0 || in_image(cvt[0], &base))) {
+                GetModuleFileNameA((HMODULE)base, mod, sizeof mod);
+                for (int i = 0; i < 119; i++) { void *b2 = 0; if (!in_image(cvt[i], &b2)) outside++; else if (b2 != base) foreign++; }
+            }
+            char line[420];
+            wsprintfA(line, "no D3D9 device yet: renderer %p candidate %p vtable %p%s (foreign %d, outside images %d, slot 0 in %s)\r\n",
+                      ren, cand, cvt, heap ? " on the heap" : "", foreign, outside, mod);
+            log_line(line);
+        }
         if (v && v[42] != (void *)end_scene) {
             /* new device vtable, or someone re-patched ours: remember its current EndScene, then hook */
             int i = 0;
