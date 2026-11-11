@@ -69,8 +69,11 @@ PROG = r'''
 typedef unsigned U32;
 #define LABEL_COUNT %d
 #define NAME_FIRST 5000
+#define ZH_FIRST 8000
+typedef unsigned char BYTE;
 #include "name_lines.h"
-static U32 W_[6000], H_[6000];
+#include "labels_zh.h"
+static U32 W_[9000], H_[9000];
 static U32 image_w(U32 i) { return W_[i]; }
 static U32 image_h(U32 i) { return H_[i]; }
 static struct { U32 i; float x, y, w, h, u0, v0, u1, v1; } op[8]; static int nop;
@@ -79,9 +82,11 @@ static void emit(U32 i, float x, float y, float w, float h, float u0, float v0, 
 int main(void) {
 %s
     int checked = 0;
-    for (U32 n = 0; n < LABEL_LINES_COUNT + NAMETEXT_LINES_COUNT; n++) {
-        const NameLines *nl = n < LABEL_LINES_COUNT ? &label_lines[n] : &nametext_lines[n - LABEL_LINES_COUNT];
-        U32 img = n < LABEL_LINES_COUNT ? nl->image : NAME_FIRST + nl->image;
+    for (U32 k = 0; k < ZH_COUNT; k++) { W_[ZH_FIRST + k] = zh_text[k].w; H_[ZH_FIRST + k] = zh_text[k].h; }
+    for (U32 n = 0; n < LABEL_LINES_COUNT + NAMETEXT_LINES_COUNT + ZH_LINES_COUNT; n++) {
+        const NameLines *nl = n < LABEL_LINES_COUNT ? &label_lines[n] : n < LABEL_LINES_COUNT + NAMETEXT_LINES_COUNT ? &nametext_lines[n - LABEL_LINES_COUNT]
+                                                                       : &zh_lines[n - LABEL_LINES_COUNT - NAMETEXT_LINES_COUNT];
+        U32 img = n < LABEL_LINES_COUNT ? nl->image : n < LABEL_LINES_COUNT + NAMETEXT_LINES_COUNT ? NAME_FIRST + nl->image : ZH_FIRST + nl->image;
         float iw = image_w(img), ih = image_h(img), s = 1.5f, bx = 100, by = 50;
         int left = nl->line[0].x0, right = nl->line[0].x1;
         for (int k = 1; k < nl->lines; k++) { if (nl->line[k].x0 < left) left = nl->line[k].x0; if (nl->line[k].x1 > right) right = nl->line[k].x1; }
@@ -96,7 +101,7 @@ int main(void) {
         for (int k = 0; k < nop; k++) assert(op[k].x + op[k].w == bx + (right + 1) * s);       /* the lines share the right ink edge */
         checked++;
     }
-    assert(checked == LABEL_LINES_COUNT + NAMETEXT_LINES_COUNT);
+    assert(checked == LABEL_LINES_COUNT + NAMETEXT_LINES_COUNT + ZH_LINES_COUNT && ZH_LINES_COUNT > 0);
     /* a one-line name (no entry) is drawn whole, whatever the alignment */
     nop = 0; emit_name(0, 10, 10, 30, 12, -1); assert(nop == 1 || lines_of(0) != 0);
     return 0;

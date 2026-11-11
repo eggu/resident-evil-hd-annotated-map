@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Simplified Chinese as a third language: `\` cycles English → Korean → Simplified Chinese, `Language=zh` in the INI.
+- Every room name, marker name, item name and legend row in Chinese, rendered with Source Han Sans SC; room names are placed again for the Chinese widths with the same rules and checks.
+
+- 简体中文作为第三种语言：`\` 依次切换 English → 한국어 → 简体中文，INI 中为 `Language=zh`。
+- 房间名称、标记名称、物品名称和图例全部为中文，使用思源黑体渲染；房间名称按中文宽度重新排布并通过同样的检查。
+
 ## 1.0.0
 
 First public release.

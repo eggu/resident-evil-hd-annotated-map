@@ -1,5 +1,45 @@
 RE1 HD Annotated Map - Survivor's Notes - Resident Evil HD REMASTER
-상세 지도: 생존자의 메모
+상세 지도: 생존자의 메모 / 详细地图：幸存者笔记
+
+================================================================
+简体中文
+================================================================
+
+支持：Steam·GOG 版 Resident Evil / Biohazard HD REMASTER（bhd.exe）+ Ultimate ASI Loader（已附带）。
+不适用于 1996 年原版。
+在游戏地图上标注房间名称、上锁的门与所需钥匙、关键物品、文件·地图、谜题·事件、普通物品、打字机·物品箱和敌人。
+支持英语、韩语和简体中文。物品、钥匙、文件与地点名称与常用的“扑家汉化”补丁一致。
+
+安装
+1. 关闭游戏。
+2. 将 ZIP 内容按原有目录结构复制到 bhd.exe 所在的游戏文件夹
+   （dinput8.dll、scripts/RE1HD.AnnotatedMap.asi、scripts/RE1HD.AnnotatedMap.ini）。
+   如果已有 dinput8.dll（例如 Fusion Fix 的），请跳过 dinput8.dll，只复制 scripts。
+3. 启动游戏并打开地图。
+首次运行为英语：在地图画面按 \ 切换到简体中文（设置会自动保存），或把 INI 中的 Language 改为 zh。
+
+操作（仅在地图画面有效）
+- 数字键：0 全部标注开关，1 房间名称，2 上锁的门·钥匙，3 关键物品，4 文件·地图，
+  5 谜题，6 事件（剧透），7 普通物品，8 敌人，9 显示范围（已访问 → 已揭示 → 全部房间），
+  \（韩文键盘上为 ₩）切换语言：English → 한국어 → 简体中文。
+- 名称大小：- · +（含小键盘），名称不透明度：[ · ]
+- 图标大小：Shift + - · +，图标不透明度：Shift + [ · ]（INI 中 Modifier=Ctrl 时为 Ctrl）
+- 物品名称：H（全部 → 不含普通物品 → 关，初始为关）。折叠图例：~
+- 赤红头复活剩余时间：显示敌人时长按 8 开关（单位显示为 m，即分钟）。
+- 地图放大 2 倍：攻击键。放大时用方向键移动地图，重新打开地图恢复 1 倍。
+- 设置保存在 scripts/RE1HD.AnnotatedMap.ini；[Colors] 可用 #RRGGBB 修改各分类颜色。
+
+卸载
+删除 scripts 中以 RE1HD.AnnotatedMap 开头的文件。如果没有其他 ASI 模组，也删除 dinput8.dll。
+不修改 EXE 和存档。
+
+原作者：커트씨。非官方粉丝模组，与 Capcom 无关，不含游戏文件。
+中文字体：思源黑体（Source Han Sans SC，Adobe，SIL OFL 1.1），以位图形式嵌入。
+源代码许可：LICENSE.txt（MIT）；参考资料与字体出处：NOTICE.md。
+
+================================================================
+한국어
+================================================================
 
 지원: Steam·GOG판 Resident Evil / Biohazard HD REMASTER(bhd.exe) + Ultimate ASI Loader(포함).
 1996년 원작용이 아닙니다.
@@ -16,7 +56,7 @@ RE1 HD Annotated Map - Survivor's Notes - Resident Evil HD REMASTER
 사용 (지도 화면에서만 작동)
 - 숫자 키: 0 전체 표시, 1 방 이름, 2 잠긴 문·열쇠, 3 핵심 아이템, 4 문서·지도,
   5 퍼즐, 6 이벤트(스포일러), 7 일반 아이템, 8 적, 9 표시 범위(방문한 방 → 공개된 방 → 모든 방),
-  \(₩) 한국어 / English.
+  \(₩) 언어 전환: English → 한국어 → 简体中文.
 - 이름 크기: - · + (숫자패드 포함), 불투명도: [ · ]
 - 아이콘 크기: Shift + - · +, 불투명도: Shift + [ · ] (INI의 Modifier=Ctrl이면 Ctrl)
 - 아이템 이름: H (모두 → 일반 아이템 제외 → 끔, 처음에는 끔). 범례 접기: ~
@@ -54,7 +94,7 @@ When upgrading, skip scripts/RE1HD.AnnotatedMap.ini or back it up and restore it
 Controls (on the map screen only)
 - Number keys: 0 all annotations, 1 room names, 2 doors/keys, 3 key items, 4 files/maps,
   5 puzzles, 6 events (spoilers), 7 common items, 8 enemies, 9 scope (visited -> revealed -> all rooms),
-  \ (won sign on Korean keyboards) Korean / English.
+  \ (won sign on Korean keyboards) language: English -> Korean -> Simplified Chinese.
 - Name size: - · + (numpad too). Opacity: [ · ]
 - Icon size: Shift + - · +. Icon opacity: Shift + [ · ] (Ctrl with Modifier=Ctrl in the INI).
 - Item names: H (all → all except common items → off; off at first). Fold the legend: ~

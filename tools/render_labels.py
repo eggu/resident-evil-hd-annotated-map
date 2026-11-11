@@ -10,6 +10,10 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 FONT = ROOT / 'fonts/Pretendard-Medium.otf'
 FONT_BOLD = ROOT / 'fonts/Pretendard-Bold.otf'
+# Simplified Chinese (zh_cn, the third language slot): Source Han Sans SC Medium and Bold (SIL OFL 1.1), cut down to the
+# characters of data/zh_cn.json by tools/subset_zh_fonts.py
+FONT_ZH = ROOT / 'fonts/SourceHanSansSC-Medium-zh.otf'
+FONT_ZH_BOLD = ROOT / 'fonts/SourceHanSansSC-Bold-zh.otf'
 OUTLINE = (8, 8, 8)
 WHITE = (255, 255, 255)
 HINT = (170, 170, 170)  # legend key hints, in both languages
@@ -22,7 +26,10 @@ LEGEND_ROW = re.compile(r'^(?P<head>\{(?P<kind>6),.*?,)(?P<w>\d+),(?P<h>\d+),(?P
 _fonts = {}
 
 
-def font(px):
+def font(px, lang=None):
+    """Pretendard Medium, or Source Han Sans SC Medium for lang 'zh'."""
+    if lang == 'zh':
+        return _fonts.setdefault(('zh', px), ImageFont.truetype(str(FONT_ZH), px))
     return _fonts.setdefault(px, ImageFont.truetype(str(FONT), px))
 
 
@@ -33,12 +40,12 @@ def clean(comment):
     return re.sub(r'^[★◆◇□]', '', comment).split(' / ')
 
 
-def legend_row(line, px, color):
+def legend_row(line, px, color, lang=None):
     """A legend row on a canvas of one fixed height per size, so all rows share a baseline. In '[ · ] ...', '- · + ...' and the
     same after 'Shift + ' or 'Ctrl + ', the keys are bold white and ' · ' (between alternatives) and ' + ' (a combination) are in the
     row colour (RE0 HD legend, user decision 2026-11-07: no outer brackets); the words after the keys start at the same x in rows
     with the same modifier."""
-    regular, bold, small = font(px), ImageFont.truetype(str(FONT_BOLD), px), font(round(px * .7))
+    regular, bold, small = font(px, lang), ImageFont.truetype(str(FONT_ZH_BOLD if lang == 'zh' else FONT_BOLD), px), font(round(px * .7), lang)
 
     def key_runs(modifier, first, second):
         head = [(modifier, WHITE, bold), (' + ', color, regular)] if modifier else []
@@ -76,16 +83,16 @@ def legend_row(line, px, color):
     return canvas
 
 
-def block_size(lines, px):
-    f = font(px)
+def block_size(lines, px, lang=None):
+    f = font(px, lang)
     boxes = [f.getbbox(line, stroke_width=STROKE) for line in lines]
     return max(b[2] - b[0] for b in boxes), sum(b[3] - b[1] for b in boxes) + LINE_GAP * (len(lines) - 1)
 
 
-def draw_block(canvas, lines, cx, cy, px, color):
-    f = font(px)
+def draw_block(canvas, lines, cx, cy, px, color, lang=None):
+    f = font(px, lang)
     d = ImageDraw.Draw(canvas)
-    y = cy - block_size(lines, px)[1] / 2
+    y = cy - block_size(lines, px, lang)[1] / 2
     for line in lines:
         l, t, r, b = f.getbbox(line, stroke_width=STROKE)
         d.text((round(cx - (r - l) / 2 - l), round(y - t)), line, font=f, fill=color + (255,),
@@ -119,7 +126,9 @@ def parse(text):
 # Font size per marker kind and language, fitted once to the previous rasters so names keep their on-screen size.
 SIZES = {(0, 'ko'): 23, (0, 'en'): 21, (1, 'ko'): 19, (1, 'en'): 17, (3, 'ko'): 19, (3, 'en'): 16, (2, 'ko'): 18, (2, 'en'): 17,
          (4, 'ko'): 19, (4, 'en'): 17, (5, 'ko'): 19, (5, 'en'): 17, ('legend', 'ko'): 20, ('legend-small', 'ko'): 16,
-         ('legend', 'en'): 19, ('legend-small', 'en'): 15}
+         ('legend', 'en'): 19, ('legend-small', 'en'): 15,
+         # zh_cn: Source Han Sans at the Korean sizes (CJK ideographs fill the em like Hangul)
+         (0, 'zh'): 23, (1, 'zh'): 19, (2, 'zh'): 18, (3, 'zh'): 19, (4, 'zh'): 19, (5, 'zh'): 19, ('legend', 'zh'): 20, ('legend-small', 'zh'): 16}
 
 
 def rewrite_labels(kinds=None):

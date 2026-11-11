@@ -64,6 +64,6 @@ assert any('too long' in e for e in L.check(broken, shapes, exclusive))
 
 # the runtime draws a room name from its anchor
 src = (ROOT / 'src/re1_mapnames.c').read_text(encoding='utf-8')
-assert 'float x = cx - l->ax * tk, y = cy - l->ay * tk;' in src
+assert 'float x = cx - (zr ? zr->ax : l->ax) * tk, y = cy - (zr ? zr->ay : l->ay) * tk;' in src  # zh_cn: its own anchor
 print('PASS: %d room names reproducible; anchors in rooms, %d leaders <= %d, 150%% wrap, no overlaps; check catches 3 mutants'
       % (len(names), sum(1 for n in names if n['leader']), L.LEADER_MAX))

@@ -80,7 +80,7 @@ names = re.findall(r'static const unsigned char ntpx\d+\[\]=\{([^}]*)\};', t)
 assert len(names) == int(re.search(r'#define NT_COUNT (\d+)', t)[1]) and all(neutral_white(px) for px in names)
 lg = (ROOT / 'src/legend_text.h').read_text(encoding='utf-8')
 rows = re.findall(r'static const unsigned char ltpx\d+\[\]=\{([^}]*)\};', lg)
-assert len(rows) == int(re.search(r'#define LT_COUNT (\d+)', lg)[1]) == 116 and all(neutral_white(px) for px in rows)
+assert len(rows) == int(re.search(r'#define LT_COUNT (\d+)', lg)[1]) == 3 * 58 and all(neutral_white(px) for px in rows)  # Korean, English, Chinese
 
 # the runtime tints with the table: names by category, the legend rows by build_legend, MODULATE in the draw state
 c = (ROOT / 'src/re1_mapnames.c').read_text(encoding='utf-8')

@@ -18,6 +18,8 @@ text_sizes = [(int(w), int(h)) for w, h in re.findall(r'^\{(\d+),(\d+),ltpx\d+\}
 assert len(text_sizes) == int(re.search(r'#define LT_COUNT (\d+)', (HERE / 'legend_text.h').read_text())[1])
 name_sizes = [(int(w), int(h)) for w, h in re.findall(r'^\{(\d+),(\d+),ntpx\d+,', (HERE / 'item_name_text.h').read_text(), re.M)]
 assert len(name_sizes) == int(re.search(r'#define NT_COUNT (\d+)', (HERE / 'item_name_text.h').read_text())[1])
+zh_rows = [(int(a), int(w), int(h)) for a, w, h in re.findall(r'^\{(\d+),(\d+),(\d+),zhpx\d+,', (HERE / 'labels_zh.h').read_text(), re.M)]
+assert len(zh_rows) == int(re.search(r'#define ZH_COUNT (\d+)', (HERE / 'labels_zh.h').read_text())[1])
 prog = '''#include <assert.h>
 #include <stdlib.h>
 typedef unsigned U32; typedef unsigned char BYTE;
@@ -29,6 +31,10 @@ typedef struct { U32 w, h; const BYTE *px; } Label;
 #define ICON_COUNT %d
 #define LT_COUNT %d
 #define NT_COUNT %d
+#define ZH_COUNT %d
+typedef struct { unsigned short label, w, h; const BYTE *px; float x, y, ax, ay; } ZhText;
+static const ZhText zh_text[] = {%s};
+static int language;
 typedef struct { float l, t, r, b; } Box;
 typedef struct { Box box; U32 weight; } Occupied;
 static const BYTE crimson_atlas[1];
@@ -36,7 +42,7 @@ static const struct { U32 w, h; const BYTE *px; } legend_text[] = {%s};
 static const struct { U32 w, h; const BYTE *px; } item_name_text[] = {%s};
 static const Label labels[] = {%s};
 static const struct { U32 w, h; const BYTE *px; } icons[] = {%s};
-''' % (len(sizes) - 1, cw, ch, icon_n, len(text_sizes), len(name_sizes), ','.join('{%d,%d,0}' % wh for wh in text_sizes), ','.join('{%d,%d,0}' % wh for wh in name_sizes), ','.join('{%d,%d,0}' % wh for wh in sizes[:-1]), ','.join('{%d,%d,0}' % wh for wh in icon_sizes)) + code + '''
+''' % (len(sizes) - 1, cw, ch, icon_n, len(text_sizes), len(name_sizes), len(zh_rows), ','.join('{%d,%d,%d,0}' % r for r in zh_rows), ','.join('{%d,%d,0}' % wh for wh in text_sizes), ','.join('{%d,%d,0}' % wh for wh in name_sizes), ','.join('{%d,%d,0}' % wh for wh in sizes[:-1]), ','.join('{%d,%d,0}' % wh for wh in icon_sizes)) + code + '''
 int main(void) {
  pack(); assert(npages >= 1 && npages <= MAXPAGES);
  for (U32 i = 0; i < IMAGES; i++) {
@@ -67,4 +73,4 @@ with tempfile.TemporaryDirectory() as d:
     subprocess.run(['clang', '-w', str(c), '-o', str(exe)], check=True)
     pages = subprocess.run([str(exe)]).returncode
     assert 1 <= pages <= 4, pages
-print(f'PASS: {len(sizes) + icon_n + len(text_sizes) + len(name_sizes) + 1} images packed on {pages} page(s) of 2048px with 2px gaps; emit maps UVs into the page')
+print(f'PASS: {len(sizes) + icon_n + len(text_sizes) + len(name_sizes) + len(zh_rows) + 1} images packed on {pages} page(s) of 2048px with 2px gaps; emit maps UVs into the page')

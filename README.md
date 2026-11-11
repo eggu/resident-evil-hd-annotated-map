@@ -1,10 +1,10 @@
 # RE1 HD Annotated Map - Survivor's Notes — Resident Evil HD REMASTER
 
-English | [한국어](README.ko.md)
+English | [한국어](README.ko.md) | [简体中文](README.zh-CN.md)
 
 <p align="center"><img src="docs/logo.png" alt="RE1 HD Annotated Map - Survivor's Notes" width="320"></p>
 
-An ASI mod that shows room names, locked doors and keys, items, documents and maps, puzzles, events, typewriters and item boxes, and enemies on the map of Resident Evil / Biohazard HD REMASTER on Steam or GOG. English and Korean are supported. It is not for the 1996 original; use [RE1 Annotated Map](https://github.com/eggu/resident-evil-annotated-map) for that.
+An ASI mod that shows room names, locked doors and keys, items, documents and maps, puzzles, events, typewriters and item boxes, and enemies on the map of Resident Evil / Biohazard HD REMASTER on Steam or GOG. English, Korean and Simplified Chinese (zh_cn, third language slot) are supported. It is not for the 1996 original; use [RE1 Annotated Map](https://github.com/eggu/resident-evil-annotated-map) for that.
 
 - It draws on the game's own map screen. Items you picked up and puzzles you finished disappear from the map.
 - Show visited rooms only, rooms revealed by a map, or all rooms.
@@ -56,7 +56,7 @@ The keys work on the map screen only, and the legend shows the current state.
 | 7 | Common items |
 | 8 | Enemies and Crimson Heads (hold while enemies are on: time left until revival on/off) |
 | 9 | Visited rooms → revealed rooms → all rooms |
-| \ (₩) | Korean / English |
+| \ (₩) | Language: English → Korean → Simplified Chinese |
 | - · + (numpad too) | Name size in 10% steps (50–150%) |
 | [ · ] | Name opacity in 10% steps (10–100%) |
 | Shift + - · + | Icon size in 10% steps (50–200%) |

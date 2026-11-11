@@ -12,6 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 s = (ROOT / 'src/re1_mapnames.c').read_text(encoding='utf-8')
 h = (ROOT / 'src/labels.h').read_text(encoding='utf-8')
 t = (ROOT / 'src/legend_text.h').read_text(encoding='utf-8')
+z = (ROOT / 'src/labels_zh.h').read_text(encoding='utf-8')
+zh_rows = re.findall(r'^\{(\d+),(\d+),(\d+),zhpx\d+,', z, re.M)
+assert len(zh_rows) == int(re.search(r'#define ZH_COUNT (\d+)', z)[1])
 cut = lambda a, b: s[s.index(a):s.index(b)]
 count = int(re.search(r'#define LABEL_COUNT (\d+)', h)[1])
 rows = re.findall(r'^\{(\d+),(?:[^,]*,){11}(\d+),(\d+),px\d+[^\n]*/\* (.*?) \*/', h, re.M)
@@ -29,6 +32,7 @@ assert lt[0][2] == 'Shift + [ · ] 아이콘 불투명도 10%' and lt[10][2] == 
 assert lt[20][2] == 'Shift + - · + 아이콘 크기 50%' and lt[51][2] == 'Ctrl + - · + 아이콘 크기 200%'
 assert [x for _, _, x in lt[52:58]] == ['[H] 아이템 이름: 모두', '[H] 아이템 이름: 일반 제외', '[H] 아이템 이름: 끔', '[~] 숨김', '[~] 범례', '[\\] 언어: 한국어']
 assert [x for _, _, x in lt[110:116]] == ['[H] Item names: All', '[H] Item names: No common', '[H] Item names: Off', '[~] Hide', '[~] Legend', '[\\] LANGUAGE: ENGLISH']
+assert [x for _, _, x in lt[168:174]] == ['[H] 物品名称: 全部', '[H] 物品名称: 不含普通', '[H] 物品名称: 关', '[~] 隐藏', '[~] 图例', '[\\] 语言: 简体中文']
 sizes = ','.join('{%s,%s}' % (w, hh) for _, w, hh, _ in rows)
 lt_sizes = ','.join('{%s,%s}' % (w, hh) for w, hh, _ in lt)
 
@@ -51,10 +55,17 @@ typedef struct { float l, t, r, b; } Box;
 typedef struct { Box box; U32 weight; } Occupied;
 static const Size labels[LABEL_COUNT] = {%s};
 static const Size legend_text[LT_COUNT] = {%s};
-static U32 image_w(U32 i) { return i < LABEL_COUNT ? labels[i].w : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].w : 4; }
-static U32 image_h(U32 i) { return i < LABEL_COUNT ? labels[i].h : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].h : 4; }
-static LONG english, all_off, hidden, name_opacity = 70, name_size = 100, visibility, icon_size = 100, icon_opacity = 80;
+#define ZH_FIRST (TEXT_FIRST + LT_COUNT)
+static const struct { U32 label, w, h; } zh_text[] = {%s};
+#define ZH_COUNT (sizeof zh_text / sizeof *zh_text)
+static U32 image_w(U32 i) { return i < LABEL_COUNT ? labels[i].w : i >= ZH_FIRST ? zh_text[i - ZH_FIRST].w : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].w : 4; }
+static U32 image_h(U32 i) { return i < LABEL_COUNT ? labels[i].h : i >= ZH_FIRST ? zh_text[i - ZH_FIRST].h : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].h : 4; }
+static LONG language, all_off, hidden, name_opacity = 70, name_size = 100, visibility, icon_size = 100, icon_opacity = 80;
 static LONG item_names, legend_open = 1, modifier_vk = VK_SHIFT;
+#define TEXT_BLOCK ((U32)(language == 0 ? 1 : language == 1 ? 0 : 2))
+static U32 zh_or(U32 i) { for (U32 k = 0; k < ZH_COUNT; k++) if (zh_text[k].label == i) return ZH_FIRST + k; return i; }
+static U32 zh_image(U32 i) { return language == 2 ? zh_or(i) : i; }
+#define Z(i) zh_image(i)
 static float legend_top; static U32 layer, emit_color;
 static struct { U32 i, color; float x, y, w, h; } op[64]; static int nop;
 static Occupied occ[8]; static U32 nocc;
@@ -67,15 +78,16 @@ static int inside(int n, Box b) { return op[n].x >= b.l && op[n].y >= b.t && op[
 static U32 tint(int n) { return op[n].color & 0xffffff; }
 int main(void) {
     float first_width = -1;
-    for (english = 0; english < 2; english++) for (visibility = 0; visibility < 3; visibility++) for (int m = 0; m < 2; m++) {
+    for (language = 0; language < 3; language++) for (visibility = 0; visibility < 3; visibility++) for (int m = 0; m < 2; m++) {
         modifier_vk = m ? VK_CONTROL : VK_SHIFT; item_names = (visibility + 1) %% 3; icon_opacity = 10 + 30 * visibility; icon_size = 50 + 70 * visibility;
         nop = 0; nocc = 0; legend_open = 1; hidden = 0; all_off = 0; build_legend(0, 1.0f, 2560, 1440);
-        U32 base = LEGEND_FIRST + (english ? LEGEND_PER_LANG : 0), lt = TEXT_FIRST + (english ? LT_PER_LANG : 0);
+        U32 base = LEGEND_FIRST + (language == 0 ? LEGEND_PER_LANG : 0), lt = TEXT_FIRST + TEXT_BLOCK * LT_PER_LANG;  /* zh_cn: the Korean block, zh rasters */
+        if (language == 2) for (U32 r = 0; r < LEGEND_PER_LANG; r++) assert(Z(base + r) >= ZH_FIRST);                 /* every zh legend row has its raster */
         assert(nocc == 2 && occ[0].weight == 8 && occ[1].weight == 8);
         assert(occ[0].box.l < 100 && occ[1].box.r > 2400 && occ[0].box.b == occ[1].box.b);       /* bottom-left, bottom-right */
         int cell[12];
-        for (int r = 0; r < 9; r++) cell[r] = find(base + LG_ROW + r);                     /* every row on (all shown) */
-        cell[9] = find(base + LG_SCOPE + visibility); cell[10] = find(lt + LT_ITEM_NAMES + (item_names + 2) %% 3); cell[11] = find(lt + LT_LANG);
+        for (int r = 0; r < 9; r++) cell[r] = find(Z(base + LG_ROW + r));                     /* every row on (all shown) */
+        cell[9] = find(Z(base + LG_SCOPE + visibility)); cell[10] = find(lt + LT_ITEM_NAMES + (item_names + 2) %% 3); cell[11] = find(lt + LT_LANG);
         for (int r = 0; r < 12; r++) assert(cell[r] >= 0 && inside(cell[r], occ[0].box));
         /* two columns (RE0 layout): [0]..[4] with [H] under [4], [5]..[8] with [9] under [8] and [\\] under [9] */
         for (int r = 1; r < 5; r++) { assert(op[cell[r]].x == op[cell[0]].x); assert(op[cell[r]].y > op[cell[r - 1]].y); }
@@ -94,23 +106,23 @@ int main(void) {
         if (first_width < 0) first_width = width; assert(width == first_width);
         static const int col[9] = {-1, COL_ROOM, COL_LOCK, COL_KEY, COL_FILE, COL_PUZZLE, COL_EVENT, COL_COMMON, COL_ENEMY};
         for (int r = 1; r < 9; r++) assert(tint(cell[r]) == cat_color[col[r]]);                /* the INI colour of the category */
-        int hide = find(lt + LT_HIDE), zoom = find(LG_ZOOM + english);
-        assert(hide >= 0 && inside(hide, occ[0].box) && op[hide].x > op[find(base + LG_TITLE)].x + op[find(base + LG_TITLE)].w);
+        int hide = find(lt + LT_HIDE), zoom = find(Z(LG_ZOOM + (language == 0)));
+        assert(hide >= 0 && inside(hide, occ[0].box) && op[hide].x > op[find(Z(base + LG_TITLE))].x + op[find(Z(base + LG_TITLE))].w);
         assert(find(lt + LT_ITEM_NAMES + (item_names + 3) %% 3) < 0 && find(lt + LT_ITEM_NAMES + (item_names + 1) %% 3) < 0 && zoom >= 0 && op[zoom].y > op[cell[11]].y);
-        int ro[4] = {find(base + LG_OPACITY + 6), find(base + LG_SIZE + 5),
+        int ro[4] = {find(Z(base + LG_OPACITY + 6)), find(Z(base + LG_SIZE + 5)),
                      find(lt + LT_ICON_OPACITY + m * 10 + (icon_opacity - 10) / 10), find(lt + LT_ICON_SIZE + m * 16 + (icon_size - 50) / 10)};
         for (int i = 0; i < 4; i++) { assert(ro[i] >= 0 && inside(ro[i], occ[1].box)); if (i) assert(op[ro[i]].y > op[ro[i - 1]].y); }
         for (int n = 0; n < nop; n++) if (op[n].i != PANEL_IMAGE) assert(inside(n, occ[0].box) || inside(n, occ[1].box));
         /* disabled rows: #6A6A6A; a changed INI colour follows; [H] off is grey too */
         nop = 0; nocc = 0; hidden = (1 << EVENT_KIND) | (1 << CRIMSON_KIND) | 1; cat_color[COL_KEY] = 0x123456; item_names = 0; build_legend(0, 1.0f, 2560, 1440);
-        assert(tint(find(base + LG_ROW + 6)) == COLOR_OFF && tint(find(base + LG_ROW + 8)) == COLOR_OFF && tint(find(base + LG_ROW + 1)) == COLOR_OFF);
-        assert(tint(find(base + LG_ROW + 3)) == 0x123456 && tint(find(base + LG_ROW + 2)) == cat_color[COL_LOCK] && tint(find(lt + LT_ITEM_NAMES + 2)) == COLOR_OFF);
+        assert(tint(find(Z(base + LG_ROW + 6))) == COLOR_OFF && tint(find(Z(base + LG_ROW + 8))) == COLOR_OFF && tint(find(Z(base + LG_ROW + 1))) == COLOR_OFF);
+        assert(tint(find(Z(base + LG_ROW + 3))) == 0x123456 && tint(find(Z(base + LG_ROW + 2))) == cat_color[COL_LOCK] && tint(find(lt + LT_ITEM_NAMES + 2)) == COLOR_OFF);
         cat_color[COL_KEY] = color_default[COL_KEY];
         nop = 0; nocc = 0; hidden = 0; all_off = 1; build_legend(0, 1.0f, 2560, 1440);
-        for (int r = 0; r < 9; r++) assert(tint(find(base + LG_ROW + r)) == COLOR_OFF);
+        for (int r = 0; r < 9; r++) assert(tint(find(Z(base + LG_ROW + r))) == COLOR_OFF);
         all_off = 0; hidden = 0;
         nop = 0; nocc = 0; legend_open = 0; build_legend(0, 1.0f, 2560, 1440);
-        assert(nocc == 2 && occ[1].box.r == occ[1].box.l && find(lt + LT_FOLD) >= 0 && find(base + LG_TITLE) < 0 && nop == 2);
+        assert(nocc == 2 && occ[1].box.r == occ[1].box.l && find(lt + LT_FOLD) >= 0 && find(Z(base + LG_TITLE)) < 0 && nop == 2);
         assert(inside(find(lt + LT_FOLD), occ[0].box));
     }
     return 0;
@@ -118,10 +130,10 @@ int main(void) {
 '''
 defines = '\n'.join(re.findall(r'^#define LEGEND_(?:FIRST|PER_LANG) \d+$', h, re.M))
 lt_defines = '\n'.join(re.findall(r'^#define LT_\w+ \d+', t, re.M))
-prog = PROG % (count, defines, lt_defines, sizes, lt_sizes, cut('#define LG_TITLE', '/* Kerosene tank i'))
+prog = PROG % (count, defines, lt_defines, sizes, lt_sizes, ','.join('{%s,%s,%s}' % r for r in zh_rows), cut('#define LG_TITLE', '/* Kerosene tank i'))
 with tempfile.TemporaryDirectory() as d:
     c, exe = Path(d) / 'legend.c', Path(d) / 'legend'
     c.write_text(prog, encoding='utf-8')
     subprocess.run(['clang', '-w', '-I', str(ROOT / 'src'), str(c), '-o', str(exe)], check=True)
     subprocess.run([str(exe)], check=True)
-print('PASS: legend in two columns ([0]-[4] [H] | [5]-[8] [9] [\\]), stable panel width, colours from the INI table, disabled #6A6A6A, readout bottom-right, fold to one line; both languages')
+print('PASS: legend in two columns ([0]-[4] [H] | [5]-[8] [9] [\\]), stable panel width, colours from the INI table, disabled #6A6A6A, readout bottom-right, fold to one line; Korean, English and Chinese (zh_cn)')

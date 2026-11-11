@@ -15,7 +15,8 @@ COMMON_RGB = (255, 255, 255)  # all name rasters are white: the run time multipl
 PUZZLE_RGB = (255, 255, 255)
 KEY_RGB = (254, 254, 254)  # distinct from DOC_RGB only so the size class below can tell key from file names
 DOC_RGB = (255, 255, 255)  # document names
-LANGS = ((1, 'ko', 1), (2, 'en', 0))  # label lang code, SIZES key, index in item_names.json
+LANGS = ((1, 'ko', 1), (2, 'en', 0), (3, 'zh', None))  # label lang code, SIZES key, index in item_names.json (zh: data/zh_cn.json)
+ZH = json.loads((ROOT / 'data/zh_cn.json').read_text(encoding='utf-8'))  # zh_cn, the third language slot: ' / ' breaks lines
 # Puzzle marks that have no label row (src/synth_marks.h): id >= 1000, name lines per language.
 SYNTH = [(1001, ('주황색 램프',), ('Orange Lamp',)), (1002, ('녹색 램프',), ('Green Lamp',)), (1003, ('붉은 램프',), ('Red Lamp',)),
          (1010, ('비밀번호 문',), ('Passcode Door',)), (1011, ('MO 디스크 판독기',), ('MO Disk Reader',)),
@@ -38,32 +39,32 @@ def main():
     images, rows = [], []
     for item in ids:
         for lang, key, at in LANGS:
-            text = names[str(item)][at]
-            lines = wrap(drop_particle(text) if key == 'ko' else text)
+            text = ZH['items'][str(item)] if key == 'zh' else names[str(item)][at]
+            lines = text.split(' / ') if key == 'zh' else wrap(drop_particle(text) if key == 'ko' else text)
             size = SIZES[4, key]
-            w, hh = block_size(lines, size)
+            w, hh = block_size(lines, size, key)
             canvas = Image.new('RGBA', (w + 2, hh + 2))
-            draw_block(canvas, lines, (w + 2) / 2, (hh + 2) / 2, size, COMMON_RGB[::-1])
+            draw_block(canvas, lines, (w + 2) / 2, (hh + 2) / 2, size, COMMON_RGB[::-1], key)
             name = 'ntpx%d' % len(images)
             images.append('static const unsigned char %s[]={%s};' % (name, ','.join(map(str, canvas.tobytes()))))
             rows.append('{%d,%d,%s,%d,%d}, /* %s */' % (canvas.width, canvas.height, name, item, lang, text))
     for item, ko, en in SYNTH:
         for lang, key, _ in LANGS:
-            lines = list((ko, en)[lang - 1])
+            lines = ZH['synth'][str(item)].split(' / ') if key == 'zh' else list((ko, en)[lang - 1])
             size = SIZES[2, key]
-            w, hh = block_size(lines, size)
+            w, hh = block_size(lines, size, key)
             canvas = Image.new('RGBA', (w + 2, hh + 2))
-            draw_block(canvas, lines, (w + 2) / 2, (hh + 2) / 2, size, PUZZLE_RGB[::-1])
+            draw_block(canvas, lines, (w + 2) / 2, (hh + 2) / 2, size, PUZZLE_RGB[::-1], key)
             name = 'ntpx%d' % len(images)
             images.append('static const unsigned char %s[]={%s};' % (name, ','.join(map(str, canvas.tobytes()))))
             rows.append('{%d,%d,%s,%d,%d}, /* %s */' % (canvas.width, canvas.height, name, item, lang, ' / '.join(lines)))
     for item, ko, en, colour in DOCS:
         for lang, key, _ in LANGS:
-            lines = [t for t in ' / '.join((ko, en)[lang - 1]).split(' / ')]
+            lines = ZH['synth'][str(item)].split(' / ') if key == 'zh' else [t for t in ' / '.join((ko, en)[lang - 1]).split(' / ')]
             size = SIZES[4 if colour == KEY_RGB else 5, key]
-            w, hh = block_size(lines, size)
+            w, hh = block_size(lines, size, key)
             canvas = Image.new('RGBA', (w + 2, hh + 2))
-            draw_block(canvas, lines, (w + 2) / 2, (hh + 2) / 2, size, colour[::-1])
+            draw_block(canvas, lines, (w + 2) / 2, (hh + 2) / 2, size, colour[::-1], key)
             name = 'ntpx%d' % len(images)
             images.append('static const unsigned char %s[]={%s};' % (name, ','.join(map(str, canvas.tobytes()))))
             rows.append('{%d,%d,%s,%d,%d}, /* %s */' % (canvas.width, canvas.height, name, item, lang, ' '.join(lines)))
