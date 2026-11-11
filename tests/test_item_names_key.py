@@ -25,7 +25,7 @@ typedef unsigned U32; typedef long LONG; typedef unsigned char BYTE; typedef uns
 #define VK_OEM_4 0xdb
 #define VK_OEM_6 0xdd
 #define VK_OEM_5 0xdc
-static volatile LONG hidden, english, all_off, visibility, crimson_time, legend_open = 1, name_size = 100, name_opacity = 70, icon_size = 100, icon_opacity = 80;
+static volatile LONG hidden, language, all_off, visibility, crimson_time, legend_open = 1, name_size = 100, name_opacity = 70, icon_size = 100, icon_opacity = 80;
 static volatile LONG item_names, modifier_vk = VK_SHIFT;
 #define CRIMSON_KIND 8
 #define GROUPS 7
@@ -64,10 +64,10 @@ int main(void) {
     assert(crimson_time == 1);                              /* enemies off: the long press does nothing */
     hidden = 0;
     assert(visibility == 0); tap('9'); assert(visibility == 1); tap('9'); assert(visibility == 2); tap('9'); assert(visibility == 0);   /* 9 is the scope */
-    assert(english == 0); tap(VK_OEM_5); assert(english == 1); tap(VK_OEM_5); assert(english == 0);                                   /* backslash is the language */
+    assert(language == 0); tap(VK_OEM_5); assert(language == 1); tap(VK_OEM_5); assert(language == 2); tap(VK_OEM_5); assert(language == 0); /* backslash: English -> Korean -> Chinese */
     tap('0'); assert(all_off == 1); tap('0'); assert(all_off == 0);
     for (int old = 0; old < 1; old++) { visibility = 0; tap('8'); assert(visibility == 0 && hidden == 256); tap('8'); }               /* 8 no longer changes the scope */
-    hidden = 0; english = 1; tap('9'); assert(english == 1);                                                                          /* 9 no longer changes the language */
+    hidden = 0; language = 1; tap('9'); assert(language == 1);                                                                          /* 9 no longer changes the language */
     return 0;
 }
 '''

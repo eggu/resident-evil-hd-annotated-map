@@ -1,0 +1,2744 @@
+{
+ "_note": "tools/render_zh.py output: zh_cn room-name layout; canvas units (1280x720).",
+ "names": [
+  {
+   "room": 0,
+   "lang": "zh",
+   "lines": [
+    "药品储藏室"
+   ],
+   "anchor": [
+    182.5,
+    381.5
+   ],
+   "box": [
+    152,
+    374,
+    213,
+    389
+   ],
+   "leader": null,
+   "coverage": 0.705
+  },
+  {
+   "room": 1,
+   "lang": "zh",
+   "lines": [
+    "西侧内楼梯"
+   ],
+   "anchor": [
+    169.5,
+    341.5
+   ],
+   "box": [
+    139,
+    334,
+    200,
+    349
+   ],
+   "leader": null,
+   "coverage": 0.951
+  },
+  {
+   "room": 2,
+   "lang": "zh",
+   "lines": [
+    "小储藏室"
+   ],
+   "anchor": [
+    237.5,
+    378.5
+   ],
+   "box": [
+    213,
+    371,
+    262,
+    386
+   ],
+   "leader": null,
+   "coverage": 0.796
+  },
+  {
+   "room": 3,
+   "lang": "zh",
+   "lines": [
+    "北侧走廊"
+   ],
+   "anchor": [
+    319.5,
+    353.5
+   ],
+   "box": [
+    295,
+    346,
+    344,
+    361
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 4,
+   "lang": "zh",
+   "lines": [
+    "茶室"
+   ],
+   "anchor": [
+    287.5,
+    494.5
+   ],
+   "box": [
+    274,
+    487,
+    300,
+    502
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 5,
+   "lang": "zh",
+   "lines": [
+    "餐厅"
+   ],
+   "anchor": [
+    322.5,
+    545.5
+   ],
+   "box": [
+    310,
+    538,
+    336,
+    553
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 6,
+   "lang": "zh",
+   "lines": [
+    "大厅"
+   ],
+   "anchor": [
+    513.5,
+    586.5
+   ],
+   "box": [
+    500,
+    579,
+    526,
+    594
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 7,
+   "lang": "zh",
+   "lines": [
+    "美术室"
+   ],
+   "anchor": [
+    658.5,
+    562.5
+   ],
+   "box": [
+    640,
+    555,
+    678,
+    570
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 8,
+   "lang": "zh",
+   "lines": [
+    "L形走廊"
+   ],
+   "anchor": [
+    820.5,
+    574.5
+   ],
+   "box": [
+    798,
+    567,
+    842,
+    582
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 9,
+   "lang": "zh",
+   "lines": [
+    "弯曲走廊"
+   ],
+   "anchor": [
+    747.5,
+    347.5
+   ],
+   "box": [
+    723,
+    340,
+    772,
+    355
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 10,
+   "lang": "zh",
+   "lines": [
+    "黑暗走廊"
+   ],
+   "anchor": [
+    634.5,
+    388.5
+   ],
+   "box": [
+    610,
+    381,
+    659,
+    396
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 11,
+   "lang": "zh",
+   "lines": [
+    "墓地"
+   ],
+   "anchor": [
+    485.5,
+    335.5
+   ],
+   "box": [
+    472,
+    328,
+    498,
+    342
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 12,
+   "lang": "zh",
+   "lines": [
+    "温室"
+   ],
+   "anchor": [
+    384.5,
+    388.5
+   ],
+   "box": [
+    372,
+    381,
+    398,
+    396
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 13,
+   "lang": "zh",
+   "lines": [
+    "老虎",
+    "石像室"
+   ],
+   "anchor": [
+    302.5,
+    380.5
+   ],
+   "box": [
+    284,
+    366,
+    322,
+    396
+   ],
+   "leader": null,
+   "coverage": 0.472
+  },
+  {
+   "room": 14,
+   "lang": "zh",
+   "lines": [
+    "研究员卧室"
+   ],
+   "anchor": [
+    232.5,
+    456.5
+   ],
+   "box": [
+    202,
+    449,
+    263,
+    464
+   ],
+   "leader": null,
+   "coverage": 0.872
+  },
+  {
+   "room": 15,
+   "lang": "zh",
+   "lines": [
+    "酒吧"
+   ],
+   "anchor": [
+    340.5,
+    449.5
+   ],
+   "box": [
+    328,
+    442,
+    354,
+    457
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 16,
+   "lang": "zh",
+   "lines": [
+    "秘密通道"
+   ],
+   "anchor": [
+    695.5,
+    497.5
+   ],
+   "box": [
+    671,
+    490,
+    720,
+    505
+   ],
+   "leader": null,
+   "coverage": 0.867
+  },
+  {
+   "room": 17,
+   "lang": "zh",
+   "lines": [
+    "大美术室·镜子房间"
+   ],
+   "anchor": [
+    641.5,
+    478.5
+   ],
+   "box": [
+    588,
+    471,
+    695,
+    486
+   ],
+   "leader": null,
+   "coverage": 0.953
+  },
+  {
+   "room": 18,
+   "lang": "zh",
+   "lines": [
+    "西侧外楼梯"
+   ],
+   "anchor": [
+    107.5,
+    449.5
+   ],
+   "box": [
+    77,
+    442,
+    138,
+    457
+   ],
+   "leader": null,
+   "coverage": 0.755
+  },
+  {
+   "room": 19,
+   "lang": "zh",
+   "lines": [
+    "浴室"
+   ],
+   "anchor": [
+    807.5,
+    360.5
+   ],
+   "box": [
+    794,
+    353,
+    820,
+    368
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 20,
+   "lang": "zh",
+   "lines": [
+    "室外锅炉"
+   ],
+   "anchor": [
+    851.5,
+    314.5
+   ],
+   "box": [
+    827,
+    307,
+    876,
+    322
+   ],
+   "leader": null,
+   "coverage": 0.965
+  },
+  {
+   "room": 21,
+   "lang": "zh",
+   "lines": [
+    "大理石",
+    "房间"
+   ],
+   "anchor": [
+    746.5,
+    384.5
+   ],
+   "box": [
+    728,
+    370,
+    766,
+    400
+   ],
+   "leader": null,
+   "coverage": 0.947
+  },
+  {
+   "room": 22,
+   "lang": "zh",
+   "lines": [
+    "起居室"
+   ],
+   "anchor": [
+    774.5,
+    432.5
+   ],
+   "box": [
+    756,
+    425,
+    794,
+    440
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 23,
+   "lang": "zh",
+   "lines": [
+    "大画廊"
+   ],
+   "anchor": [
+    719.5,
+    421.5
+   ],
+   "box": [
+    700,
+    414,
+    738,
+    429
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 24,
+   "lang": "zh",
+   "lines": [
+    "东侧",
+    "储藏室"
+   ],
+   "anchor": [
+    686.5,
+    346.5
+   ],
+   "box": [
+    668,
+    332,
+    706,
+    362
+   ],
+   "leader": null,
+   "coverage": 0.924
+  },
+  {
+   "room": 25,
+   "lang": "zh",
+   "lines": [
+    "中庭书房"
+   ],
+   "anchor": [
+    627.5,
+    350.5
+   ],
+   "box": [
+    603,
+    343,
+    652,
+    358
+   ],
+   "leader": null,
+   "coverage": 0.733
+  },
+  {
+   "room": 26,
+   "lang": "zh",
+   "lines": [
+    "有顶通道"
+   ],
+   "anchor": [
+    585.5,
+    223.5
+   ],
+   "box": [
+    561,
+    216,
+    610,
+    231
+   ],
+   "leader": null,
+   "coverage": 0.854
+  },
+  {
+   "room": 27,
+   "lang": "zh",
+   "lines": [
+    "园艺棚屋"
+   ],
+   "anchor": [
+    641.5,
+    198.5
+   ],
+   "box": [
+    617,
+    191,
+    666,
+    206
+   ],
+   "leader": null,
+   "coverage": 0.997
+  },
+  {
+   "room": 28,
+   "lang": "zh",
+   "lines": [
+    "隐藏的衣橱"
+   ],
+   "anchor": [
+    772.5,
+    542.5
+   ],
+   "box": [
+    742,
+    535,
+    803,
+    550
+   ],
+   "leader": null,
+   "coverage": 0.934
+  },
+  {
+   "room": 29,
+   "lang": "zh",
+   "lines": [
+    "镜子房间"
+   ],
+   "anchor": [
+    775.5,
+    496.5
+   ],
+   "box": [
+    751,
+    489,
+    800,
+    504
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 30,
+   "lang": "zh",
+   "lines": [
+    "酒吧"
+   ],
+   "anchor": [
+    328.5,
+    447.5
+   ],
+   "box": [
+    316,
+    440,
+    342,
+    455
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 32,
+   "lang": "zh",
+   "lines": [
+    "东侧楼梯"
+   ],
+   "anchor": [
+    673.5,
+    312.5
+   ],
+   "box": [
+    649,
+    305,
+    698,
+    320
+   ],
+   "leader": null,
+   "coverage": 0.931
+  },
+  {
+   "room": 33,
+   "lang": "zh",
+   "lines": [
+    "大画廊"
+   ],
+   "anchor": [
+    566.5,
+    441.5
+   ],
+   "box": [
+    548,
+    434,
+    586,
+    449
+   ],
+   "leader": null,
+   "coverage": 0.986
+  },
+  {
+   "room": 34,
+   "lang": "zh",
+   "lines": [
+    "北侧走廊·茶室"
+   ],
+   "anchor": [
+    297.5,
+    347.5
+   ],
+   "box": [
+    256,
+    340,
+    340,
+    355
+   ],
+   "leader": null,
+   "coverage": 0.952
+  },
+  {
+   "room": 35,
+   "lang": "zh",
+   "lines": [
+    "弯曲走廊·浴室"
+   ],
+   "anchor": [
+    802.5,
+    358.5
+   ],
+   "box": [
+    760,
+    351,
+    844,
+    366
+   ],
+   "leader": null,
+   "coverage": 0.928
+  },
+  {
+   "room": 36,
+   "lang": "zh",
+   "lines": [
+    "大美术室·镜子房间"
+   ],
+   "anchor": [
+    759.5,
+    478.5
+   ],
+   "box": [
+    706,
+    471,
+    813,
+    486
+   ],
+   "leader": null,
+   "coverage": 0.953
+  },
+  {
+   "room": 38,
+   "lang": "zh",
+   "lines": [
+    "地下墓穴"
+   ],
+   "anchor": [
+    519.5,
+    263.5
+   ],
+   "box": [
+    495,
+    256,
+    544,
+    271
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 39,
+   "lang": "zh",
+   "lines": [
+    "餐厅二层"
+   ],
+   "anchor": [
+    323.5,
+    545.5
+   ],
+   "box": [
+    299,
+    538,
+    348,
+    553
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 40,
+   "lang": "zh",
+   "lines": [
+    "阳台"
+   ],
+   "anchor": [
+    312.5,
+    634.5
+   ],
+   "box": [
+    300,
+    627,
+    326,
+    642
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 41,
+   "lang": "zh",
+   "lines": [
+    "C形走廊"
+   ],
+   "anchor": [
+    702.5,
+    502.5
+   ],
+   "box": [
+    680,
+    495,
+    725,
+    510
+   ],
+   "leader": null,
+   "coverage": 0.956
+  },
+  {
+   "room": 42,
+   "lang": "zh",
+   "lines": [
+    "铠甲室"
+   ],
+   "anchor": [
+    650.5,
+    452.5
+   ],
+   "box": [
+    632,
+    445,
+    670,
+    460
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 43,
+   "lang": "zh",
+   "lines": [
+    "小图书室"
+   ],
+   "anchor": [
+    617.5,
+    353.5
+   ],
+   "box": [
+    593,
+    346,
+    642,
+    361
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 44,
+   "lang": "zh",
+   "lines": [
+    "东侧楼梯"
+   ],
+   "anchor": [
+    668.5,
+    327.5
+   ],
+   "box": [
+    644,
+    320,
+    693,
+    335
+   ],
+   "leader": null,
+   "coverage": 0.959
+  },
+  {
+   "room": 45,
+   "lang": "zh",
+   "lines": [
+    "鹿头房间"
+   ],
+   "anchor": [
+    752.5,
+    354.5
+   ],
+   "box": [
+    728,
+    347,
+    777,
+    362
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 46,
+   "lang": "zh",
+   "lines": [
+    "卧室"
+   ],
+   "anchor": [
+    694.5,
+    362.5
+   ],
+   "box": [
+    682,
+    355,
+    708,
+    370
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 47,
+   "lang": "zh",
+   "lines": [
+    "鱼缸室"
+   ],
+   "anchor": [
+    807.5,
+    356.5
+   ],
+   "box": [
+    788,
+    350,
+    826,
+    364
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 48,
+   "lang": "zh",
+   "lines": [
+    "休息室"
+   ],
+   "anchor": [
+    819.5,
+    401.5
+   ],
+   "box": [
+    800,
+    394,
+    838,
+    409
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 49,
+   "lang": "zh",
+   "lines": [
+    "压顶陷阱室"
+   ],
+   "anchor": [
+    755.5,
+    439.5
+   ],
+   "box": [
+    725,
+    432,
+    786,
+    447
+   ],
+   "leader": null,
+   "coverage": 0.967
+  },
+  {
+   "room": 50,
+   "lang": "zh",
+   "lines": [
+    "石柱房间"
+   ],
+   "anchor": [
+    686.5,
+    582.5
+   ],
+   "box": [
+    662,
+    575,
+    711,
+    590
+   ],
+   "leader": null,
+   "coverage": 0.951
+  },
+  {
+   "room": 51,
+   "lang": "zh",
+   "lines": [
+    "阁楼入口"
+   ],
+   "anchor": [
+    767.5,
+    585.5
+   ],
+   "box": [
+    743,
+    578,
+    792,
+    593
+   ],
+   "leader": null,
+   "coverage": 0.906
+  },
+  {
+   "room": 52,
+   "lang": "zh",
+   "lines": [
+    "小餐厅"
+   ],
+   "anchor": [
+    730.5,
+    544.5
+   ],
+   "box": [
+    712,
+    537,
+    750,
+    552
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 53,
+   "lang": "zh",
+   "lines": [
+    "阁楼"
+   ],
+   "anchor": [
+    817.5,
+    526.5
+   ],
+   "box": [
+    804,
+    519,
+    830,
+    534
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 54,
+   "lang": "zh",
+   "lines": [
+    "小餐厅"
+   ],
+   "anchor": [
+    728.5,
+    549.5
+   ],
+   "box": [
+    710,
+    542,
+    748,
+    557
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 55,
+   "lang": "zh",
+   "lines": [
+    "露天平台"
+   ],
+   "anchor": [
+    625.5,
+    538.5
+   ],
+   "box": [
+    601,
+    531,
+    650,
+    546
+   ],
+   "leader": null,
+   "coverage": 0.952
+  },
+  {
+   "room": 56,
+   "lang": "zh",
+   "lines": [
+    "电梯走廊"
+   ],
+   "anchor": [
+    412.5,
+    486.5
+   ],
+   "box": [
+    388,
+    479,
+    437,
+    494
+   ],
+   "leader": null,
+   "coverage": 0.959
+  },
+  {
+   "room": 57,
+   "lang": "zh",
+   "lines": [
+    "镜子走廊"
+   ],
+   "anchor": [
+    285.5,
+    473.5
+   ],
+   "box": [
+    261,
+    466,
+    310,
+    481
+   ],
+   "leader": null,
+   "coverage": 0.955
+  },
+  {
+   "room": 58,
+   "lang": "zh",
+   "lines": [
+    "标本室"
+   ],
+   "anchor": [
+    181.5,
+    377.5
+   ],
+   "box": [
+    162,
+    370,
+    200,
+    385
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 59,
+   "lang": "zh",
+   "lines": [
+    "图书室"
+   ],
+   "anchor": [
+    335.5,
+    394.5
+   ],
+   "box": [
+    316,
+    387,
+    354,
+    402
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 60,
+   "lang": "zh",
+   "lines": [
+    "死亡通道"
+   ],
+   "anchor": [
+    282.5,
+    301.5
+   ],
+   "box": [
+    258,
+    294,
+    307,
+    309
+   ],
+   "leader": null,
+   "coverage": 0.714
+  },
+  {
+   "room": 61,
+   "lang": "zh",
+   "lines": [
+    "图书室"
+   ],
+   "anchor": [
+    370.5,
+    447.5
+   ],
+   "box": [
+    352,
+    440,
+    390,
+    455
+   ],
+   "leader": null,
+   "coverage": 0.96
+  },
+  {
+   "room": 62,
+   "lang": "zh",
+   "lines": [
+    "材料室"
+   ],
+   "anchor": [
+    334.5,
+    489.5
+   ],
+   "box": [
+    316,
+    482,
+    354,
+    497
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 63,
+   "lang": "zh",
+   "lines": [
+    "混凝土通道1"
+   ],
+   "anchor": [
+    594.5,
+    543.5
+   ],
+   "box": [
+    561,
+    536,
+    628,
+    551
+   ],
+   "leader": null,
+   "coverage": 0.955
+  },
+  {
+   "room": 64,
+   "lang": "zh",
+   "lines": [
+    "混凝土通道2"
+   ],
+   "anchor": [
+    425.5,
+    533.5
+   ],
+   "box": [
+    392,
+    526,
+    459,
+    541
+   ],
+   "leader": null,
+   "coverage": 0.955
+  },
+  {
+   "room": 65,
+   "lang": "zh",
+   "lines": [
+    "厨房"
+   ],
+   "anchor": [
+    354.5,
+    493.5
+   ],
+   "box": [
+    342,
+    486,
+    368,
+    501
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 66,
+   "lang": "zh",
+   "lines": [
+    "西侧内楼梯"
+   ],
+   "anchor": [
+    167.5,
+    459.5
+   ],
+   "box": [
+    137,
+    452,
+    198,
+    467
+   ],
+   "leader": null,
+   "coverage": 0.951
+  },
+  {
+   "room": 67,
+   "lang": "zh",
+   "lines": [
+    "西侧外楼梯"
+   ],
+   "anchor": [
+    137.5,
+    301.5
+   ],
+   "box": [
+    107,
+    294,
+    168,
+    309
+   ],
+   "leader": null,
+   "coverage": 0.869
+  },
+  {
+   "room": 69,
+   "lang": "zh",
+   "lines": [
+    "死亡通道"
+   ],
+   "anchor": [
+    400.5,
+    364.5
+   ],
+   "box": [
+    376,
+    357,
+    425,
+    372
+   ],
+   "leader": null,
+   "coverage": 0.959
+  },
+  {
+   "room": 70,
+   "lang": "zh",
+   "lines": [
+    "楼梯通道"
+   ],
+   "anchor": [
+    336.5,
+    449.5
+   ],
+   "box": [
+    312,
+    442,
+    361,
+    457
+   ],
+   "leader": null,
+   "coverage": 0.619
+  },
+  {
+   "room": 71,
+   "lang": "zh",
+   "lines": [
+    "大厅"
+   ],
+   "anchor": [
+    512.5,
+    565.5
+   ],
+   "box": [
+    500,
+    558,
+    526,
+    573
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 72,
+   "lang": "zh",
+   "lines": [
+    "中央花园"
+   ],
+   "anchor": [
+    465.5,
+    555.5
+   ],
+   "box": [
+    441,
+    548,
+    490,
+    563
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 73,
+   "lang": "zh",
+   "lines": [
+    "水池"
+   ],
+   "anchor": [
+    419.5,
+    385.5
+   ],
+   "box": [
+    406,
+    378,
+    432,
+    393
+   ],
+   "leader": null,
+   "coverage": 0.954
+  },
+  {
+   "room": 74,
+   "lang": "zh",
+   "lines": [
+    "瀑布"
+   ],
+   "anchor": [
+    328.5,
+    543.5
+   ],
+   "box": [
+    316,
+    536,
+    342,
+    551
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 75,
+   "lang": "zh",
+   "lines": [
+    "停机坪"
+   ],
+   "anchor": [
+    461.5,
+    479.5
+   ],
+   "box": [
+    442,
+    472,
+    480,
+    487
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 76,
+   "lang": "zh",
+   "lines": [
+    "之字形小路"
+   ],
+   "anchor": [
+    203.5,
+    382.5
+   ],
+   "box": [
+    173,
+    375,
+    234,
+    390
+   ],
+   "leader": null,
+   "coverage": 0.956
+  },
+  {
+   "room": 77,
+   "lang": "zh",
+   "lines": [
+    "喷泉"
+   ],
+   "anchor": [
+    209.5,
+    575.5
+   ],
+   "box": [
+    196,
+    568,
+    222,
+    583
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 78,
+   "lang": "zh",
+   "lines": [
+    "地下石像室"
+   ],
+   "anchor": [
+    230.5,
+    608.5
+   ],
+   "box": [
+    200,
+    601,
+    261,
+    616
+   ],
+   "leader": null,
+   "coverage": 0.934
+  },
+  {
+   "room": 79,
+   "lang": "zh",
+   "lines": [
+    "地下入口通道"
+   ],
+   "anchor": [
+    468.5,
+    265.5
+   ],
+   "box": [
+    432,
+    258,
+    504,
+    273
+   ],
+   "leader": null,
+   "coverage": 0.958
+  },
+  {
+   "room": 80,
+   "lang": "zh",
+   "lines": [
+    "岔路"
+   ],
+   "anchor": [
+    571.5,
+    381.5
+   ],
+   "box": [
+    558,
+    374,
+    584,
+    389
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 81,
+   "lang": "zh",
+   "lines": [
+    "发电机室"
+   ],
+   "anchor": [
+    668.5,
+    334.5
+   ],
+   "box": [
+    644,
+    327,
+    693,
+    342
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 82,
+   "lang": "zh",
+   "lines": [
+    "恩里克的房间"
+   ],
+   "anchor": [
+    738.5,
+    566.5
+   ],
+   "box": [
+    702,
+    559,
+    774,
+    574
+   ],
+   "leader": null,
+   "coverage": 0.95
+  },
+  {
+   "room": 83,
+   "lang": "zh",
+   "lines": [
+    "巨石通道1"
+   ],
+   "anchor": [
+    404.5,
+    440.5
+   ],
+   "box": [
+    376,
+    433,
+    432,
+    448
+   ],
+   "leader": null,
+   "coverage": 0.956
+  },
+  {
+   "room": 84,
+   "lang": "zh",
+   "lines": [
+    "蜘蛛房间"
+   ],
+   "anchor": [
+    456.5,
+    535.5
+   ],
+   "box": [
+    432,
+    528,
+    481,
+    543
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 85,
+   "lang": "zh",
+   "lines": [
+    "笔直通道"
+   ],
+   "anchor": [
+    441.5,
+    591.5
+   ],
+   "box": [
+    417,
+    584,
+    466,
+    599
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 86,
+   "lang": "zh",
+   "lines": [
+    "瀑布"
+   ],
+   "anchor": [
+    328.5,
+    541.5
+   ],
+   "box": [
+    316,
+    534,
+    342,
+    549
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 87,
+   "lang": "zh",
+   "lines": [
+    "巨石通道2"
+   ],
+   "anchor": [
+    342.5,
+    537.5
+   ],
+   "box": [
+    314,
+    530,
+    370,
+    545
+   ],
+   "leader": null,
+   "coverage": 0.956
+  },
+  {
+   "room": 88,
+   "lang": "zh",
+   "lines": [
+    "巨石通道1"
+   ],
+   "anchor": [
+    418.5,
+    440.5
+   ],
+   "box": [
+    390,
+    433,
+    446,
+    448
+   ],
+   "leader": null,
+   "coverage": 0.962
+  },
+  {
+   "room": 89,
+   "lang": "zh",
+   "lines": [
+    "泥泞小路"
+   ],
+   "anchor": [
+    494.5,
+    643.5
+   ],
+   "box": [
+    470,
+    636,
+    519,
+    651
+   ],
+   "leader": null,
+   "coverage": 0.954
+  },
+  {
+   "room": 90,
+   "lang": "zh",
+   "lines": [
+    "小墓碑"
+   ],
+   "anchor": [
+    669.5,
+    565.5
+   ],
+   "box": [
+    650,
+    558,
+    688,
+    573
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 91,
+   "lang": "zh",
+   "lines": [
+    "林间小路"
+   ],
+   "anchor": [
+    666.5,
+    338.5
+   ],
+   "box": [
+    642,
+    331,
+    691,
+    346
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 92,
+   "lang": "zh",
+   "lines": [
+    "小屋"
+   ],
+   "anchor": [
+    626.5,
+    251.5
+   ],
+   "box": [
+    614,
+    244,
+    640,
+    259
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 93,
+   "lang": "zh",
+   "lines": [
+    "杰茜卡之墓"
+   ],
+   "anchor": [
+    371.5,
+    390.5
+   ],
+   "box": [
+    341,
+    383,
+    402,
+    398
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 94,
+   "lang": "zh",
+   "lines": [
+    "垃圾压缩室"
+   ],
+   "anchor": [
+    286.5,
+    567.5
+   ],
+   "box": [
+    256,
+    560,
+    317,
+    575
+   ],
+   "leader": null,
+   "coverage": 0.94
+  },
+  {
+   "room": 95,
+   "lang": "zh",
+   "lines": [
+    "弯曲的地下通道"
+   ],
+   "anchor": [
+    495.5,
+    431.5
+   ],
+   "box": [
+    454,
+    424,
+    538,
+    439
+   ],
+   "leader": null,
+   "coverage": 0.736
+  },
+  {
+   "room": 96,
+   "lang": "zh",
+   "lines": [
+    "地下储藏室"
+   ],
+   "anchor": [
+    650.5,
+    463.5
+   ],
+   "box": [
+    620,
+    456,
+    681,
+    471
+   ],
+   "leader": null,
+   "coverage": 0.951
+  },
+  {
+   "room": 97,
+   "lang": "zh",
+   "lines": [
+    "丽莎的房间"
+   ],
+   "anchor": [
+    457.5,
+    336.5
+   ],
+   "box": [
+    427,
+    329,
+    488,
+    344
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 98,
+   "lang": "zh",
+   "lines": [
+    "祭坛楼梯通道"
+   ],
+   "anchor": [
+    543.5,
+    594.5
+   ],
+   "box": [
+    508,
+    587,
+    580,
+    602
+   ],
+   "leader": null,
+   "coverage": 0.807
+  },
+  {
+   "room": 100,
+   "lang": "zh",
+   "lines": [
+    "杰茜卡之墓"
+   ],
+   "anchor": [
+    371.5,
+    469.5
+   ],
+   "box": [
+    341,
+    462,
+    402,
+    477
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 101,
+   "lang": "zh",
+   "lines": [
+    "丽莎的房间"
+   ],
+   "anchor": [
+    457.5,
+    336.5
+   ],
+   "box": [
+    427,
+    329,
+    488,
+    344
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 102,
+   "lang": "zh",
+   "lines": [
+    "喷泉"
+   ],
+   "anchor": [
+    209.5,
+    575.5
+   ],
+   "box": [
+    196,
+    568,
+    222,
+    583
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 103,
+   "lang": "zh",
+   "lines": [
+    "小屋"
+   ],
+   "anchor": [
+    626.5,
+    251.5
+   ],
+   "box": [
+    614,
+    244,
+    640,
+    259
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 104,
+   "lang": "zh",
+   "lines": [
+    "入口走廊"
+   ],
+   "anchor": [
+    161.5,
+    457.5
+   ],
+   "box": [
+    137,
+    450,
+    186,
+    465
+   ],
+   "leader": null,
+   "coverage": 0.959
+  },
+  {
+   "room": 105,
+   "lang": "zh",
+   "lines": [
+    "001号房"
+   ],
+   "anchor": [
+    216.5,
+    361.5
+   ],
+   "box": [
+    194,
+    354,
+    240,
+    369
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 106,
+   "lang": "zh",
+   "lines": [
+    "001号房浴室"
+   ],
+   "anchor": [
+    198.5,
+    415.5
+   ],
+   "box": [
+    164,
+    408,
+    233,
+    423
+   ],
+   "leader": null,
+   "coverage": 0.681
+  },
+  {
+   "room": 107,
+   "lang": "zh",
+   "lines": [
+    "储藏室"
+   ],
+   "anchor": [
+    218.5,
+    490.5
+   ],
+   "box": [
+    200,
+    483,
+    238,
+    498
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 108,
+   "lang": "zh",
+   "lines": [
+    "娱乐室"
+   ],
+   "anchor": [
+    351.5,
+    502.5
+   ],
+   "box": [
+    332,
+    495,
+    370,
+    510
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 109,
+   "lang": "zh",
+   "lines": [
+    "中央走廊"
+   ],
+   "anchor": [
+    396.5,
+    551.5
+   ],
+   "box": [
+    372,
+    544,
+    421,
+    559
+   ],
+   "leader": null,
+   "coverage": 0.959
+  },
+  {
+   "room": 110,
+   "lang": "zh",
+   "lines": [
+    "002号房"
+   ],
+   "anchor": [
+    519.5,
+    402.5
+   ],
+   "box": [
+    496,
+    395,
+    542,
+    410
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 111,
+   "lang": "zh",
+   "lines": [
+    "002号房浴室"
+   ],
+   "anchor": [
+    460.5,
+    382.5
+   ],
+   "box": [
+    426,
+    375,
+    495,
+    390
+   ],
+   "leader": null,
+   "coverage": 0.841
+  },
+  {
+   "room": 112,
+   "lang": "zh",
+   "lines": [
+    "画廊"
+   ],
+   "anchor": [
+    533.5,
+    493.5
+   ],
+   "box": [
+    520,
+    486,
+    546,
+    501
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 113,
+   "lang": "zh",
+   "lines": [
+    "医务室"
+   ],
+   "anchor": [
+    457.5,
+    457.5
+   ],
+   "box": [
+    438,
+    450,
+    476,
+    465
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 114,
+   "lang": "zh",
+   "lines": [
+    "003号房"
+   ],
+   "anchor": [
+    662.5,
+    475.5
+   ],
+   "box": [
+    640,
+    468,
+    686,
+    483
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 115,
+   "lang": "zh",
+   "lines": [
+    "003号房浴室"
+   ],
+   "anchor": [
+    606.5,
+    456.5
+   ],
+   "box": [
+    572,
+    449,
+    641,
+    464
+   ],
+   "leader": null,
+   "coverage": 0.812
+  },
+  {
+   "room": 116,
+   "lang": "zh",
+   "lines": [
+    "42号植物房间"
+   ],
+   "anchor": [
+    758.5,
+    537.5
+   ],
+   "box": [
+    722,
+    530,
+    796,
+    545
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 117,
+   "lang": "zh",
+   "lines": [
+    "大水槽入口"
+   ],
+   "anchor": [
+    256.5,
+    409.5
+   ],
+   "box": [
+    226,
+    402,
+    287,
+    417
+   ],
+   "leader": null,
+   "coverage": 0.951
+  },
+  {
+   "room": 118,
+   "lang": "zh",
+   "lines": [
+    "大水槽通道"
+   ],
+   "anchor": [
+    546.5,
+    495.5
+   ],
+   "box": [
+    516,
+    488,
+    577,
+    503
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 119,
+   "lang": "zh",
+   "lines": [
+    "警卫室"
+   ],
+   "anchor": [
+    426.5,
+    464.5
+   ],
+   "box": [
+    408,
+    457,
+    446,
+    472
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 120,
+   "lang": "zh",
+   "lines": [
+    "大水槽储藏室"
+   ],
+   "anchor": [
+    480.5,
+    422.5
+   ],
+   "box": [
+    444,
+    415,
+    516,
+    430
+   ],
+   "leader": null,
+   "coverage": 0.929
+  },
+  {
+   "room": 121,
+   "lang": "zh",
+   "lines": [
+    "控制室"
+   ],
+   "anchor": [
+    456.5,
+    526.5
+   ],
+   "box": [
+    438,
+    519,
+    476,
+    534
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 122,
+   "lang": "zh",
+   "lines": [
+    "大水槽"
+   ],
+   "anchor": [
+    663.5,
+    521.5
+   ],
+   "box": [
+    644,
+    514,
+    682,
+    529
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 125,
+   "lang": "zh",
+   "lines": [
+    "大水槽入口"
+   ],
+   "anchor": [
+    355.5,
+    295.5
+   ],
+   "box": [
+    325,
+    288,
+    386,
+    303
+   ],
+   "leader": null,
+   "coverage": 0.955
+  },
+  {
+   "room": 126,
+   "lang": "zh",
+   "lines": [
+    "控制室"
+   ],
+   "anchor": [
+    430.5,
+    566.5
+   ],
+   "box": [
+    412,
+    559,
+    450,
+    574
+   ],
+   "leader": null,
+   "coverage": 0.993
+  },
+  {
+   "room": 127,
+   "lang": "zh",
+   "lines": [
+    "大水槽入口"
+   ],
+   "anchor": [
+    418.5,
+    290.5
+   ],
+   "box": [
+    388,
+    283,
+    449,
+    298
+   ],
+   "leader": null,
+   "coverage": 0.562
+  },
+  {
+   "room": 128,
+   "lang": "zh",
+   "lines": [
+    "002号房"
+   ],
+   "anchor": [
+    519.5,
+    403.5
+   ],
+   "box": [
+    496,
+    396,
+    542,
+    411
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 129,
+   "lang": "zh",
+   "lines": [
+    "入口"
+   ],
+   "anchor": [
+    563.5,
+    453.5
+   ],
+   "box": [
+    550,
+    446,
+    576,
+    460
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 130,
+   "lang": "zh",
+   "lines": [
+    "停机坪通道"
+   ],
+   "anchor": [
+    316.5,
+    377.5
+   ],
+   "box": [
+    286,
+    370,
+    347,
+    385
+   ],
+   "leader": null,
+   "coverage": 0.951
+  },
+  {
+   "room": 131,
+   "lang": "zh",
+   "lines": [
+    "物品箱房间"
+   ],
+   "anchor": [
+    625.5,
+    410.5
+   ],
+   "box": [
+    595,
+    403,
+    656,
+    418
+   ],
+   "leader": null,
+   "coverage": 0.885
+  },
+  {
+   "room": 132,
+   "lang": "zh",
+   "lines": [
+    "楼梯"
+   ],
+   "anchor": [
+    427.5,
+    473.5
+   ],
+   "box": [
+    414,
+    466,
+    440,
+    481
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 133,
+   "lang": "zh",
+   "lines": [
+    "影像资料室"
+   ],
+   "anchor": [
+    340.5,
+    390.5
+   ],
+   "box": [
+    310,
+    383,
+    371,
+    398
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 134,
+   "lang": "zh",
+   "lines": [
+    "O形通道"
+   ],
+   "anchor": [
+    489.5,
+    372.5
+   ],
+   "box": [
+    466,
+    365,
+    512,
+    380
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 135,
+   "lang": "zh",
+   "lines": [
+    "手术室"
+   ],
+   "anchor": [
+    497.5,
+    288.5
+   ],
+   "box": [
+    478,
+    281,
+    516,
+    296
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 136,
+   "lang": "zh",
+   "lines": [
+    "停尸间"
+   ],
+   "anchor": [
+    496.5,
+    357.5
+   ],
+   "box": [
+    478,
+    350,
+    516,
+    365
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 137,
+   "lang": "zh",
+   "lines": [
+    "密码走廊"
+   ],
+   "anchor": [
+    401.5,
+    330.5
+   ],
+   "box": [
+    377,
+    323,
+    426,
+    338
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 138,
+   "lang": "zh",
+   "lines": [
+    "X光室A"
+   ],
+   "anchor": [
+    420.5,
+    358.5
+   ],
+   "box": [
+    400,
+    351,
+    441,
+    366
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 139,
+   "lang": "zh",
+   "lines": [
+    "X光室B"
+   ],
+   "anchor": [
+    416.5,
+    304.5
+   ],
+   "box": [
+    396,
+    297,
+    437,
+    312
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 140,
+   "lang": "zh",
+   "lines": [
+    "牢房入口"
+   ],
+   "anchor": [
+    367.5,
+    235.5
+   ],
+   "box": [
+    343,
+    228,
+    392,
+    243
+   ],
+   "leader": null,
+   "coverage": 0.765
+  },
+  {
+   "room": 141,
+   "lang": "zh",
+   "lines": [
+    "电梯入口"
+   ],
+   "anchor": [
+    575.5,
+    393.5
+   ],
+   "box": [
+    551,
+    386,
+    600,
+    401
+   ],
+   "leader": null,
+   "coverage": 0.82
+  },
+  {
+   "room": 143,
+   "lang": "zh",
+   "lines": [
+    "休息室"
+   ],
+   "anchor": [
+    619.5,
+    388.5
+   ],
+   "box": [
+    600,
+    381,
+    638,
+    396
+   ],
+   "leader": null,
+   "coverage": 0.842
+  },
+  {
+   "room": 144,
+   "lang": "zh",
+   "lines": [
+    "供电迷宫A"
+   ],
+   "anchor": [
+    606.5,
+    465.5
+   ],
+   "box": [
+    578,
+    458,
+    635,
+    473
+   ],
+   "leader": null,
+   "coverage": 0.906
+  },
+  {
+   "room": 145,
+   "lang": "zh",
+   "lines": [
+    "供电迷宫B"
+   ],
+   "anchor": [
+    576.5,
+    551.5
+   ],
+   "box": [
+    548,
+    544,
+    605,
+    559
+   ],
+   "leader": null,
+   "coverage": 0.814
+  },
+  {
+   "room": 146,
+   "lang": "zh",
+   "lines": [
+    "供电控制室"
+   ],
+   "anchor": [
+    591.5,
+    610.5
+   ],
+   "box": [
+    561,
+    603,
+    622,
+    618
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 147,
+   "lang": "zh",
+   "lines": [
+    "牢房"
+   ],
+   "anchor": [
+    407.5,
+    262.5
+   ],
+   "box": [
+    394,
+    255,
+    420,
+    270
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 148,
+   "lang": "zh",
+   "lines": [
+    "主研究室"
+   ],
+   "anchor": [
+    484.5,
+    440.5
+   ],
+   "box": [
+    460,
+    433,
+    509,
+    448
+   ],
+   "leader": null,
+   "coverage": 1.0
+  },
+  {
+   "room": 149,
+   "lang": "zh",
+   "lines": [
+    "主研究室入口"
+   ],
+   "anchor": [
+    445.5,
+    273.5
+   ],
+   "box": [
+    410,
+    266,
+    482,
+    281
+   ],
+   "leader": null,
+   "coverage": 0.972
+  },
+  {
+   "room": 153,
+   "lang": "zh",
+   "lines": [
+    "楼梯"
+   ],
+   "anchor": [
+    451.5,
+    318.5
+   ],
+   "box": [
+    438,
+    311,
+    464,
+    326
+   ],
+   "leader": null,
+   "coverage": 0.541
+  }
+ ]
+}

@@ -35,6 +35,7 @@ typedef struct { float x, y, z, rhw; U32 color; float u, v; } Vertex; /* FVF XYZ
 #include "event_spots.h"
 #include "save_points.h"
 #include "name_lines.h"
+#include "labels_zh.h" /* zh_cn rasters of the third language slot (after name_lines.h: zh_lines) */
 #include "colors.h"
 
 #define EXE_MAP_VTABLE   0x83d0f8 /* map object class vtable; slots 0..9 hooked */
@@ -100,7 +101,11 @@ static const int toggle_kind[GROUPS] = {0, 1, 4, 5, 2, 6, 7}; /* HiddenKinds bit
 #define EVENT_KIND 6    /* HiddenKinds bit 64: events; kind 6 of a mark (labels use kind 6 for legend rows only, which are never drawn as marks) */
 #define ITEM_ICON_PX 36 /* ordinary item icon size at 1440p (sprites are 32px); user: 90% of 40 */
 static volatile LONG hidden;       /* bit per kind */
-static volatile LONG english = 1;  /* default English */
+static volatile LONG language;     /* 0 English (default), 1 Korean, 2 Simplified Chinese (zh_cn) */
+/* zh_cn is a compatibility slot: it draws the Korean label rows (lang 1) with the zh rasters of labels_zh.h in their place. */
+#define LANG_ROW   (language == 0 ? 2u : 1u)                 /* labels lang drawn (0 rows: every language) */
+#define NAME_LANG  (language == 0 ? 2 : language == 1 ? 1 : 3) /* item_name_text lang */
+#define TEXT_BLOCK ((U32)(language == 0 ? 1 : language == 1 ? 0 : 2)) /* legend_text block: Korean, English, Chinese */
 static volatile LONG all_off;      /* key 0: hide every marker, keep the legend */
 static volatile LONG visibility; /* 0 visited, 1 revealed, 2 all */
 static volatile LONG crimson_time; /* show minutes left beside Crimson Heads; hold key 7 */
@@ -136,7 +141,7 @@ static void save_settings(void) {
     PUT_INT("Legend", legend_open != 0);
     PUT_INT("Visibility", visibility);
     PUT_INT("HiddenKinds", hidden);
-    PUT_STR("Language", english ? "en" : "ko");
+    PUT_STR("Language", language == 1 ? "ko" : language == 2 ? "zh" : "en");
     PUT_STR("Enabled", all_off ? "0" : "1");
     PUT_STR("CrimsonTime", crimson_time ? "1" : "0");
     PUT_STR("Modifier", modifier_vk == VK_CONTROL ? "Ctrl" : "Shift");
@@ -176,7 +181,7 @@ static int load_settings(void) {
      * bits are kinds, not key numbers, so the new numbering needs no change of the saved toggles. */
     if (version < 4) hidden |= 1 << EVENT_KIND;
     GetPrivateProfileStringA("AnnotatedMap", "Language", "en", v, sizeof v, ini_path);
-    english = !(v[0] == 'k' && v[1] == 'o');
+    language = v[0] == 'k' && v[1] == 'o' ? 1 : v[0] == 'z' && v[1] == 'h' ? 2 : 0;
     all_off = !GetPrivateProfileIntA("AnnotatedMap", "Enabled", 1, ini_path);
     crimson_time = GetPrivateProfileIntA("AnnotatedMap", "CrimsonTime", 0, ini_path) != 0;
     GetPrivateProfileStringA("AnnotatedMap", "Modifier", "Shift", v, sizeof v, ini_path);
@@ -305,7 +310,8 @@ static U32 live_units(U32 room, Live *out) {
 #define ICON_FIRST (LABEL_COUNT + 2) /* icons[0..ICON_COUNT): sprites shared by name-with-icon labels */
 #define TEXT_FIRST (LABEL_COUNT + 2 + ICON_COUNT) /* legend_text[]: legend and readout rows of legend_text.h */
 #define NAME_FIRST (TEXT_FIRST + LT_COUNT) /* item_name_text[]: ordinary item names of item_name_text.h */
-#define IMAGES    (NAME_FIRST + NT_COUNT)
+#define ZH_FIRST  (NAME_FIRST + NT_COUNT) /* zh_text[]: the zh_cn rasters of labels_zh.h */
+#define IMAGES    (ZH_FIRST + ZH_COUNT)
 #define MAXV      (6 * 1536)
 #define LAYERS    3 /* 0 markers, 1 legend panel, 2 legend text: panel and text may sit on different pages */
 static struct { U32 page, x, y; } slot[IMAGES];
@@ -316,9 +322,23 @@ static U32 nverts[LAYERS][MAXPAGES];
 static U32 layer, emit_color = 0xffffffff; /* destination layer and vertex diffuse (alpha) for emit() */
 #define PX_ 14,14,18,255
 static const BYTE panel_px[4 * 4 * 4] = {PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_,PX_};
-static U32 image_w(U32 i) { return i < LABEL_COUNT ? labels[i].w : i == PANEL_IMAGE ? 4 : i >= NAME_FIRST ? item_name_text[i - NAME_FIRST].w : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].w : i >= ICON_FIRST ? icons[i - ICON_FIRST].w : CRIMSON_ATLAS_W; }
-static U32 image_h(U32 i) { return i < LABEL_COUNT ? labels[i].h : i == PANEL_IMAGE ? 4 : i >= NAME_FIRST ? item_name_text[i - NAME_FIRST].h : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].h : i >= ICON_FIRST ? icons[i - ICON_FIRST].h : CRIMSON_ATLAS_H; }
-static const BYTE *image_px(U32 i) { return i < LABEL_COUNT ? labels[i].px : i == PANEL_IMAGE ? panel_px : i >= NAME_FIRST ? item_name_text[i - NAME_FIRST].px : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].px : i >= ICON_FIRST ? icons[i - ICON_FIRST].px : crimson_atlas; }
+static U32 image_w(U32 i) { return i < LABEL_COUNT ? labels[i].w : i == PANEL_IMAGE ? 4 : i >= ZH_FIRST ? zh_text[i - ZH_FIRST].w : i >= NAME_FIRST ? item_name_text[i - NAME_FIRST].w : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].w : i >= ICON_FIRST ? icons[i - ICON_FIRST].w : CRIMSON_ATLAS_W; }
+static U32 image_h(U32 i) { return i < LABEL_COUNT ? labels[i].h : i == PANEL_IMAGE ? 4 : i >= ZH_FIRST ? zh_text[i - ZH_FIRST].h : i >= NAME_FIRST ? item_name_text[i - NAME_FIRST].h : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].h : i >= ICON_FIRST ? icons[i - ICON_FIRST].h : CRIMSON_ATLAS_H; }
+static const BYTE *image_px(U32 i) { return i < LABEL_COUNT ? labels[i].px : i == PANEL_IMAGE ? panel_px : i >= ZH_FIRST ? zh_text[i - ZH_FIRST].px : i >= NAME_FIRST ? item_name_text[i - NAME_FIRST].px : i >= TEXT_FIRST ? legend_text[i - TEXT_FIRST].px : i >= ICON_FIRST ? icons[i - ICON_FIRST].px : crimson_atlas; }
+/* zh_cn: the zh_text entry that replaces label row i (any language; 0 if none), and the image drawn for row i now. */
+static const ZhText *zh_of(U32 i) {
+    static short at[LABEL_COUNT];
+    static int ready;
+    if (!ready) {
+        for (U32 k = 0; k < LABEL_COUNT; k++) at[k] = -1;
+        for (U32 k = 0; k < ZH_COUNT; k++) if (zh_text[k].label < LABEL_COUNT) at[zh_text[k].label] = (short)k;
+        ready = 1;
+    }
+    return i < LABEL_COUNT && at[i] >= 0 ? &zh_text[at[i]] : 0;
+}
+static U32 zh_or(U32 i) { const ZhText *z = zh_of(i); return z ? ZH_FIRST + (U32)(z - zh_text) : i; }
+static const ZhText *zh_row(U32 i) { return language == 2 ? zh_of(i) : 0; }
+static U32 zh_image(U32 i) { return language == 2 ? zh_or(i) : i; }
 static int taller(const void *a, const void *b) {
     return (int)image_h(*(const U32 *)b) - (int)image_h(*(const U32 *)a);
 }
@@ -636,10 +656,11 @@ static void room_name_side(int room, float *px, float *py) {
 static int room_name_spot(U32 room, float ox, float oy, float sx, float sy, float tk, float *cx, float *bottom) {
     for (U32 i = 0; i < LABEL_COUNT; i++) {
         const Label *l = &labels[i];
-        if (l->kind != 0 || (U32)l->room != room || l->flag >= KEROSENE_FLAG || (l->lang && l->lang != (english ? 2u : 1u))) continue;
-        float x = ((int)(ZX(l->x) + ox)) * sx, y = ((int)(ZY(l->y) + oy)) * sy;
-        *cx = x - l->ax * tk + l->w * tk / 2;
-        *bottom = y - l->ay * tk + l->h * tk;
+        if (l->kind != 0 || (U32)l->room != room || l->flag >= KEROSENE_FLAG || (l->lang && l->lang != LANG_ROW)) continue;
+        const ZhText *z = zh_row(i); /* zh_cn: its own anchor and raster */
+        float x = ((int)(ZX(z ? z->x : l->x) + ox)) * sx, y = ((int)(ZY(z ? z->y : l->y) + oy)) * sy;
+        *cx = x - (z ? z->ax : l->ax) * tk + (z ? z->w : l->w) * tk / 2;
+        *bottom = y - (z ? z->ay : l->ay) * tk + (z ? z->h : l->h) * tk;
         return 1;
     }
     return 0;
@@ -751,7 +772,7 @@ static void build_crimson(BYTE *mgr, U32 area, U32 floor, float ox, float oy, fl
         if (minutes > 999) minutes = 999;
         do d[n++] = minutes % 10; while ((minutes /= 10) && n < 3);
         while (n--) pen = crimson_glyph(&crimson_digit[d[n]], idle, pen, ty, s);
-        pen = crimson_glyph(&crimson_unit[english != 0], idle, pen, ty, s);
+        pen = crimson_glyph(&crimson_unit[language != 1], idle, pen, ty, s); /* "분" in Korean, "m" in English and zh_cn */
         reserve(x, y, pen - x, is);
     }
 }
@@ -830,6 +851,7 @@ static int cat_color_of(int cat) {
 /* Line bands of a name image (name_lines.h), 0 for a one-line name. */
 static const NameLines *lines_of(U32 image) {
     if (image < LABEL_COUNT) { for (U32 n = 0; n < LABEL_LINES_COUNT; n++) if (label_lines[n].image == image) return &label_lines[n]; }
+    else if (image >= ZH_FIRST) { for (U32 n = 0; n < ZH_LINES_COUNT; n++) if (zh_lines[n].image == image - ZH_FIRST) return &zh_lines[n]; }
     else if (image >= NAME_FIRST) { for (U32 n = 0; n < NAMETEXT_LINES_COUNT; n++) if (nametext_lines[n].image == image - NAME_FIRST) return &nametext_lines[n]; }
     return 0;
 }
@@ -878,7 +900,7 @@ static void build(BYTE *mgr, U32 area, U32 floor, float ox, float oy, U32 W, U32
             if (!syn_visible((int)(i - LABEL_COUNT), b5, files) || !syn_event_visible(&synth_marks[i - LABEL_COUNT], (const U32 *)(mgr + 0x1fc), b1, b2, b3)) continue;
             synth_store[i - LABEL_COUNT].icon = syn_icon((int)(i - LABEL_COUNT), b1, synth_marks[i - LABEL_COUNT].kind == SYN_EVENT_KIND ? EVENT_ICON : i - LABEL_COUNT >= SYN_DOC_ORGCHEM ? DOC_ICON : PUZZLE_ICON);
         }
-        if (l->area != area || l->floor != floor || (l->lang && l->lang != (english ? 2u : 1u))) continue;
+        if (l->area != area || l->floor != floor || (l->lang && l->lang != LANG_ROW)) continue;
         if (all_off || hidden >> (l->kind == 3 ? 2 : l->kind) & 1) continue;
         int source_room = l->room2 >= 0 ? l->room2 : l->room;
         if (!placed_item_available(l->kind,l->flag,source_room,cbit==0x20,(const U32 *)(mgr+0x1fc),b1,b3)) continue;
@@ -905,13 +927,14 @@ static void build(BYTE *mgr, U32 area, U32 floor, float ox, float oy, U32 W, U32
             build_kerosene(l->flag - KEROSENE_FLAG, ((int)(ZX(l->x) + ox)) * sx, ((int)(ZY(l->y) + oy)) * sy, tk, W, H);
             continue;
         }
-        float w = l->w * tk, h = l->h * tk;
-        int name_img = i >= LABEL_COUNT ? item_name_by_id(syn_name_id((int)(i - LABEL_COUNT)), english ? 2 : 1)
-                                        : l->kind == 7 ? item_name_image(i, english ? 2 : 1) : -1;
+        const ZhText *zr = i < LABEL_COUNT ? zh_row(i) : 0; /* zh_cn: the Korean row drawn with its zh raster */
+        float w = (zr ? zr->w : l->w) * tk, h = (zr ? zr->h : l->h) * tk;
+        int name_img = i >= LABEL_COUNT ? item_name_by_id(syn_name_id((int)(i - LABEL_COUNT)), NAME_LANG)
+                                        : l->kind == 7 ? item_name_image(i, NAME_LANG) : -1;
         if (l->kind == 7 || i >= LABEL_COUNT) { /* the name image replaces the icon's size for the name box */
             w = name_img < 0 ? 0 : image_w(name_img) * tk; h = name_img < 0 ? 0 : image_h(name_img) * tk;
         }
-        float px = l->x, py = l->y;
+        float px = l->kind == 0 && zr ? zr->x : l->x, py = l->kind == 0 && zr ? zr->y : l->y; /* zh room names: their own anchor */
         U32 section=pickup_section(l,b5,b7,visibility);
         if ((int)section!=l->room || i >= LABEL_COUNT) project_pickup(section,l->x2,l->y2,&px,&py);
         if (i >= LABEL_COUNT + SYN_GEN_FIRST) room_name_side(l->room, &px, &py);
@@ -952,10 +975,10 @@ static void build(BYTE *mgr, U32 area, U32 floor, float ox, float oy, U32 W, U32
         }
         /* room names: painted first and never moved; marks do not avoid them, names weigh them 4x. (x, y) is the anchor and
          * (ax, ay) its place in the raster: a leader's room end, or the text centre, so a resized name grows away from it */
-        float x = cx - l->ax * tk, y = cy - l->ay * tk;
+        float x = cx - (zr ? zr->ax : l->ax) * tk, y = cy - (zr ? zr->ay : l->ay) * tk;
         if (x < 0 || y < 0 || x + w > W || y + h > H) continue;
         emit_color = name_alpha | cat_color[COL_ROOM];
-        emit(i, x, y, w, h, 0, 0, 1, 1);
+        emit(zh_image(i), x, y, w, h, 0, 0, 1, 1);
         reserve_w(x, y, w, h, 4);
     }
     /* Enemies, Crimson Heads and the zoomed save icons: the lowest priority, painted before the marks, weight 1. */
@@ -974,7 +997,7 @@ static void build(BYTE *mgr, U32 area, U32 floor, float ox, float oy, U32 W, U32
             emit(l->kind == 7 ? m->label : ICON_FIRST + l->icon - 1, m->mark.l, m->mark.t, is, is, 0, 0, 1, 1);
             if (m->state != MARK_NAMED) continue;
             emit_color = name_alpha | cat_color[cat_color_of(m->cat)];
-            emit_name(m->label >= LABEL_COUNT ? item_name_by_id(syn_name_id((int)(m->label - LABEL_COUNT)), english ? 2 : 1) : l->kind == 7 ? item_name_image(m->label, english ? 2 : 1) : m->label, m->name.l, m->name.t, m->name.r - m->name.l, m->name.b - m->name.t, name_align(m->slot));
+            emit_name(m->label >= LABEL_COUNT ? item_name_by_id(syn_name_id((int)(m->label - LABEL_COUNT)), NAME_LANG) : l->kind == 7 ? item_name_image(m->label, NAME_LANG) : zh_image(m->label), m->name.l, m->name.t, m->name.r - m->name.l, m->name.b - m->name.t, name_align(m->slot));
         }
     emit_color = 0xffffffff;
 }
@@ -987,7 +1010,7 @@ static void build(BYTE *mgr, U32 area, U32 floor, float ox, float oy, U32 W, U32
 #define LG_ROW     22 /* categories [0]..[8] */
 #define LG_SCOPE   31 /* [9], 3 states */
 #define LG_NOTE    34
-#define LG_ZOOM    (LABEL_COUNT - 2) /* appended after both language blocks: Korean, English */
+#define LG_ZOOM    (LABEL_COUNT - 2) /* appended after both language blocks: Korean, English (zh_cn: the Korean row's zh raster) */
 static void legend_quad(U32 i, float x, float y, float k, U32 rgb) {
     emit_color = 0xff000000u | rgb;
     emit(i, x, y, image_w(i) * k, image_h(i) * k, 0, 0, 1, 1);
@@ -1007,7 +1030,8 @@ static void build_legend(const U32 *b1, float k, U32 W, U32 H) {
     (void)b1;
     static const int row_kind[9] = {-1, 0, 1, 4, 5, 2, EVENT_KIND, 7, CRIMSON_KIND}; /* [0]..[8] -> hidden bit */
     static const int row_color[9] = {-1, COL_ROOM, COL_LOCK, COL_KEY, COL_FILE, COL_PUZZLE, COL_EVENT, COL_COMMON, COL_ENEMY};
-    U32 base = LEGEND_FIRST + (english ? LEGEND_PER_LANG : 0), lt = TEXT_FIRST + (english ? LT_PER_LANG : 0);
+    /* zh_cn draws the Korean block (base) with its zh rasters: every label row below goes through zh_image */
+    U32 base = LEGEND_FIRST + (language == 0 ? LEGEND_PER_LANG : 0), lt = TEXT_FIRST + TEXT_BLOCK * LT_PER_LANG;
     U32 mod = modifier_vk == VK_CONTROL;
     float pad = 12 * k, gap = 22 * k, lh = 30 * k, margin = 28 * k, col[2] = {0, 0}, tw = 0, th = 0, hw_hide = 0, zw = 0;
     if (!legend_open) {
@@ -1020,21 +1044,23 @@ static void build_legend(const U32 *b1, float k, U32 W, U32 H) {
         layer = 0;
         return;
     }
-    for (U32 lang = 0; lang < 2; lang++) { /* widest of both languages and of every state: a stable panel */
-        U32 b = LEGEND_FIRST + lang * LEGEND_PER_LANG, l = TEXT_FIRST + lang * LT_PER_LANG;
-        for (U32 r = 0; r < 9; r++) { float w = labels[b + LG_ROW + r].w * k; if (w > col[r < 5 ? 0 : 1]) col[r < 5 ? 0 : 1] = w; }
+    for (U32 lang = 0; lang < 3; lang++) { /* widest of every language (Korean, English, Chinese) and state: a stable panel */
+        U32 b = LEGEND_FIRST + (lang == 1 ? LEGEND_PER_LANG : 0), l = TEXT_FIRST + lang * LT_PER_LANG;
+#define LGW(i) quad_w(lang == 2 ? zh_or(i) : (i), k)
+        for (U32 r = 0; r < 9; r++) { float w = LGW(b + LG_ROW + r); if (w > col[r < 5 ? 0 : 1]) col[r < 5 ? 0 : 1] = w; }
         for (U32 i = 0; i < 3; i++) {
-            if (labels[b + LG_SCOPE + i].w * k > col[1]) col[1] = labels[b + LG_SCOPE + i].w * k;
+            if (LGW(b + LG_SCOPE + i) > col[1]) col[1] = LGW(b + LG_SCOPE + i);
             if (quad_w(l + LT_ITEM_NAMES + i, k) > col[0]) col[0] = quad_w(l + LT_ITEM_NAMES + i, k);
         }
         if (quad_w(l + LT_LANG, k) > col[1]) col[1] = quad_w(l + LT_LANG, k);
-        if (labels[b + LG_TITLE].w * k + quad_w(l + LT_HIDE, k) > tw + hw_hide) { tw = labels[b + LG_TITLE].w * k; hw_hide = quad_w(l + LT_HIDE, k); }
-        if (quad_w(LG_ZOOM + lang, k) > zw) zw = quad_w(LG_ZOOM + lang, k);
+        if (LGW(b + LG_TITLE) + quad_w(l + LT_HIDE, k) > tw + hw_hide) { tw = LGW(b + LG_TITLE); hw_hide = quad_w(l + LT_HIDE, k); }
+        if (LGW(LG_ZOOM + (lang == 1)) > zw) zw = LGW(LG_ZOOM + (lang == 1));
+#undef LGW
     }
-    th = labels[base + LG_TITLE].h * k;
+    th = image_h(zh_image(base + LG_TITLE)) * k;
     float hide_gap = 14 * k, hh = th + 6 * k, cw = col[0] + gap + col[1], hw = tw + hide_gap + hw_hide;
     float w = 2 * pad + (cw > hw ? cw : hw);
-    U32 zoom_row = LG_ZOOM + (english ? 1 : 0);
+    U32 zoom_row = zh_image(LG_ZOOM + (language == 0 ? 1 : 0));
     if (zw + 2 * pad > w) w = zw + 2 * pad;
     float h = 2 * pad + hh + 6 * lh + lh * 0.85f;
     float x0 = margin, y0 = (float)H - margin - h; /* ponytail: margins unverified against native HUD */
@@ -1042,23 +1068,23 @@ static void build_legend(const U32 *b1, float k, U32 W, U32 H) {
     reserve_w(x0, y0, w, h, 8);
     legend_panel(x0, y0, w, h);
     float x = x0 + pad, y = y0 + pad, x1 = x + col[0] + gap;
-    legend_quad(base + LG_TITLE, x, y, k, COLOR_WHITE);
-    legend_quad(lt + LT_HIDE, x + labels[base + LG_TITLE].w * k + hide_gap, y + th - image_h(lt + LT_HIDE) * k, k, COLOR_READOUT);
+    legend_quad(zh_image(base + LG_TITLE), x, y, k, COLOR_WHITE);
+    legend_quad(lt + LT_HIDE, x + quad_w(zh_image(base + LG_TITLE), k) + hide_gap, y + th - image_h(lt + LT_HIDE) * k, k, COLOR_READOUT);
     y += hh;
     for (U32 r = 0; r < 9; r++) {
         int on = !all_off && (r == 0 || !(hidden >> row_kind[r] & 1));
-        legend_quad(base + LG_ROW + r, r < 5 ? x : x1, y + (r < 5 ? r : r - 5) * lh, k, !on ? COLOR_OFF : r == 0 ? COLOR_WHITE : cat_color[row_color[r]]);
+        legend_quad(zh_image(base + LG_ROW + r), r < 5 ? x : x1, y + (r < 5 ? r : r - 5) * lh, k, !on ? COLOR_OFF : r == 0 ? COLOR_WHITE : cat_color[row_color[r]]);
     }
     legend_quad(lt + LT_ITEM_NAMES + (U32)((item_names + 2) % 3), x, y + 5 * lh, k, item_names ? COLOR_WHITE : COLOR_OFF); /* under [4]; All, No common, Off for 1, 2, 0 */
-    legend_quad(base + LG_SCOPE + visibility, x1, y + 4 * lh, k, COLOR_WHITE);                                           /* [9] under [8] */
+    legend_quad(zh_image(base + LG_SCOPE + visibility), x1, y + 4 * lh, k, COLOR_WHITE);                                           /* [9] under [8] */
     legend_quad(lt + LT_LANG, x1, y + 5 * lh, k, COLOR_WHITE);                                                           /* [\] under [9]: the size and colour of [H] */
     y += 6 * lh;
     legend_quad(zoom_row, x, y, k, COLOR_HINT);
     /* readout: widest value of each row, so the panel does not jump while a value changes */
-    U32 rows[4] = {base + LG_OPACITY + name_opacity / 10 - 1, base + LG_SIZE + (name_size - 50) / 10,
+    U32 rows[4] = {zh_image(base + LG_OPACITY + name_opacity / 10 - 1), zh_image(base + LG_SIZE + (name_size - 50) / 10),
                    lt + LT_ICON_OPACITY + mod * 10 + (icon_opacity - 10) / 10, lt + LT_ICON_SIZE + mod * 16 + (icon_size - 50) / 10};
     float rw = 0, rh = 0;
-    for (U32 i = 0; i < 21; i++) if (quad_w(base + LG_OPACITY + i, k) > rw) rw = quad_w(base + LG_OPACITY + i, k);
+    for (U32 i = 0; i < 21; i++) if (quad_w(zh_image(base + LG_OPACITY + i), k) > rw) rw = quad_w(zh_image(base + LG_OPACITY + i), k);
     for (U32 i = 0; i < 10; i++) if (quad_w(lt + LT_ICON_OPACITY + mod * 10 + i, k) > rw) rw = quad_w(lt + LT_ICON_OPACITY + mod * 10 + i, k);
     for (U32 i = 0; i < 16; i++) if (quad_w(lt + LT_ICON_SIZE + mod * 16 + i, k) > rw) rw = quad_w(lt + LT_ICON_SIZE + mod * 16 + i, k);
     for (U32 i = 0; i < 4; i++) rh += image_h(rows[i]) * k;
@@ -1098,7 +1124,7 @@ static void build_kerosene(U32 i, float cx, float cy, float tk, U32 W, U32 H) {
 static void draw(void *dev) {
     BYTE *map = (BYTE *)map_object, *mgr, *ren;
     void *surface = 0, *state = 0; SurfaceDesc desc;
-    static struct { void *dev; U32 session, area, floor, W, H, BW, BH; float ox, oy, zx, zy; LONG zoom; LONG hidden, english, all_off, visibility, name_size, name_opacity, crimson_time, icon_size, icon_opacity, item_names, legend_open, modifier_vk; } view, seen;
+    static struct { void *dev; U32 session, area, floor, W, H, BW, BH; float ox, oy, zx, zy; LONG zoom; LONG hidden, language, all_off, visibility, name_size, name_opacity, crimson_time, icon_size, icon_opacity, item_names, legend_open, modifier_vk; } view, seen;
     if (!map || frame - map_frame > 3) { draw_trace(1, frame, map_frame, (U32)map, 0); return; }
     if (!readable(map, 0x62a0)) { draw_trace(2, (U32)map, 0, 0, 0); return; }
     /* Native +0x629c: 0 map, 1 item-box selection/list, 2 selected box contents. */
@@ -1140,7 +1166,7 @@ static void draw(void *dev) {
         live_ready = 1;
     }
     view.dev = dev; view.session = map_session; view.area = area; view.floor = floor; view.W = W; view.H = H; view.BW = desc.w; view.BH = desc.h; view.zoom = zoom_on; view.zx = zoom_on ? zoom_x : 0; view.zy = zoom_on ? zoom_y : 0;
-    view.ox = ox; view.oy = oy; view.hidden = hidden; view.english = english; view.all_off = all_off;
+    view.ox = ox; view.oy = oy; view.hidden = hidden; view.language = language; view.all_off = all_off;
     view.visibility = visibility; view.name_size = name_size; view.name_opacity = name_opacity; view.crimson_time = crimson_time;
     view.icon_size = icon_size; view.icon_opacity = icon_opacity; view.item_names = item_names; view.legend_open = legend_open; view.modifier_vk = modifier_vk;
     if (memcmp(&view, &seen, sizeof view)) { seen = view; build(mgr, area, floor, ox, oy, W, H, live, nlive, cur); }
@@ -1207,7 +1233,7 @@ static void poll_keys(void) {
         int key = keys[i];
         if (!key_rest_step(&rest[i], (GetAsyncKeyState(key) & 0x8000) != 0, GetTickCount())) continue;
         if (i < GROUPS) InterlockedXor(&hidden, 1 << toggle_kind[i]);
-        else if (key == VK_OEM_5) InterlockedXor(&english, 1);
+        else if (key == VK_OEM_5) language = (language + 1) % 3; /* English -> Korean -> Chinese (zh_cn) */
         else if (key == '9') visibility = (visibility + 1) % 3;
         else if (key == '0') InterlockedXor(&all_off, 1);
         else if (key == 'H') item_names = item_names == 1 ? 2 : item_names == 2 ? 0 : 1; /* all -> no common -> hidden -> all */
@@ -1387,19 +1413,41 @@ static int in_image(const void *p, void **base) {
     MEMORY_BASIC_INFORMATION m;
     return VirtualQuery(p, &m, sizeof m) && m.Type == MEM_IMAGE && (*base = m.AllocationBase) != 0;
 }
-/* A COM object whose 119-entry vtable lives in one non-game image: IDirect3DDevice9 layout. */
+/* A COM object whose 119-entry vtable lives in one non-game image: IDirect3DDevice9 layout. Overlays and hook libraries may
+ * redirect a few slots (Present, Reset, EndScene) into their own image, so only the first three COM slots and most of the
+ * table must stay in the vtable's image; every slot must still point into loaded code. The object may also point at a copy
+ * of the whole table in heap memory (seen with the Steam and NVIDIA overlays injected; the copier was not identified): then the module of slot 0 (QueryInterface) stands in for the vtable's image.
+ * Returns the number of redirected slots + 1, or 0 when p is not a device. */
+#define DEVICE_FOREIGN_MAX 16
 static int is_device(void *p) {
     void **vt, *base, *b2;
-    if (!readable(p, 4) || !readable(vt = *(void ***)p, 119 * 4) || !in_image(vt, &base) || base == exe) return 0;
-    for (int i = 0; i < 119; i++)
-        if (!in_image(vt[i], &b2) || b2 != base) return 0;
-    return 1;
+    int foreign = 0;
+    if (!readable(p, 4) || !readable(vt = *(void ***)p, 119 * 4)) return 0;
+    if (!in_image(vt, &base) && !in_image(vt[0], &base)) return 0; /* heap copy of the table: slot 0's module */
+    if (base == exe) return 0;
+    for (int i = 0; i < 119; i++) {
+        if (!in_image(vt[i], &b2)) return 0;
+        if (b2 != base && (i < 3 || ++foreign > DEVICE_FOREIGN_MAX)) return 0;
+    }
+    return foreign + 1;
 }
 /* the device the game itself presents with: [[0xd5a048]+0x98] (0x7c1816, 0x9de294, 0xa702d8) */
 static void *find_device(void) {
     BYTE *ren = *(BYTE **)(exe + EXE_RENDERER);
     if (!readable(ren, 0x9c)) return 0;
-    return is_device(*(void **)(ren + 0x98)) ? *(void **)(ren + 0x98) : 0;
+    void *dev = *(void **)(ren + 0x98);
+    int found = is_device(dev);
+    static void *logged;
+    if (found && logged != dev) { /* once per device: where its table lives and how many slots other hooks own */
+        char line[400], mod[MAX_PATH] = "?";
+        void **vt = *(void ***)dev, *base = 0, *vbase = 0;
+        if (in_image(vt[0], &base)) GetModuleFileNameA((HMODULE)base, mod, sizeof mod);
+        logged = dev;
+        wsprintfA(line, "device found: vtable %s, %d slots hooked by others, slot 0 in %s\r\n",
+                  in_image(vt, &vbase) ? "in a module" : "copied to the heap", found - 1, mod);
+        log_line(line);
+    }
+    return found ? dev : 0;
 }
 
 /* Scope 3 (All rooms): native map renderers skip a room failing both bank5 (visited) and bank7 (revealed by a map
@@ -1474,6 +1522,22 @@ static DWORD WINAPI install(void *unused) {
         }
         void *dev = find_device();
         void **v = dev ? *(void ***)dev : 0;
+        static int no_device_logged;
+        if (!dev && tick > 600 && !no_device_logged++) { /* 30 s without a device: say what [[renderer]+0x98] holds */
+            BYTE *ren = *(BYTE **)(exe + EXE_RENDERER);
+            void *cand = readable(ren, 0x9c) ? *(void **)(ren + 0x98) : 0, *base = 0;
+            void **cvt = readable(cand, 4) ? *(void ***)cand : 0;
+            int foreign = 0, outside = 0, heap = 0;
+            char mod[MAX_PATH] = "?";
+            if (cvt && readable(cvt, 119 * 4) && ((heap = !in_image(cvt, &base)) == 0 || in_image(cvt[0], &base))) {
+                GetModuleFileNameA((HMODULE)base, mod, sizeof mod);
+                for (int i = 0; i < 119; i++) { void *b2 = 0; if (!in_image(cvt[i], &b2)) outside++; else if (b2 != base) foreign++; }
+            }
+            char line[420];
+            wsprintfA(line, "no D3D9 device yet: renderer %p candidate %p vtable %p%s (foreign %d, outside images %d, slot 0 in %s)\r\n",
+                      ren, cand, cvt, heap ? " on the heap" : "", foreign, outside, mod);
+            log_line(line);
+        }
         if (v && v[42] != (void *)end_scene) {
             /* new device vtable, or someone re-patched ours: remember its current EndScene, then hook */
             int i = 0;

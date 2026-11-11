@@ -2,7 +2,7 @@
   "game_exe_sha256": "39b840663e4b1a6835c60cbd176e4ee6c21b9197fc2c2dd733f2a7c36a0b429a",
   "copied_files": {
     "src/re1_mapnames.c": {
-      "sha256": "3eb790e4b5f6f42c61b8743726718bda0b78914513972d9eea857e765e183c29"
+      "sha256": "1fa26708e191dbf5855df2d585a0987a45518c1995d5c3beed358f3af9c7a143"
     },
     "src/labels.h": {
       "sha256": "736053ee8c5e69940b5791473d14072cfc70cb12bf24510e2974fb7bae222df6"
@@ -32,13 +32,13 @@
       "sha256": "be5d1df7a0fc8831623903414ab3302a650a4b757ff1410cd145e9f2e62caad9"
     },
     "src/legend_text.h": {
-      "sha256": "b8f08926ac9ba895bb322b931f81ce0d80462d780dd717fcb599b5f333514ecd"
+      "sha256": "ea81771e1bbf71a27240e8ff83b4bae4150835f64a1a83afdb6de8e23a1a4958"
     },
     "src/hold_key.h": {
       "sha256": "ee00370ea00fdea1d9202d2e48da889308a4763e900a03acb63a1fa0318622aa"
     },
     "src/item_name_text.h": {
-      "sha256": "be8be996f8dde4c68a2b7b98ddb47c7ca611e5887b9e4be6544dfefe0982c4b6"
+      "sha256": "1374a0dcd505b6e7063f1f1886d07bb0821ebf2faa114ce8b7af229cdd2c2311"
     },
     "src/synth_marks.h": {
       "sha256": "e6f1b574a802011719e9380a8af6bbb3d1e6d0756d393f293c1941f2ede22e3b"
@@ -50,7 +50,7 @@
       "sha256": "a8fdae17a034703d352cc185807932729c2667c4a065c821d9975ab7347ba6d8"
     },
     "src/name_lines.h": {
-      "sha256": "eaeadd997eb63e5feaa7daac203b63f1eb68f5e26cce0907a22161357cc6a279"
+      "sha256": "718ec4676e92fbc1b29b86175ce21f67b384ae20d4c04cb71fc9da10ba014b77"
     },
     "src/event_marks.h": {
       "sha256": "15593323421434f0244ef2a24b06a0e1fe3a56c570aa465f9a236335399efb7e"

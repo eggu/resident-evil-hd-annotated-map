@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 h = (ROOT / 'src/labels.h').read_text(encoding='utf-8')
 t = (ROOT / 'src/item_name_text.h').read_text(encoding='utf-8')
 names = json.loads((ROOT / 'data/item_names.json').read_text(encoding='utf-8'))
+zh = json.loads((ROOT / 'data/zh_cn.json').read_text(encoding='utf-8'))['items']
 
 rows = re.findall(r'^\{(-?\d+),.*?/\* (.*?) \*/$', h[h.index('static const Label labels[]={'):], re.M)[:int(re.search(r'#define LABEL_COUNT (\d+)', h)[1])]
 kind7 = {i: int(c[5:]) for i, (k, c) in enumerate(rows) if k == '7'}
@@ -18,19 +19,22 @@ assert pairs == kind7, 'item_of_label does not match the labels.h rows'
 
 arrays = dict(re.findall(r'static const unsigned char (ntpx\d+)\[\]=\{([^}]*)\};', t))
 entries = re.findall(r'^\{(\d+),(\d+),(ntpx\d+),(\d+),(\d+)\}, /\* (.*?) \*/$', t, re.M)
-assert len(entries) == int(re.search(r'#define NT_COUNT (\d+)', t)[1]) == 2 * len(set(kind7.values())) + 2 * 12  # + the synthetic puzzle names
+assert len(entries) == int(re.search(r'#define NT_COUNT (\d+)', t)[1]) == 3 * len(set(kind7.values())) + 3 * 12  # + the synthetic puzzle names; Korean, English, Chinese
 for w, hh, px, item, lang, text in entries:
     if int(item) >= 1000:  # synthetic puzzle names: tests/test_synth_marks.py
         continue
-    assert text == names[item][0 if lang == '2' else 1].replace('의 ', ' ') or text == names[item][0 if lang == '2' else 1], (item, text)
+    if lang == '3':
+        assert text == zh[item], (item, text)
+    else:
+        assert text == names[item][0 if lang == '2' else 1].replace('의 ', ' ') or text == names[item][0 if lang == '2' else 1], (item, text)
     b = list(map(int, arrays[px].split(',')))
     assert len(b) == int(w) * int(hh) * 4
     fill = Counter((b[i + 2], b[i + 1], b[i]) for i in range(0, len(b), 4) if b[i + 3] > 240 and sum(b[i:i + 3]) > 60)
     assert fill.most_common(1)[0][0] == (255, 255, 255), (item, lang)
 
 c = (ROOT / 'src/re1_mapnames.c').read_text(encoding='utf-8')
-assert 'l->kind == 7 ? item_name_image(m->label' in c and 'item_name_image(i, english ? 2 : 1)' in c
-print(f'PASS: {len(kind7)} ordinary item rows -> {len(entries)} white names, both languages, from data/item_names.json')
+assert 'l->kind == 7 ? item_name_image(m->label' in c and 'item_name_image(i, NAME_LANG)' in c
+print(f'PASS: {len(kind7)} ordinary item rows -> {len(entries)} white names, three languages, from data/item_names.json')
 
 # Defense weapons are exclusive even when both rows share a pickup flag (Morgue 236).
 for line in (ROOT / 'src/labels.h').read_text().splitlines():

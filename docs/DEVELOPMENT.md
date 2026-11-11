@@ -42,6 +42,23 @@ python build.py --test
 
 The generators for item and marker coordinates read a legally owned game and are not part of this repository. Change those rows in the headers directly and run the tests.
 
+## Simplified Chinese (zh_cn)
+
+zh_cn is the third language slot (`Language=zh`, `\` cycles en → ko → zh). It reuses every Korean label row (positions, conditions,
+legend layout) and swaps only the raster: `src/labels_zh.h` (`zh_text[]`, image range `ZH_FIRST`) names the Korean row each Chinese
+raster replaces; room names carry their own anchor. Item names (`item_name_text` lang 3) and `legend_text` (third block) have their
+own zh rows. Text is `data/zh_cn.json` (keyed by the Korean source text; names follow the Pujia Chinese patch), the font Source Han Sans SC
+(SIL OFL 1.1), bundled as subsets.
+
+```sh
+python tools/subset_zh_fonts.py        # after changing data/zh_cn.json; full fonts in local/fonts/ (ignored)
+cd tools && python render_legend.py && python render_item_names.py && python gen_name_lines.py && python render_zh.py
+python build.py --test                 # tests/test_zh.py checks coverage, fonts and the runtime wiring
+```
+
+`tools/render_zh.py` places the Chinese room names with `layout_room_names.py`'s search and check (`data/room_names_zh.json`) and stops
+on any missing translation. Run it after `render_labels.py` / `layout_room_names.py` whenever `labels.h` changes.
+
 ## Room shapes and room names
 
 Room names are placed at build time on each room's real shape (the RE0 HD rules: pole of inaccessibility, smallest rooms first, leaders for corridors, 150% wrap, room names never overlapping on a floor). To regenerate:
