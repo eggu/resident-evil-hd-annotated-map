@@ -16,3 +16,4 @@ zig-out/
 *.exe
 local/
 AGENTS.md
+src/rc_version.h

@@ -16,8 +16,10 @@ def main():
     dist.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='re1hd-annotated-map-') as d:
         binary = Path(d)/'RE1HD.AnnotatedMap.asi'
+        # version resource + stripped symbols: an unstripped DLL without them drew antivirus false positives
+        (ROOT/'src/rc_version.h').write_text(f'#define VER_STR "{version}"\n#define VER_NUM {",".join(version.split("."))},0\n')
         subprocess.run([sys.executable,'-m','ziglang','cc','-target','x86-windows-gnu',
-            '-shared','-O2',str(ROOT/'src/re1_mapnames.c'),'-o',str(binary),
+            '-shared','-O2','-s',str(ROOT/'src/re1_mapnames.c'),str(ROOT/'src/version.rc'),'-o',str(binary),
             '-lkernel32','-luser32'],cwd=d,check=True)
         blob = binary.read_bytes()
         assert blob[:2] == b'MZ'

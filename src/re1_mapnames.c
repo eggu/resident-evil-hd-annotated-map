@@ -1505,10 +1505,10 @@ BOOL WINAPI DllMain(HINSTANCE dll, DWORD reason, void *reserved) {
         if (migrate) { save_settings(); log_line("settings: INI rewritten once with Version 4\r\n"); }
         exe = (BYTE *)GetModuleHandleA(0);
         if (exe != (BYTE *)0x400000) {
-            log_line("RE1HD.AnnotatedMap 1.0.0: unsupported bhd.exe; no patch applied\r\n");
+            log_line("RE1HD.AnnotatedMap 1.0.1: unsupported bhd.exe; no patch applied\r\n");
             return TRUE;
         }
-        log_line("RE1HD.AnnotatedMap 1.0.0 loaded\r\n");
+        log_line("RE1HD.AnnotatedMap 1.0.1 loaded\r\n");
         CloseHandle(CreateThread(0, 0, install, 0, 0, 0));
     }
     return TRUE;

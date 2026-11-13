@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+- Fewer antivirus false positives: the mod file now carries version information and no debug data. No gameplay changes.
+
+- 백신 오탐 감소: 모드 파일에 버전 정보를 넣고 디버그 정보를 뺐습니다. 게임 내 동작은 바뀌지 않았습니다.
+
 ## 1.0.0
 
 First public release.
