@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.2
+
+- Fixed the map annotations not appearing for some players: the Direct3D device is now recognised even when another overlay or mod has hooked part of it.
+- The log now records which module the Direct3D device comes from, to help diagnose setups where the map still shows nothing.
+
+- 일부 환경에서 지도 표시가 나오지 않던 문제 수정: 다른 오버레이나 모드가 Direct3D 장치 일부를 후킹해도 인식합니다.
+- 그래도 지도에 아무것도 나오지 않는 환경을 진단할 수 있도록 Direct3D 장치가 어느 모듈에서 오는지 로그에 남깁니다.
+
 ## 1.0.1
 
 - Fewer antivirus false positives: the mod file now carries version information and no debug data. No gameplay changes.

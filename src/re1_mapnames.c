@@ -1387,19 +1387,53 @@ static int in_image(const void *p, void **base) {
     MEMORY_BASIC_INFORMATION m;
     return VirtualQuery(p, &m, sizeof m) && m.Type == MEM_IMAGE && (*base = m.AllocationBase) != 0;
 }
-/* A COM object whose 119-entry vtable lives in one non-game image: IDirect3DDevice9 layout. */
+/* A COM object whose 119-entry vtable points mostly into one non-game image: IDirect3DDevice9 layout.
+ * Other overlays/mods may repoint a few slots (or keep the vtable on the heap), so only most entries must agree. */
 static int is_device(void *p) {
-    void **vt, *base, *b2;
-    if (!readable(p, 4) || !readable(vt = *(void ***)p, 119 * 4) || !in_image(vt, &base) || base == exe) return 0;
+    void **vt, *base = 0, *b2;
+    int same = 0;
+    if (!readable(p, 4) || !readable(vt = *(void ***)p, 119 * 4)) return 0;
+    if (!in_image(vt[0], &base) || base == exe) return 0;
     for (int i = 0; i < 119; i++)
-        if (!in_image(vt[i], &b2) || b2 != base) return 0;
-    return 1;
+        if (in_image(vt[i], &b2) && b2 == base) same++;
+    return same >= 100; /* ponytail: majority vote, real devices score 119 */
 }
 /* the device the game itself presents with: [[0xd5a048]+0x98] (0x7c1816, 0x9de294, 0xa702d8) */
 static void *find_device(void) {
     BYTE *ren = *(BYTE **)(exe + EXE_RENDERER);
     if (!readable(ren, 0x9c)) return 0;
     return is_device(*(void **)(ren + 0x98)) ? *(void **)(ren + 0x98) : 0;
+}
+
+/* Diagnostics for a device that is missing or not recognised: which module each pointer of the check lands in. */
+static void module_of(const void *p, char *out, int cap) {
+    MEMORY_BASIC_INFORMATION m;
+    char full[MAX_PATH];
+    lstrcpyA(out, "?");
+    if (!VirtualQuery(p, &m, sizeof m)) return;
+    if (m.Type != MEM_IMAGE) { lstrcpyA(out, m.Type == MEM_PRIVATE ? "heap" : "mapped"); return; }
+    if (!GetModuleFileNameA((HMODULE)m.AllocationBase, full, MAX_PATH)) return;
+    const char *name = full;
+    for (const char *c = full; *c; c++) if (*c == '\\' || *c == '/') name = c + 1;
+    if (lstrlenA(name) < cap) lstrcpyA(out, name);
+}
+static void log_device_diag(const char *why) {
+    char line[200], a[64], b[64];
+    BYTE *ren = *(BYTE **)(exe + EXE_RENDERER);
+    void *dev = readable(ren, 0x9c) ? *(void **)(ren + 0x98) : 0;
+    void **vt = readable(dev, 4) ? *(void ***)dev : 0;
+    wsprintfA(line, "device diag (%s): renderer=%p device=%p vtable=%p\r\n", why, ren, dev, vt); log_line(line);
+    if (!vt || !readable(vt, 119 * 4)) { log_line("device diag: vtable unreadable\r\n"); return; }
+    module_of(vt, a, sizeof a); module_of(vt[0], b, sizeof b);
+    void *base = 0, *b2;
+    int same = 0, shown = 0;
+    in_image(vt[0], &base);
+    for (int i = 0; i < 119; i++) if (in_image(vt[i], &b2) && b2 == base) same++;
+    wsprintfA(line, "device diag: vtable in %s, slot0 in %s, %d/119 slots in slot0's module\r\n", a, b, same); log_line(line);
+    module_of(vt[17], a, sizeof a); module_of(vt[42], b, sizeof b);
+    wsprintfA(line, "device diag: Present(17) in %s, EndScene(42) in %s\r\n", a, b); log_line(line);
+    for (int i = 0; i < 119 && shown < 8; i++)
+        if (!(in_image(vt[i], &b2) && b2 == base)) { module_of(vt[i], a, sizeof a); wsprintfA(line, "device diag: slot %d -> %s\r\n", i, a); log_line(line); shown++; }
 }
 
 /* Scope 3 (All rooms): native map renderers skip a room failing both bank5 (visited) and bank7 (revealed by a map
@@ -1473,6 +1507,7 @@ static DWORD WINAPI install(void *unused) {
             hook_zoom();
         }
         void *dev = find_device();
+        if (!dev && (tick == 600 || tick == 3000)) log_device_diag(tick == 600 ? "not recognised after 30 s" : "still not recognised after 150 s");
         void **v = dev ? *(void ***)dev : 0;
         if (v && v[42] != (void *)end_scene) {
             /* new device vtable, or someone re-patched ours: remember its current EndScene, then hook */
@@ -1480,7 +1515,11 @@ static DWORD WINAPI install(void *unused) {
             while (i < 3 && chain[i].vt && chain[i].vt != v) i++;
             chain[i].fn = v[42];
             chain[i].vt = v;
-            if (patch_slot(&v[42], (void *)end_scene)) log_line("EndScene hooked\r\n");
+            if (patch_slot(&v[42], (void *)end_scene)) {
+                char line[120], m[64];
+                module_of(chain[i].fn, m, sizeof m);
+                wsprintfA(line, "EndScene hooked (previous EndScene in %s)\r\n", m); log_line(line);
+            }
         }
     }
     return 0;
@@ -1505,10 +1544,10 @@ BOOL WINAPI DllMain(HINSTANCE dll, DWORD reason, void *reserved) {
         if (migrate) { save_settings(); log_line("settings: INI rewritten once with Version 4\r\n"); }
         exe = (BYTE *)GetModuleHandleA(0);
         if (exe != (BYTE *)0x400000) {
-            log_line("RE1HD.AnnotatedMap 1.0.1: unsupported bhd.exe; no patch applied\r\n");
+            log_line("RE1HD.AnnotatedMap 1.0.2: unsupported bhd.exe; no patch applied\r\n");
             return TRUE;
         }
-        log_line("RE1HD.AnnotatedMap 1.0.1 loaded\r\n");
+        log_line("RE1HD.AnnotatedMap 1.0.2 loaded\r\n");
         CloseHandle(CreateThread(0, 0, install, 0, 0, 0));
     }
     return TRUE;
