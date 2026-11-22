@@ -24,7 +24,7 @@
 
 ## 표시 범위와 기본값
 
-Steam 또는 GOG판 Resident Evil / Biohazard HD REMASTER(`bhd.exe`, 현재 빌드)가 필요합니다.
+Steam 또는 GOG판 Resident Evil / Biohazard HD REMASTER(`bhd.exe`)가 필요합니다. 현재 Steam 빌드(2026 업데이트)와 롤백해서 쓰는 이전 빌드를 모두 지원합니다. 그 밖의 `bhd.exe`에서는 `unsupported bhd.exe build`를 로그에 남기고 아무것도 바꾸지 않습니다.
 
 처음 실행하면 영어, 방문한 방, 방 이름만 표시합니다. 나머지는 지도 화면에서 숫자 키로 켭니다. 이벤트(스포일러)도 처음에는 숨겨져 있습니다.
 

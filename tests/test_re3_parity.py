@@ -116,19 +116,17 @@ static int readable(const void *p, U32 n) { return p != 0; }
 static int VirtualProtect(void *p, size_t n, DWORD a, DWORD *old) { *old = 0; return 1; }
 static int FlushInstructionCache(void *h, void *p, size_t n) { return 1; }
 static void *GetCurrentProcess(void) { return 0; }
-''' + cut('#define EXE_FLAG_TEST', 'static DWORD WINAPI install') + r'''
+''' + cut('typedef struct {\n    U32 stamp', '#define EXE_MAP_VTABLE') + cut('#define EXE_FLAG_TEST', 'static DWORD WINAPI install') + r'''
 static unsigned char fake_orig(void *m, void *e, U32 bank, U32 idx) { return 0x5a; }
-static const BYTE ctx[8] = {0x6a, 0x07, 0x81, 0xc1, 0xf8, 0x01, 0x00, 0x00};
-static const BYTE head[16] = {0x8b, 0x44, 0x24, 0x04, 0x56, 0x8b, 0xf1, 0x83, 0xf8, 0x07, 0x0f, 0x87, 0x06, 0x01, 0x00, 0x00};
 #define SIZE 0x160000
 /* a fake image mapped within +-2GB of the wrapper so the 32-bit displacement is exact, as in the 32-bit game */
 static BYTE *make_image(void) {
     uintptr_t hint = ((uintptr_t)flag_all_scope & ~(uintptr_t)0xfff) + 0x10000000;
     BYTE *b = mmap((void *)hint, SIZE, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0);
     assert(b != MAP_FAILED && (intptr_t)((BYTE *)flag_all_scope - b) < 0x7ff00000);
-    memcpy(b + EXE_FLAG_TEST, head, 16);
+    memcpy(b + EXE_FLAG_TEST, ad->flag_head, 16);
     for (int i = 0; i < 2; i++) {
-        BYTE *p = b + bank7_sites[i]; memcpy(p - 8, ctx, 8); p[0] = 0xe8;
+        BYTE *p = b + bank7_sites[i]; memcpy(p - 8, ad->bank7_ctx, 8); p[0] = 0xe8;
         int rel = (int)((b + EXE_FLAG_TEST) - (p + 5)); memcpy(p + 1, &rel, 4);
     }
     return b;
@@ -142,6 +140,8 @@ static int untouched(BYTE *b, int i) {
     return p + 5 + rel == b + EXE_FLAG_TEST;
 }
 int main(void) {
+  for (int build = 0; build < 2; build++) {                                 /* 2026 and 2018 tables */
+    ad = &builds[build];
     exe = make_image(); hook_all_scope();                                   /* every byte matches */
     for (int i = 0; i < 2; i++) assert(patched(exe, i));
     flag_test = fake_orig;                                                  /* wrapper behaviour */
@@ -161,6 +161,7 @@ int main(void) {
         for (int i = 0; i < 2; i++) assert(!patched(b, i) && (bad == 3 || untouched(b, i) || (bad == 2 && i == 1)));
         assert(logged == 1 && strstr(last_log, "mismatch"));
     }
+  }
     return 0;
 }
 '''

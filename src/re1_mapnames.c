@@ -2,6 +2,7 @@
  * Korean room names, key doors, puzzles, key items and documents on the HD Remaster map.
  * Standalone: hooks map object vtable 0xc3d0f8 slots 0..9 (captures the map object each frame it is used)
  * and the game's IDirect3DDevice9::EndScene (device found inside the renderer object [0xd5a048]).
+ * Addresses in comments are the 2026 build's; the 2018 build's are in builds[] below.
  */
 #include <windows.h>
 #include <stdlib.h>
@@ -37,17 +38,53 @@ typedef struct { float x, y, z, rhw; U32 color; float u, v; } Vertex; /* FVF XYZ
 #include "name_lines.h"
 #include "colors.h"
 
-#define EXE_MAP_VTABLE   0x83d0f8 /* map object class vtable; slots 0..9 hooked */
-#define EXE_ROOMS        0x8c8e00 /* 154 records x 96 bytes */
-#define EXE_BANKS        0x8f2fc8 /* manager: bank4 +0x31c, bank5 +0x33c, bank7 +0x37c */
-#define EXE_RENDERER     0x95a048 /* renderer dims +0xb8/+0xbc */
-#define EXE_INVENTORY    0x8f2f28 /* +0x5110 == 1 Jill, +0x24 difficulty (spawn mask filter 0x481d40) */
-#define EXE_ROOMSTATE    0x8f3068 /* +0x20 stage, +0x24 room */
-#define EXE_ITEM_CTOR    0x27e990 /* uItem base ctor 0x67e990: push esi; push 0x3e8 */
+/* Per-build addresses (image base 0x400000, no relocations). RVAs are added to exe, VAs are absolute.
+ * Picked by the in-memory PE header (TimeDateStamp + SizeOfImage); any other build patches nothing. */
+typedef struct {
+    U32 stamp, image; const char *name;
+    U32 map_vtable, rooms, banks, renderer, inventory, roomstate, crimson, pad_config, gui, msg_manager; /* RVA */
+    U32 item_ctor, spawn_core, spawn_frame, flag_test, bank7[2]; /* RVA */
+    BYTE spawn_head[14], flag_head[16], bank7_ctx[8];
+    U32 sprite, pad_held, pad_repeat, pad_edge, gui_hover, gui_set_pos; /* VA */
+    U32 site_marker, site_pad, site_paper, zoom[8], hidden[29]; /* VA of `E8 rel32` calls */
+} Addr;
+static const Addr builds[2] = {
+    {0x6a27c7df, 0x9a6000, "2026",
+     0x83d0f8, 0x8c8e00, 0x8f2fc8, 0x95a048, 0x8f2f28, 0x8f3068, 0x8f2df4, 0x9599e4, 0x8f2788, 0x8f30d8,
+     0x27e990, 0x07f500, 0x58, 0x0916a0, {0x155377, 0x1543b1},
+     {0x55, 0x8b, 0xec, 0x83, 0xe4, 0xf0, 0x83, 0xec, 0x58, 0x56, 0x57, 0x8b, 0x7d, 0x0c},
+     {0x8b, 0x44, 0x24, 0x04, 0x56, 0x8b, 0xf1, 0x83, 0xf8, 0x07, 0x0f, 0x87, 0x06, 0x01, 0x00, 0x00},
+     {0x6a, 0x07, 0x81, 0xc1, 0xf8, 0x01, 0x00, 0x00},
+     0x5561d0, 0x4d9230, 0x4d93c0, 0x4d9550, 0x4ddf40, 0x9eee20,
+     0x555286, 0x552b1b, 0x5537de, {0x554079, 0x5540ed, 0x5541f3, 0x554251, 0x554617, 0x554fb0, 0x5555d4, 0x555631},
+     {0x553ef9, 0x553f20, 0x5547c2, 0x5547e5, 0x5548f3, 0x554911, 0x553867, 0x5538fc, 0x553985, 0x553a73, 0x553b0f, 0x553ba4, 0x553d11,
+      0x553d79, 0x553e73, 0x55472a, 0x55474b, 0x554a99, 0x554b9a, 0x554c2f, 0x554cc4, 0x555769, 0x555792, 0x555819, 0x555842, 0x5558c0,
+      0x55593e, 0x5559c1, 0x555a44}},
+    /* 2018 (rollback builds; the 2018/2023/2025 manifests share this code). Same structs; the spawn core reserves 0x68,
+     * the flag test's first ja and the bank7 `add ecx` (here lea) differ. hidden[]: same 29 calls as a set (no 1:1 order). */
+    {0x5ba38fbb, 0xa18000, "2018",
+     0x88fa74, 0x93b1f0, 0x97ca2c, 0x9e4a90, 0x97c9c0, 0x97caa0, 0x97c8c0, 0x9e464c, 0x97c398, 0x9815a4,
+     0x224a60, 0x01f6b0, 0x68, 0x031230, {0x0f2d35, 0x0f17e7},
+     {0x55, 0x8b, 0xec, 0x83, 0xe4, 0xf0, 0x83, 0xec, 0x68, 0x56, 0x57, 0x8b, 0x7d, 0x0c},
+     {0x8b, 0x44, 0x24, 0x04, 0x56, 0x8b, 0xf1, 0x83, 0xf8, 0x07, 0x0f, 0x87, 0x1e, 0x01, 0x00, 0x00},
+     {0x6a, 0x07, 0x8d, 0x89, 0xf8, 0x01, 0x00, 0x00},
+     0x4f3d20, 0x477150, 0x477310, 0x4774d0, 0x47b8b0, 0x9d4680,
+     0x4f2c28, 0x4effa6, 0x4f26dc, {0x4f1416, 0x4f149f, 0x4f15be, 0x4f1630, 0x4f196a, 0x4f2579, 0x4f3015, 0x4f3078},
+     {0x4f222e, 0x4f2255, 0x4f1b2f, 0x4f1b52, 0x4f1c50, 0x4f1c6e, 0x4f0f17, 0x4f0fd1, 0x4f1076, 0x4f2801, 0x4f1d82, 0x4f1f18, 0x4f12af,
+      0x4f1fd2, 0x4f218b, 0x4f1a98, 0x4f1aba, 0x4f208c, 0x4f28cc, 0x4f2986, 0x4f3595, 0x4f31c0, 0x4f31ea, 0x4f327c, 0x4f32a6, 0x4f332a,
+      0x4f33ae, 0x4f343c, 0x4f34ca}},
+};
+static const Addr *ad = &builds[0];
+#define EXE_MAP_VTABLE   (ad->map_vtable) /* map object class vtable; slots 0..9 hooked */
+#define EXE_ROOMS        (ad->rooms)      /* 154 records x 96 bytes */
+#define EXE_BANKS        (ad->banks)      /* manager: bank4 +0x31c, bank5 +0x33c, bank7 +0x37c */
+#define EXE_RENDERER     (ad->renderer)   /* renderer dims +0xb8/+0xbc */
+#define EXE_INVENTORY    (ad->inventory)  /* +0x5110 == 1 Jill, +0x24 difficulty (spawn mask filter 0x481d40) */
+#define EXE_ROOMSTATE    (ad->roomstate)  /* +0x20 stage, +0x24 room */
+#define EXE_ITEM_CTOR    (ad->item_ctor)  /* uItem base ctor 0x67e990: push esi; push 0x3e8 */
 /* Crimson Heads: [0xcf2df4]+0x40 + id*0x30 death records (0x4ea1d0): +0x10/+0x18 world x/z, +0x2c revive
  * time (0 = never); clock [INV+0xe4738] in 1/30 s; dead = bank2[id]. Revive check 0x4ea3a0. */
-#define EXE_CRIMSON      0x8f2df4
-#define EXE_REVIVE_JBE   0x0ea3fc /* 0x4ea3fc jbe; RE1.DeadShallNotRise NOPs it (90 90) */
+#define EXE_CRIMSON      (ad->crimson)
 #define CRIMSON_KIND     8        /* HiddenKinds bit, key 8 */
 #define KEROSENE_FLAG 900 /* gen_labels.KEROSENE_FLAG */
 #define CRIMSON_MINUTE   1800.0f
@@ -88,7 +125,7 @@ void __cdecl record_unit(void *p) { units[(InterlockedIncrement(&unit_next) - 1)
 __asm__(".globl _ctor_stub\n_ctor_stub:\n pushal\n pushfl\n pushl %ecx\n call _record_unit\n addl $4, %esp\n"
         " popfl\n popal\n pushl %esi\n pushl $0x3e8\n jmp *_ctor_back\n");
 void ctor_stub(void);
-void *ctor_back = (void *)0x67e996;
+void *ctor_back; /* EXE_ITEM_CTOR + 6 */
 static HANDLE log_file;
 /* Keys while the map is open (user decision 2026-11-08, the shared numbering): 1 rooms, 2 locks, 3 key items, 4 files/maps, 5 puzzles,
  * 6 events, 7 common items, 8 enemies (hold: the minutes left of Crimson Heads), 9 scope, 0 everything on/off, H item names, \ language
@@ -487,7 +524,7 @@ static void track_deaths(void) {
  * 2 revived; called by 0x47efe0, 0x47f180, 0x47f340). Object: +0x156c global id, +0x1460 em id, +0x1568 row index+1.
  * Row: +0x10/+0x18 world x/z. Only mode 0 is recorded. Prologue (9 bytes) is displaced into the stub.
  * Records live in enemy_rec.h; file RE1HD.AnnotatedMap.enemies.dat beside the ASI. Design/evidence: enemies-runtime/NOTES.md. */
-#define EXE_SPAWN_CORE 0x07f500
+#define EXE_SPAWN_CORE (ad->spawn_core)
 static CRITICAL_SECTION enemy_cs;
 static char enemy_path[MAX_PATH];
 static volatile LONG enemy_dirty;
@@ -577,15 +614,17 @@ void __cdecl record_spawn(BYTE *obj, BYTE *row, U32 mode) {
 }
 __asm__(".globl _spawn_stub\n_spawn_stub:\n pushal\n pushfl\n pushl 48(%esp)\n pushl 48(%esp)\n pushl 48(%esp)\n"
         " call _record_spawn\n addl $12, %esp\n popfl\n popal\n"
-        " pushl %ebp\n movl %esp, %ebp\n andl $-16, %esp\n subl $0x58, %esp\n jmp *_spawn_back\n");
+        " pushl %ebp\n movl %esp, %ebp\n andl $-16, %esp\n subl _spawn_frame, %esp\n jmp *_spawn_back\n");
 void spawn_stub(void);
-void *spawn_back = (void *)0x47f509;
+void *spawn_back; /* EXE_SPAWN_CORE + 9 */
+U32 spawn_frame; /* the core's sub esp, imm8 */
 static void hook_spawn(void) {
-    static const BYTE head[14] = {0x55, 0x8b, 0xec, 0x83, 0xe4, 0xf0, 0x83, 0xec, 0x58, 0x56, 0x57, 0x8b, 0x7d, 0x0c};
+    const BYTE *head = ad->spawn_head;
     BYTE *p = exe + EXE_SPAWN_CORE; DWORD old;
     int ok = readable(p, 14);
     for (int i = 0; ok && i < 14; i++) ok = p[i] == head[i];
     if (!ok || !VirtualProtect(p, 9, PAGE_EXECUTE_READWRITE, &old)) { log_line("spawn core mismatch; enemy markers off\r\n"); return; }
+    spawn_frame = head[8]; spawn_back = p + 9;
     p[0] = 0xe9; *(int *)(p + 1) = (int)((BYTE *)spawn_stub - (p + 5));
     p[5] = p[6] = p[7] = p[8] = 0x90;
     VirtualProtect(p, 9, old, &old);
@@ -706,8 +745,6 @@ static float crimson_glyph(const CrimsonRect *r, int row, float pen, float y, fl
  * revival is not unlocked (bank1 0x2f, set by scripted events 100/101; 0x4ea3a0 returns 0 without it). */
 static void build_crimson(BYTE *mgr, U32 area, U32 floor, float ox, float oy, float sx, float sy, float s, U32 W, U32 H) {
     BYTE *obj = *(BYTE **)(exe + EXE_CRIMSON), *inv = *(BYTE **)(exe + EXE_INVENTORY);
-    const BYTE *jbe = exe + EXE_REVIVE_JBE;
-    if (jbe[0] == 0x90 && jbe[1] == 0x90) return; /* DeadShallNotRise: corpses never revive */
     if (!readable(obj, 0x40 + 1024 * 0x30) || !readable(inv, 0xe473c)) return;
     const U32 *b2 = (const U32 *)(mgr + 0x25c); /* bank2 at mgr+0x1f8+0x64, 1024 bits */
     float now = *(float *)(inv + 0xe4738);
@@ -1224,32 +1261,29 @@ static void poll_keys(void) {
 }
 
 /* 2x view. All 39 map calls to 0x5561d0 are sorted here; SITE_MARKER (player) keeps its size. */
-#define EXE_PAD        0x9595c4 /* [0xd595c4] pad object */
-#define EXE_PAD_CONFIG 0x9599e4 /* [0xd599e4] pad action masks */
-#define VA_SPRITE      0x5561d0
-#define VA_PAD_HELD    0x4d9230
-#define VA_PAD_REPEAT  0x4d93c0
-#define VA_PAD_EDGE    0x4d9550
-#define SITE_MARKER    0x555286
-#define SITE_PAD       0x552b1b
+#define EXE_PAD_CONFIG (ad->pad_config) /* [0xd599e4] pad action masks */
+#define VA_SPRITE      (ad->sprite)
+#define VA_PAD_HELD    (ad->pad_held)
+#define VA_PAD_REPEAT  (ad->pad_repeat)
+#define VA_PAD_EDGE    (ad->pad_edge)
+#define SITE_MARKER    (ad->site_marker)
+#define SITE_PAD       (ad->site_pad)
 /* Pad masks per action in the current scheme's block at config +0xba0. Native defaults for scheme A (0xc2ea90):
  * +0x1c LT aim, +0x24 RT attack, +0x28 LB switch target, +0x14 X run, +0x34 Y status, +0x3c A investigate. */
 #define SLOT_ATTACK      0x24
-#define EXE_GUI          0x8f2788 /* [0xcf2788]: 0x4ddf40 returns the GUI item under the mouse, -1 for none */
-#define VA_GUI_HOVER     0x4ddf40
+#define EXE_GUI          (ad->gui) /* [0xcf2788]: 0x4ddf40 returns the GUI item under the mouse, -1 for none */
+#define VA_GUI_HOVER     (ad->gui_hover)
 /* rooms and door marks scale */
-#define SITE_PAPER 0x5537de
+#define SITE_PAPER (ad->site_paper)
 /* paper art bakes in the compass, dial socket and rule; zoomed, draw a clean part of it (same 4:3 shape) */
 static const int paper_uv[4] = {20, 150, 340, 430};
-static const U32 zoom_sites[] = {0x554079, 0x5540ed, 0x5541f3, 0x554251, 0x554617, 0x554fb0, 0x5555d4, 0x555631};
+#define zoom_sites (ad->zoom) /* 0x554079 0x5540ed 0x5541f3 0x554251 0x554617 0x554fb0 0x5555d4 0x555631 */
 /* Floor name: a native GUI text object, not a sprite. Zoomed it moves above the legend (game px at 1280x720). */
-#define EXE_MSG_MANAGER 0x8f30d8 /* [0xcf30d8] +0x30 text unit, +0x250 floor name object, +0x80 position */
-#define VA_GUI_SET_POS  0x9eee20
+#define EXE_MSG_MANAGER (ad->msg_manager) /* [0xcf30d8] +0x30 text unit, +0x250 floor name object, +0x80 position */
+#define VA_GUI_SET_POS  (ad->gui_set_pos)
 /* dial, compass, legend and buttons, plus the native callouts: art 0x55472a/b, typewriter 0x5547c2/e5, item box 0x5548f3/0x554911.
  * build_save_icons draws those two as icons instead. */
-static const U32 hidden_sites[] = {0x553ef9, 0x553f20, 0x5547c2, 0x5547e5, 0x5548f3, 0x554911, 0x553867, 0x5538fc, 0x553985, 0x553a73, 0x553b0f, 0x553ba4, 0x553d11, 0x553d79,
-    0x553e73, 0x55472a, 0x55474b, 0x554a99, 0x554b9a, 0x554c2f, 0x554cc4, 0x555769, 0x555792, 0x555819, 0x555842, 0x5558c0,
-    0x55593e, 0x5559c1, 0x555a44};
+#define hidden_sites (ad->hidden)
 #define COUNT(a) (sizeof (a) / sizeof *(a))
 static volatile float marker_x, marker_y;
 static volatile U32 marker_frame, zoom_session;
@@ -1436,24 +1470,41 @@ static void log_device_diag(const char *why) {
         if (!(in_image(vt[i], &b2) && b2 == base)) { module_of(vt[i], a, sizeof a); wsprintfA(line, "device diag: slot %d -> %s\r\n", i, a); log_line(line); shown++; }
 }
 
+static U32 text_lo, text_hi; /* .text VAs from the section header: a decrypted vtable points in here */
+/* 0 unsupported: the in-memory header picks the address table and the .text bounds. */
+static int pick_build(void) {
+    const IMAGE_NT_HEADERS32 *nt = (const IMAGE_NT_HEADERS32 *)(exe + ((const IMAGE_DOS_HEADER *)exe)->e_lfanew);
+    const IMAGE_SECTION_HEADER *sec = IMAGE_FIRST_SECTION(nt);
+    char line[120];
+    U32 stamp = nt->FileHeader.TimeDateStamp, image = nt->OptionalHeader.SizeOfImage;
+    for (U32 i = 0; i < COUNT(builds); i++)
+        if (builds[i].stamp == stamp) ad = &builds[i]; /* image size varies with the Steam stub wrapper (2018: 0x9ee000 bare, 0xa18000 wrapped) */
+    if (ad->stamp != stamp) {
+        wsprintfA(line, "unsupported bhd.exe build %08x (image %x); no patch applied\r\n", stamp, image); log_line(line);
+        return 0;
+    }
+    for (U32 i = 0; i < nt->FileHeader.NumberOfSections; i++)
+        if (!memcmp(sec[i].Name, ".text", 6)) { text_lo = (U32)(uintptr_t)exe + sec[i].VirtualAddress; text_hi = text_lo + sec[i].Misc.VirtualSize; }
+    wsprintfA(line, "bhd.exe build %s (%08x, image %x), .text %x-%x\r\n", ad->name, stamp, image, text_lo, text_hi); log_line(line);
+    if (!text_hi) { log_line("bhd.exe has no .text section; no patch applied\r\n"); return 0; }
+    return 1;
+}
+
 /* Scope 3 (All rooms): native map renderers skip a room failing both bank5 (visited) and bank7 (revealed by a map
  * pickup) tests. Their bank7 calls to flag test 0x4916a0 are redirected here, so unvisited rooms are drawn in the
  * native dim "revealed" style while bank5 stays real. Read-only: no flag is written. */
-#define EXE_FLAG_TEST 0x0916a0 /* 0x4916a0 thiscall (bank, idx), ret 8 */
+#define EXE_FLAG_TEST (ad->flag_test) /* 0x4916a0 thiscall (bank, idx), ret 8 */
 typedef unsigned char (__fastcall *FlagTest)(void *mgr, void *edx, U32 bank, U32 idx);
 static FlagTest flag_test;
 static unsigned char __fastcall flag_all_scope(void *mgr, void *edx, U32 bank, U32 idx) {
     if (bank == 7 && idx < 154 && !all_off && visibility == 2) return 1;
     return flag_test(mgr, edx, bank, idx);
 }
-/* Each site: rva of `E8 rel32` and the 8 bytes before it (`6A 07 81 C1 F8 01 00 00`: push 7; add ecx, 0x1f8). */
-static const U32 bank7_sites[2] = {
-    0x155377, /* 0x5552a0 room outlines */
-    0x1543b1, /* 0x5542b0 door lines of those rooms */
-}; /* floor tabs (0x55255f) stay native: All scope never opens a place the player has not reached */
+/* Each site: rva of `E8 rel32` and the 8 bytes before it (`6A 07 81 C1 F8 01 00 00`: push 7; add ecx, 0x1f8).
+ * 0x155377: 0x5552a0 room outlines; 0x1543b1: 0x5542b0 door lines of those rooms. */
+#define bank7_sites (ad->bank7) /* floor tabs (0x55255f) stay native: All scope never opens a place the player has not reached */
 static void hook_all_scope(void) {
-    static const BYTE ctx[8] = {0x6a, 0x07, 0x81, 0xc1, 0xf8, 0x01, 0x00, 0x00};
-    static const BYTE head[16] = {0x8b, 0x44, 0x24, 0x04, 0x56, 0x8b, 0xf1, 0x83, 0xf8, 0x07, 0x0f, 0x87, 0x06, 0x01, 0x00, 0x00};
+    const BYTE *ctx = ad->bank7_ctx, *head = ad->flag_head;
     BYTE *target = exe + EXE_FLAG_TEST;
     int ok = readable(target, 16);
     for (int i = 0; ok && i < 16; i++) ok = target[i] == head[i];
@@ -1485,7 +1536,7 @@ static DWORD WINAPI install(void *unused) {
             BYTE *r = exe + EXE_ROOMS;
             /* wait for the Steam stub to decrypt: room table + map vtable pointing into .text */
             if (!readable(r, 96) || u32(r) != 136 || u32(r + 4) != 353 || u32(r + 0x1c) != 2 || u32(r + 0x58) != 54 ||
-                !readable(vt, 40) || u32(vt) < 0x401000 || u32(vt) >= 0xc19000) {
+                !readable(vt, 40) || u32(vt) < text_lo || u32(vt) >= text_hi) {
                 if (tick > 600 && !logged++) log_line("bhd.exe layout mismatch; waiting\r\n");
                 continue;
             }
@@ -1496,6 +1547,7 @@ static DWORD WINAPI install(void *unused) {
             BYTE *p = exe + EXE_ITEM_CTOR; DWORD old;
             int same = readable(p, 8);
             for (int i = 0; same && i < 8; i++) same = p[i] == ctor_bytes[i];
+            ctor_back = p + 6;
             if (same && VirtualProtect(p, 6, PAGE_EXECUTE_READWRITE, &old)) {
                 p[0] = 0xe9; *(int *)(p + 1) = (int)((BYTE *)ctor_stub - (p + 5)); p[5] = 0x90;
                 VirtualProtect(p, 6, old, &old);
@@ -1544,10 +1596,11 @@ BOOL WINAPI DllMain(HINSTANCE dll, DWORD reason, void *reserved) {
         if (migrate) { save_settings(); log_line("settings: INI rewritten once with Version 4\r\n"); }
         exe = (BYTE *)GetModuleHandleA(0);
         if (exe != (BYTE *)0x400000) {
-            log_line("RE1HD.AnnotatedMap 1.0.2: unsupported bhd.exe; no patch applied\r\n");
+            log_line("RE1HD.AnnotatedMap 1.0.3: unsupported bhd.exe; no patch applied\r\n");
             return TRUE;
         }
-        log_line("RE1HD.AnnotatedMap 1.0.2 loaded\r\n");
+        if (!pick_build()) return TRUE;
+        log_line("RE1HD.AnnotatedMap 1.0.3 loaded\r\n");
         CloseHandle(CreateThread(0, 0, install, 0, 0, 0));
     }
     return TRUE;

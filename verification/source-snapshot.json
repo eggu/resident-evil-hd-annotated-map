@@ -2,7 +2,7 @@
   "game_exe_sha256": "39b840663e4b1a6835c60cbd176e4ee6c21b9197fc2c2dd733f2a7c36a0b429a",
   "copied_files": {
     "src/re1_mapnames.c": {
-      "sha256": "4c68595f8c3c004e15a7a766986c6e43afe522519241dddc6c8661fdfa2faff1"
+      "sha256": "9b4dcacc26a8eaeed279c3b480a004513f397f9a60fbae656790dab58f311b52"
     },
     "src/labels.h": {
       "sha256": "736053ee8c5e69940b5791473d14072cfc70cb12bf24510e2974fb7bae222df6"

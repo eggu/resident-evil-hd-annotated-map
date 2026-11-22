@@ -24,7 +24,7 @@ An ASI mod that shows room names, locked doors and keys, items, documents and ma
 
 ## Scope and defaults
 
-Requires the Steam or GOG version of Resident Evil / Biohazard HD REMASTER (`bhd.exe`, current build).
+Requires the Steam or GOG version of Resident Evil / Biohazard HD REMASTER (`bhd.exe`). Both the current Steam build (2026 update) and the earlier build that players roll back to are supported; with any other `bhd.exe` the mod logs `unsupported bhd.exe build` and changes nothing.
 
 The first run uses English, visited rooms and room names only. Turn on the rest with the number keys on the map screen. Events (spoilers) are hidden at first too.
 
